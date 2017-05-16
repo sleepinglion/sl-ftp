@@ -1,8 +1,10 @@
 <?php
+
 require __DIR__ . DIRECTORY_SEPARATOR . '..'. DIRECTORY_SEPARATOR . 'config' . DIRECTORY_SEPARATOR . 'config.php';
 
-if (isset($_GET['dir']))
-	$current_folder = $_GET['dir'];
+if (isset($_GET['dir'])) {
+    $current_folder = $_GET['dir'];
+}
 ?>
 <div class="modal-dialog">
 	<form action="mkdir.php" method="post" class="modal-content">
@@ -11,7 +13,7 @@ if (isset($_GET['dir']))
 			<h4 class="modal-title" id="myModalLabel"><?php echo _('New Folder') ?></h4>
 		</div>
 		<div class="modal-body">
-			<input type="hidden" name="dir" value="<?php if(empty($current_folder)): ?><?php else: ?><?php echo $current_folder ?><?php endif ?>" />
+			<input type="hidden" name="dir" value="<?php if (empty($current_folder)): ?><?php else: ?><?php echo $current_folder ?><?php endif ?>" />
 			<input type="text" name="folder_name" class="form-control" />
 		</div>
 		<div class="modal-footer">
