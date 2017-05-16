@@ -8,7 +8,7 @@ try {
         $file = $_GET['file'];
     }
 
-    $config = new \sl_ftp\config($_SESSION['sl_connect_info']);
+    $config = new Config\config($_SESSION['sl_connect_info']);
 
     $filename = basename($file);
     $local_file = TMP_DIR . DIRECTORY_SEPARATOR . $filename;
@@ -27,7 +27,7 @@ try {
     }
 
     if (empty($file_exists)) {
-        throw new Exception(_('File Not Exists'), 1);
+        throw new \Exception(_('File Not Exists'), 1);
     }
 
     if ($ftp -> get($local_file, $server_file, FTP_BINARY)) {
@@ -53,6 +53,6 @@ try {
 
         unlink($local_file);
     }
-} catch (Exception $e) {
+} catch (\Exception $e) {
     include __DIR__ . DIRECTORY_SEPARATOR . '500.php';
 }

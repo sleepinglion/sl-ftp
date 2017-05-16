@@ -1,5 +1,7 @@
 <?php
 
+namespace SleepingLion\SL_FTP;
+
 try {
     require __DIR__ . DIRECTORY_SEPARATOR . '..'. DIRECTORY_SEPARATOR . 'vendor' . DIRECTORY_SEPARATOR . 'autoload.php';
     require __DIR__ . DIRECTORY_SEPARATOR . '..'. DIRECTORY_SEPARATOR . 'config' . DIRECTORY_SEPARATOR . 'config.php';
@@ -13,10 +15,10 @@ try {
     }
 
     if (empty($file)) {
-        throw new Exception(_('Folder Name Not Submit'), 4);
+        throw new \Exception(_('Folder Name Not Submit'), 4);
     }
 
-    $config = new \sl_ftp\config($_SESSION['sl_connect_info']);
+    $config = new Config\config($_SESSION['sl_connect_info']);
 
     $ftp = new \FtpClient\FtpClient();
     $ftp -> connect($config -> host, $config -> ssl, $config -> port);

@@ -1,27 +1,30 @@
 <?php
 
+namespace SleepingLion\SL_FTP;
+
 try {
-		
-	require __DIR__ . DIRECTORY_SEPARATOR . '..'. DIRECTORY_SEPARATOR . 'config' . DIRECTORY_SEPARATOR . 'config.php';
-	
-	if(!empty($_POST)):
-		if(empty($_POST['host']))
-			throw new Exception("Error Processing Request", 1);
-	
-		if(empty($_POST['username']))
-			throw new Exception("Error Processing Request", 1);
-	
-		if(empty($_POST['userpass']))
-			throw new Exception("Error Processing Request", 1);
-	
-		$_SESSION['sl_connect_info']=array();
-		$_SESSION['sl_connect_info']['host']=filter_var($_POST['host'],FILTER_SANITIZE_STRING);
-		$_SESSION['sl_connect_info']['username']=filter_var($_POST['username'],FILTER_SANITIZE_STRING);
-		$_SESSION['sl_connect_info']['userpass']=filter_var($_POST['userpass'],FILTER_SANITIZE_STRING);
-		$_SESSION['sl_connect_info']['no_default']=true;
-	
-    	header('Location: ' . $config -> web_root_directory . 'index.php');
-else:
+    require __DIR__ . DIRECTORY_SEPARATOR . '..'. DIRECTORY_SEPARATOR . 'config' . DIRECTORY_SEPARATOR . 'config.php';
+
+    if (!empty($_POST)):
+        if (empty($_POST['host'])) {
+            throw new \Exception("Error Processing Request", 1);
+        }
+
+    if (empty($_POST['username'])) {
+        throw new \Exception("Error Processing Request", 1);
+    }
+
+    if (empty($_POST['userpass'])) {
+        throw new \Exception("Error Processing Request", 1);
+    }
+
+    $_SESSION['sl_connect_info']=array();
+    $_SESSION['sl_connect_info']['host']=filter_var($_POST['host'], FILTER_SANITIZE_STRING);
+    $_SESSION['sl_connect_info']['username']=filter_var($_POST['username'], FILTER_SANITIZE_STRING);
+    $_SESSION['sl_connect_info']['userpass']=filter_var($_POST['userpass'], FILTER_SANITIZE_STRING);
+    $_SESSION['sl_connect_info']['no_default']=true;
+
+    header('Location: ' . $config -> web_root_directory . 'index.php'); else:
 ?>
 <!DOCTYPE html>
 <html lang="ko">
@@ -42,23 +45,24 @@ else:
 					<input type="text" name="host" required="required" />
 				</div>
 				<div class="form-group">
-					<label><?php echo _('username') ?></label>					
+					<label><?php echo _('username') ?></label>
 					<input type="text" name="username" required="required" />
 				</div>
 				<div class="form-group">
 					<label><?php echo _('userpass') ?></label>
-					<input type="password" name="userpass" required="required" />					
+					<input type="password" name="userpass" required="required" />
 				</div>
 				<div>
 					<input type="submit" value="FTP접속" />
-				</div>								
+				</div>
 			</form>
 		</div>
 	</header>
 </body>
 <?php endif ?>
 <?php
-} catch (Exception $e) {
+
+} catch (\Exception $e) {
     include __DIR__ . DIRECTORY_SEPARATOR . '500.php';
 }
 ?>

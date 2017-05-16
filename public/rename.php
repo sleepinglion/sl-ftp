@@ -1,5 +1,7 @@
 <?php
 
+namespace SleepingLion\SL_FTP;
+
 try {
     require __DIR__ . DIRECTORY_SEPARATOR . '..'. DIRECTORY_SEPARATOR . 'vendor' . DIRECTORY_SEPARATOR . 'autoload.php';
     require __DIR__ . DIRECTORY_SEPARATOR . '..'. DIRECTORY_SEPARATOR . 'config' . DIRECTORY_SEPARATOR . 'config.php';
@@ -13,14 +15,14 @@ try {
     }
 
     if (empty($files)) {
-        throw new Exception(_('File Names Not Submit'), 5);
+        throw new \Exception(_('File Names Not Submit'), 5);
     }
 
     if (!count($files)) {
         return false;
     }
 
-    $config = new \sl_ftp\config($_SESSION['sl_connect_info']);
+    $config = new Config\config($_SESSION['sl_connect_info']);
 
     $ftp = new \FtpClient\FtpClient();
     $ftp -> connect($config -> host, $config -> ssl, $config -> port);
@@ -36,6 +38,6 @@ try {
     } else {
         header('Location: ' . $config -> web_root_directory . 'index.php?dir=' . $current_folder);
     }
-} catch (Exception $e) {
+} catch (\Exception $e) {
     include __DIR__ . DIRECTORY_SEPARATOR . '500.php';
 }

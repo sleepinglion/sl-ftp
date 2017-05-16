@@ -1,5 +1,7 @@
 <?php
 
+namespace SleepingLion\SL_FTP;
+
 try {
     require __DIR__ . DIRECTORY_SEPARATOR . '..'. DIRECTORY_SEPARATOR . 'vendor' . DIRECTORY_SEPARATOR . 'autoload.php';
     require __DIR__ . DIRECTORY_SEPARATOR . '..'. DIRECTORY_SEPARATOR . 'config' . DIRECTORY_SEPARATOR . 'config.php';
@@ -11,12 +13,12 @@ try {
     if (empty($_SESSION['directory'])) {
         $_SESSION['directory'] = array();
     }
-	
+
     if (isset($_GET['logout'])) {
-    	$_SESSION['sl_connect_info']=null;
+        $_SESSION['sl_connect_info']=null;
     }
 
-    $config = new \sl_ftp\config($_SESSION['sl_connect_info']);
+    $config = new Config\config($_SESSION['sl_connect_info']);
 
     $ftp = new \FtpClient\FtpClient();
     $ftp -> connect($config -> host, $config -> ssl, $config -> port);
@@ -66,7 +68,7 @@ try {
 				<li><a href="<?php echo $config->web_root_directory ?>mkzip.php<?php echo $dir_param ?>" id="download" class="btn btn-default disabled"><?php echo _('Download') ?></a></li>
 				<li><a href="<?php echo $config->web_root_directory ?>rename_form.php<?php echo $dir_param ?>" id="rename" data-target="#myModal" data-toggle="modal" class="modal_link btn btn-default disabled"><?php echo _('Rename') ?></a></li>
 				<li><a href="<?php echo $config->web_root_directory ?>delete.php<?php echo $dir_param ?>" id="delete" class="btn btn-default disabled"><?php echo _('Delete') ?></a></li>
-				<?php if(isset($_SESSION['sl_connect_info']['no_default'])): ?>
+				<?php if (isset($_SESSION['sl_connect_info']['no_default'])): ?>
 				<li><a href="<?php echo $config->web_root_directory ?>index.php?logout=true" id="logout" class="btn btn-default"><?php echo _('Logout') ?></a></li>
 				<?php endif ?>
 			</ul>
@@ -143,7 +145,7 @@ try {
 					<?php endif ?>
 				</td>
 				<td>
-					<?php echo \sl_ftp\bytesToSize1024($value['size']) ?>
+					<?php echo Config\bytesToSize1024($value['size']) ?>
 				</td>
 				<td>
 					<?php echo $value['month'] ?>/<?php echo $value['day'] ?>
@@ -167,11 +169,11 @@ try {
 		<?php echo $current_folder ?>
 		<?php if ($config->host=='localhost'): ?>
 		<ul>
-			<li><?php echo _('Free Space') ?>  / <?php echo _('All Space') ?> :  <?php echo \sl_ftp\bytesToSize1024(disk_free_space($current_folder)) ?> / <?php echo \sl_ftp\bytesToSize1024(disk_total_space($current_folder)) ?></li>
+			<li><?php echo _('Free Space') ?>  / <?php echo _('All Space') ?> :  <?php echo Config\bytesToSize1024(\disk_free_space($current_folder)) ?> / <?php echo Config\bytesToSize1024(\disk_total_space($current_folder)) ?></li>
 		</ul>
 		<?php else: ?>
 		<ul>
-			<li><?php echo _('Temp Upload Folder Free Space') ?> : <?php echo \sl_ftp\bytesToSize1024(disk_free_space($current_folder)) ?></li>
+			<li><?php echo _('Temp Upload Folder Free Space') ?> : <?php echo Config\bytesToSize1024(\disk_free_space($current_folder)) ?></li>
 		</ul>
 		<?php endif ?>
 	</footer>
@@ -184,7 +186,7 @@ try {
 </html>
 <?php
 
-} catch (Exception $e) {
+} catch (\Exception $e) {
     include __DIR__ . DIRECTORY_SEPARATOR . '500.php';
 }
 ?>

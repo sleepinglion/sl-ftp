@@ -1,9 +1,11 @@
 <?php
 
+namespace SleepingLion\SL_FTP;
+
 try {
     require __DIR__ . DIRECTORY_SEPARATOR . '..'. DIRECTORY_SEPARATOR . 'vendor' . DIRECTORY_SEPARATOR . 'autoload.php';
     require __DIR__ . DIRECTORY_SEPARATOR . '..'. DIRECTORY_SEPARATOR . 'config' . DIRECTORY_SEPARATOR . 'config.php';
-	
+
     $_SESSION['DELETE_FOLDER'] = array();
 
     if (isset($_POST['dir'])) {
@@ -27,7 +29,7 @@ try {
         return false;
     }
 
-    $config = new \sl_ftp\config($_SESSION['sl_connect_info']);
+    $config = new Config\config($_SESSION['sl_connect_info']);
 
     $ftp = new \FtpClient\FtpClient();
     $ftp -> connect($config -> host, $config -> ssl, $config -> port);
@@ -39,7 +41,7 @@ try {
     $folders_results = deleteAllFolders($ftp);
 
     echo json_encode(array('result' => 'success', 'delete_file_result' => $files_results, 'delete_folder_result' => $folders_results));
-} catch (Exception $e) {
+} catch (\Exception $e) {
     echo json_encode(array('result' => 'fail', 'code' => $e -> getCode(), 'message' => $e -> getMessage()));
 }
 
