@@ -1,11 +1,11 @@
 # What is SL FTP
 
 SL FTP is a Basic Web Based FTP Client.
-Main(Base [Nicolab/php-ftp-client](https://github.com/Nicolab/php-ftp-client) + UI [Boostrap](http://getbootstrap.com)) + Something(config,gettext,composer,capistrano)
 
-1. No Need DeskTop FTP Client Application
-2. Add This Your Server OR Web Application, Service FTP Web UI
-3. Simple PHP, Any Web App Append This~
+Main(Base [Nicolab/php-ftp-client](https://github.com/Nicolab/php-ftp-client) + UI [Boostrap](http://getbootstrap.com)) + Something(config,[gettext](http://php.net/manual/en/book.gettext.php),[composer](https://getcomposer.org/),[capistrano](http://capistranorb.com/))
+
+1. Add This, Your Server OR Web Application, Service FTP Web UI
+2. Simple PHP, Any Web App Append This~
 
 # Server Requirements
 
@@ -20,7 +20,8 @@ But can't display list on Windows
 need [Composer](https://getcomposer.org)
 and just do "composer install"
 
-"config/config.php.sample" change name "config/config.php" and set your environment
+1. Get Source
+2. "config/config.php.sample" change name "config/config.php" and set your environment
 
 # License
 
