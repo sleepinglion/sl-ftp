@@ -45,7 +45,7 @@ header nav ul li ul {position:absolute;display:none}
 footer {background:#ccc;clear:both}
 footer address {text-align:center}
 footer nav {float:left}
-footer form {float:left;margin:0;padding:0}
+footer form {float:left;margin:10px 0;padding:0}
 footer dl {margin:10px 0;padding:0}
 
 

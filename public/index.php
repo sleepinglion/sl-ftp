@@ -159,7 +159,7 @@ try {
 			<?php endforeach ?>
 			<?php else: ?>
 			<tr>
-				<td></td>
+				<td>&nbsp;</td>
 			</tr>
 			<?php endif ?>
 		</tbody>
@@ -170,18 +170,17 @@ try {
 	<footer>
     <div class="container-fluid">
     <div class="row">
-		<?php echo $current_folder ?>
 		<?php if ($config->host=='localhost'): ?>
 		<dl class="col-xs-12 col-sm-8 col-md-6 col-lg-9">
 			<dt class="col-xs-6 col-sm-5 col-md-3 col-lg-2"><?php echo _('Free Space') ?></dt>
-      <dd class="col-xs-6 col-sm-7 col-md-9 col-lg-10"><?php echo Config\bytesToSize1024(\disk_free_space($current_folder)) ?></dd>
+      <dd class="col-xs-6 col-sm-7 col-md-9 col-lg-10"><?php echo Config\bytesToSize1024(\disk_free_space(TMP_DIR)) ?></dd>
       <dt class="col-xs-6 col-sm-5 col-md-3 col-lg-2"><?php echo _('All Space') ?></dt>
-      <dd class="col-xs-6 col-sm-7 col-md-9 col-lg-10"><?php echo Config\bytesToSize1024(\disk_total_space($current_folder)) ?></dd>
+      <dd class="col-xs-6 col-sm-7 col-md-9 col-lg-10"><?php echo Config\bytesToSize1024(\disk_total_space(TMP_DIR)) ?></dd>
 		</dl>
 		<?php else: ?>
 		<dl class="col-xs-12 col-sm-8 col-md-6 col-lg-9">
 			<dt class="col-xs-6 col-sm-5 col-md-3 col-lg-2"><?php echo _('Temp Upload Folder Free Space') ?></dt>
-      <dd class="col-xs-6 col-sm-7 col-md-9 col-lg-10"><?php echo Config\bytesToSize1024(\disk_free_space($current_folder)) ?></dd>
+      <dd class="col-xs-6 col-sm-7 col-md-9 col-lg-10"><?php echo Config\bytesToSize1024(\disk_free_space(TMP_DIR)) ?></dd>
 		</dl>
 		<?php endif ?>
     <div class="col-xs-12 col-sm-4 col-md-6 col-lg-3">
