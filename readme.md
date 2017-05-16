@@ -23,6 +23,10 @@ and just do "composer install"
 1. Get Source
 2. "config/config.php.sample" change name "config/config.php" and set your environment
 
+# Demo
+
+[SL-FTP Demo](http://demo.sl-ftp.site)
+
 # License
 
 MIT, All Free
