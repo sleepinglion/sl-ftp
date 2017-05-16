@@ -1,0 +1,7 @@
+.project
+.settings
+public/tmp
+log
+lib
+vendor
+config/config.php

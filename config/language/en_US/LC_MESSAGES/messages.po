@@ -1,0 +1,186 @@
+msgid ""
+msgstr ""
+"Project-Id-Version: sl_ftp\n"
+"POT-Creation-Date: 2016-11-24 15:59+0900\n"
+"PO-Revision-Date: 2016-11-24 15:59+0900\n"
+"Last-Translator: \n"
+"Language-Team: sleepinglion <admin@sleepinglion.pe.kr>\n"
+"Language: ko_KR\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"X-Generator: Poedit 1.8.11\n"
+"X-Poedit-Basepath: ../../..\n"
+"Plural-Forms: nplurals=1; plural=0;\n"
+"X-Poedit-SourceCharset: UTF-8\n"
+"X-Poedit-SearchPath-0: .\n"
+
+#: config/config.php:31
+msgid "Byte"
+msgstr "Byte"
+
+#: config/config.php:31
+msgid "Kilo Byte"
+msgstr "Kilo Byte"
+
+#: config/config.php:31
+msgid "Mega Byte"
+msgstr "Mega Byte"
+
+#: config/config.php:31
+msgid "Giga Byte"
+msgstr "Giga Byte"
+
+#: config/config.php:31
+msgid "Tera Byte"
+msgstr "Tera Byte"
+
+#: public/500.php:36
+msgid "Error"
+msgstr "Error"
+
+#: public/500.php:40
+msgid "Sorry Error"
+msgstr "Sorry, Error Occur"
+
+#: public/500.php:42 public/mkdir_form.php:18 public/rename_form.php:22
+msgid "Confirm"
+msgstr "Confirm"
+
+#: public/delete.php:22 public/mkzip.php:18 public/rename.php:14
+msgid "File Names Not Submit"
+msgstr "File Names Not Submit"
+
+#: public/download.php:29
+msgid "File Not Exists"
+msgstr "File Not Exists"
+
+#: public/index.php:30 public/index.php:74
+msgid "Files"
+msgstr "Files"
+
+#: public/index.php:57
+msgid "Refresh"
+msgstr "Refresh"
+
+#: public/index.php:58 public/upload_form.php:44
+msgid "Upload"
+msgstr "Upload"
+
+#: public/index.php:59 public/mkdir_form.php:11
+msgid "New Folder"
+msgstr "New Folder"
+
+#: public/index.php:60
+msgid "Download"
+msgstr "Download"
+
+#: public/index.php:61 public/rename_form.php:11
+msgid "Rename"
+msgstr "Rename"
+
+#: public/index.php:62
+msgid "Delete"
+msgstr "Delete"
+
+#: public/index.php:74
+msgid "Current Directory"
+msgstr "Current Directory"
+
+#: public/index.php:75
+msgid "Visited Directory"
+msgstr "Visited Directory"
+
+#: public/index.php:94
+msgid "Name"
+msgstr "Name"
+
+#: public/index.php:95
+msgid "Size"
+msgstr "Size"
+
+#: public/index.php:96
+msgid "Date"
+msgstr "Date"
+
+#: public/index.php:97
+msgid "Time"
+msgstr "Time"
+
+#: public/index.php:125
+msgid "Direcotry"
+msgstr "Direcotry"
+
+#: public/index.php:127
+msgid "File"
+msgstr "File"
+
+#: public/index.php:162
+msgid "Free Space"
+msgstr "Free Space"
+
+#: public/index.php:162
+msgid "All Space"
+msgstr "All Space"
+
+#: public/index.php:166
+msgid "Temp Upload Folder Free Space"
+msgstr "Temp Upload Folder Free Space"
+
+#: public/mkdir.php:14
+msgid "Folder Name Not Submit"
+msgstr "Folder Name Not Submit"
+
+#: public/mkzip.php:40
+#, php-format
+msgid "Successfully Make %s File"
+msgstr "Successfully Make %s File"
+
+#: public/upload.php:8
+msgid "Current Folder Not Submit"
+msgstr "Current Folder Not Submit"
+
+#: public/upload.php:16
+#, php-format
+msgid "Unable To Make %s Directory"
+msgstr "Unable To Make %s Directory"
+
+#: public/upload.php:24
+msgid "Upload File Move Fail"
+msgstr "Upload File Move Fail"
+
+#: public/upload_form.php:14
+#, php-format
+msgid "Upload Files %s"
+msgstr "Upload Files %s"
+
+#: public/upload_form.php:22
+msgid "Drag and Drop Your File On Drop Area"
+msgstr "Drag and Drop Your File On Drop Area"
+
+#: public/upload_form.php:22
+#, php-format
+msgid "Files Size under %s AND File Count under %s"
+msgstr "Files Size under %s AND File Count under %s"
+
+#: public/upload_form.php:24
+msgid "Drop Area"
+msgstr "Drop Area"
+
+#: public/upload_form.php:26
+msgid "Files Left"
+msgstr "Files Left"
+
+#: public/upload_form.php:28
+msgid "Result"
+msgstr "Result"
+
+#: public/upload_form.php:36
+msgid "Unable To Use Drag and Drop"
+msgstr "Unable To Use Drag and Drop(click here)"
+
+#~ msgid "Drag and Drop Your File On Drop Area(Files Size under %s)"
+#~ msgstr "Drag and Drop Your File On Drop Area(Files Size under %s)"
+
+#~ msgid "Directory"
+#~ msgstr "디렉토리"

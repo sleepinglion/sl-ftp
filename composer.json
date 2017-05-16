@@ -1,0 +1,26 @@
+{
+    "name": "sl_ftp",
+    "description": "SL Web FTP application",
+    "type": "project",
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "sleepinglion",
+            "email": "admin@sleepinglion.pe.kr",
+            "homepage": "http://www.sleepinglion.pe.kr",
+            "role": "Developer"
+        }
+     ],
+    "require": {
+        "php": ">=5.5.9",
+        "nicolab/php-ftp-client": "1.3.*",
+        "monolog/monolog": "1.2.*"
+    },
+    "require-dev": {
+        "phpunit/phpunit": "5.5.*"
+    },
+    "suggest": {
+        "markstory/asset_compress": "An asset compression plugin which provides file concatenation and a flexible filter system for preprocessing and minification.",
+        "phpunit/phpunit": "Allows automated tests to be run without system-wide install."
+    }
+}
