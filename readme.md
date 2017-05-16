@@ -7,6 +7,10 @@ Main(Base [Nicolab/php-ftp-client](https://github.com/Nicolab/php-ftp-client) + 
 1. Add This, Your Server OR Web Application, Service FTP Web UI
 2. Simple PHP, Any Web App Append This~
 
+# Demo
+
+[SL-FTP Demo](http://demo.sl-ftp.site)
+
 # Server Requirements
 
 PHP version 5.6 or newer is recommended.
@@ -22,10 +26,6 @@ and just do "composer install"
 
 1. Get Source
 2. "config/config.php.sample" change name "config/config.php" and set your environment
-
-# Demo
-
-[SL-FTP Demo](http://demo.sl-ftp.site)
 
 # License
 
