@@ -89,12 +89,12 @@ function getAllFtpList($ftp, $current_folder, $files = false)
 function makeZipFile($rootPath, $filename)
 {
     // Initialize archive object
-    $zip = new ZipArchive();
-    $zip -> open($filename, ZipArchive::CREATE | ZipArchive::OVERWRITE);
+    $zip = new \ZipArchive();
+    $zip -> open($filename, \ZipArchive::CREATE | \ZipArchive::OVERWRITE);
 
     // Create recursive directory iterator
     /** @var SplFileInfo[] $files */
-    $files = new RecursiveIteratorIterator(new RecursiveDirectoryIterator($rootPath), RecursiveIteratorIterator::LEAVES_ONLY);
+    $files = new \RecursiveIteratorIterator(new \RecursiveDirectoryIterator($rootPath), \RecursiveIteratorIterator::LEAVES_ONLY);
 
     foreach ($files as $name => $file) {
         // Skip directories (they would be added automatically)
@@ -116,7 +116,7 @@ function getAllFiles($ftp, $current_folder, $download_list)
 {
     foreach ($download_list as $key => $file) {
         if (isset($file['type'])) {
-            $handle = fopen($current_folder . DIRECTORY_SEPARATOR . $file['name'], 'w');
+            $handle = \fopen($current_folder . DIRECTORY_SEPARATOR . $file['name'], 'w');
             $ftp -> fget($handle, $file['full_path'], FTP_BINARY, 0);
             fclose($handle);
         } else {

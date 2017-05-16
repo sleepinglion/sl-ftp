@@ -50,7 +50,7 @@ try {
 <html lang="ko">
 <head>
 	<meta http-equiv="Content-type" content="text/html; charset=utf-8" />
-	<title>FTP</title>
+	<title><?php echo _('Site Title') ?></title>
 	<meta name="viewport" content="width=device-width, initial-scale=1">
 	<link href="<?php echo $config->web_root_directory ?>images/favicon.ico" type="image/x-icon" rel="shortcut icon"/>
 	<link href="<?php echo $config->web_root_directory ?>css/bootstrap.min.css" media="all" type="text/css" rel="stylesheet" />
@@ -58,22 +58,22 @@ try {
 </head>
 <body>
 	<header>
-		<div class="container">
-		<div class="row">
-		<nav>
-			<ul class="nav nav-pills">
-				<li><a href="<?php echo $config->web_root_directory ?>index.php<?php echo $dir_param ?>" class="btn btn-default"><?php echo _('Refresh') ?></a></li>
-				<li><a href="<?php echo $config->web_root_directory ?>upload_form.php<?php echo $dir_param ?>" id="upload" class="btn btn-default" target="_blank"><?php echo _('Upload') ?></a></li>
-				<li><a href="<?php echo $config->web_root_directory ?>mkdir_form.php<?php echo $dir_param ?>" data-target="#myModal" data-toggle="modal" class="modal_link btn btn-default"><?php echo _('New Folder') ?></a></li>
-				<li><a href="<?php echo $config->web_root_directory ?>mkzip.php<?php echo $dir_param ?>" id="download" class="btn btn-default disabled"><?php echo _('Download') ?></a></li>
-				<li><a href="<?php echo $config->web_root_directory ?>rename_form.php<?php echo $dir_param ?>" id="rename" data-target="#myModal" data-toggle="modal" class="modal_link btn btn-default disabled"><?php echo _('Rename') ?></a></li>
-				<li><a href="<?php echo $config->web_root_directory ?>delete.php<?php echo $dir_param ?>" id="delete" class="btn btn-default disabled"><?php echo _('Delete') ?></a></li>
-				<?php if (isset($_SESSION['sl_connect_info']['no_default'])): ?>
-				<li><a href="<?php echo $config->web_root_directory ?>index.php?logout=true" id="logout" class="btn btn-default"><?php echo _('Logout') ?></a></li>
-				<?php endif ?>
-			</ul>
-		</nav>
-		</div>
+		<div class="container-fluid">
+      <div class="row">
+        <nav class="col-xs-12">
+          <ul class="nav nav-pills">
+            <li><a href="<?php echo $config->web_root_directory ?>index.php<?php echo $dir_param ?>" class="btn btn-default"><?php echo _('Refresh') ?></a></li>
+            <li><a href="<?php echo $config->web_root_directory ?>upload_form.php<?php echo $dir_param ?>" id="upload" class="btn btn-default" target="_blank"><?php echo _('Upload') ?></a></li>
+            <li><a href="<?php echo $config->web_root_directory ?>mkdir_form.php<?php echo $dir_param ?>" data-target="#myModal" data-toggle="modal" class="modal_link btn btn-default"><?php echo _('New Folder') ?></a></li>
+            <li><a href="<?php echo $config->web_root_directory ?>mkzip.php<?php echo $dir_param ?>" id="download" class="btn btn-default disabled"><?php echo _('Download') ?></a></li>
+            <li><a href="<?php echo $config->web_root_directory ?>rename_form.php<?php echo $dir_param ?>" id="rename" data-target="#myModal" data-toggle="modal" class="modal_link btn btn-default disabled"><?php echo _('Rename') ?></a></li>
+            <li><a href="<?php echo $config->web_root_directory ?>delete.php<?php echo $dir_param ?>" id="delete" class="btn btn-default disabled"><?php echo _('Delete') ?></a></li>
+            <?php if (isset($_SESSION['sl_connect_info']['no_default'])): ?>
+            <li><a href="<?php echo $config->web_root_directory ?>index.php?logout=true" id="logout" class="btn btn-default"><?php echo _('Logout') ?></a></li>
+            <?php endif ?>
+          </ul>
+        </nav>
+      </div>
 		</div>
 	</header>
 	<div id="mom">
@@ -82,6 +82,7 @@ try {
 			<input type="hidden" id="directory_separator" value="<?php echo DIRECTORY_SEPARATOR ?>" />
 			<input type="hidden" id="current_folder" value="<?php echo $current_folder ?>" />
 	<div class="table-responsive">
+    <div id="directory_info">
 	<label for="visited_directory"><?php echo _('Current Directory') ?></label>  : <?php if ($current_folder=='.'): ?><?php echo DIRECTORY_SEPARATOR ?><?php else: ?><?php echo $current_folder ?>(<?php echo $total ?><?php echo _('Files') ?>)<?php endif ?>
 	<span style="margin:0 20px">||</span> <label for="visited_directory"><?php echo _('Visited Directory') ?></label>
 		<?php if (count($_SESSION['directory'])): ?>
@@ -91,13 +92,14 @@ try {
 			<?php endforeach ?>
 		</select>
 		<?php endif ?>
+  </div>
 	<table id="file_list" class="table table-striped">
 		<colgroup>
-			<col style="width:5%" />
+			<col style="width:10%" />
 			<col />
+			<col style="width:20%" />
 			<col style="width:10%" />
-			<col style="width:10%" />
-			<col style="width:10%" />
+			<col style="width:10%" class="hidden-xs" />
 		</colgroup>
 		<thead>
 			<tr>
@@ -105,7 +107,7 @@ try {
 				<th><?php echo _('Name') ?></th>
 				<th><?php echo _('Size') ?></th>
 				<th><?php echo _('Date') ?></th>
-				<th><?php echo _('Time') ?></th>
+				<th class="hidden-xs"><?php echo _('Time') ?></th>
 			</tr>
 		</thead>
 		<tbody>
@@ -120,7 +122,7 @@ try {
 			<tr>
 				<td>&nbsp;</td>
 				<td colspan="4">
-					<a href="<?php echo $link ?>">..</a>
+					<a href="<?php echo $link ?>"><?php echo _('Go To Parent Directory') ?></a>
 				</td>
 			</tr>
 			<?php endif ?>
@@ -150,7 +152,7 @@ try {
 				<td>
 					<?php echo $value['month'] ?>/<?php echo $value['day'] ?>
 				</td>
-				<td>
+				<td class="hidden-xs">
 					<?php echo $value['time'] ?>
 				</td>
 			</tr>
@@ -164,18 +166,37 @@ try {
 	</table>
 	</div>
 		</div>
-	</div>
+  </div>
 	<footer>
+    <div class="container-fluid">
+    <div class="row">
 		<?php echo $current_folder ?>
 		<?php if ($config->host=='localhost'): ?>
-		<ul>
-			<li><?php echo _('Free Space') ?>  / <?php echo _('All Space') ?> :  <?php echo Config\bytesToSize1024(\disk_free_space($current_folder)) ?> / <?php echo Config\bytesToSize1024(\disk_total_space($current_folder)) ?></li>
-		</ul>
+		<dl class="col-xs-12 col-sm-8 col-md-6 col-lg-9">
+			<dt class="col-xs-6 col-sm-5 col-md-3 col-lg-2"><?php echo _('Free Space') ?></dt>
+      <dd class="col-xs-6 col-sm-7 col-md-9 col-lg-10"><?php echo Config\bytesToSize1024(\disk_free_space($current_folder)) ?></dd>
+      <dt class="col-xs-6 col-sm-5 col-md-3 col-lg-2"><?php echo _('All Space') ?></dt>
+      <dd class="col-xs-6 col-sm-7 col-md-9 col-lg-10"><?php echo Config\bytesToSize1024(\disk_total_space($current_folder)) ?></dd>
+		</dl>
 		<?php else: ?>
-		<ul>
-			<li><?php echo _('Temp Upload Folder Free Space') ?> : <?php echo Config\bytesToSize1024(\disk_free_space($current_folder)) ?></li>
-		</ul>
+		<dl class="col-xs-12 col-sm-8 col-md-6 col-lg-9">
+			<dt class="col-xs-6 col-sm-5 col-md-3 col-lg-2"><?php echo _('Temp Upload Folder Free Space') ?></dt>
+      <dd class="col-xs-6 col-sm-7 col-md-9 col-lg-10"><?php echo Config\bytesToSize1024(\disk_free_space($current_folder)) ?></dd>
+		</dl>
 		<?php endif ?>
+    <div class="col-xs-12 col-sm-4 col-md-6 col-lg-3">
+    <form action="" class="form-inline">
+			<select name="language" class="form-control">
+				<option value="english"<?php if ($locale=='english'): ?> selected="selected"<?php endif ?>><?php echo _('english') ?></option>
+				<!--<option value="chineses"<?php if ($locale=='chineses'): ?> selected="selected"<?php endif ?>><?php echo _('chineses') ?></option>-->
+        <option value="korean"<?php if ($locale=='korean'): ?> selected="selected"<?php endif ?>><?php echo _('korean') ?></option>
+  			<!-- <option value="japaneses"<?php if ($locale=='japaneses'): ?> selected="selected"<?php endif ?>><?php echo _('japaneses') ?></option>-->
+			</select>
+			<input type="submit" class="btn" value="<?php echo _('submit') ?>" />
+		</form>
+  </div>
+  </div>
+</div>
 	</footer>
 	<div class="slboard_overlay" id="overlay"></div>
 	<div class="modal fade" id="myModal" tabindex="-1" role="dialog"></div>
