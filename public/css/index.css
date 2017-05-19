@@ -46,7 +46,7 @@ footer {background:#ccc;clear:both}
 footer address {text-align:center}
 footer nav {float:left}
 footer form {float:left;margin:10px 0;padding:0}
-footer dl {margin:10px 0;padding:0}
+footer dl {margin:20px 0 10px;padding:0}
 
 
 #directory_selector {width:150px}

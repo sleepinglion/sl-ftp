@@ -1,13 +1,13 @@
 <?php
 
-namespace sl_ftp;
+namespace SleepingLion\SL_FTP\Config {
 
 session_start();
 
 define('DEBUG', true);
 define('ROOT_DIR', realpath(__DIR__ . DIRECTORY_SEPARATOR . '..'));
-define('PUBLIC_DIR', realpath(ROOT_DIR . DIRECTORY_SEPARATOR . 'public'));
-define('TMP_DIR', realpath(PUBLIC_DIR . DIRECTORY_SEPARATOR . 'tmp'));
+define('PUBLIC_DIR',ROOT_DIR . DIRECTORY_SEPARATOR . 'public');
+define('TMP_DIR', PUBLIC_DIR . DIRECTORY_SEPARATOR . 'tmp');
 
 /* Setting Your MAX Upload */
 define('MAX_FILE_UPLOADS', 20);
@@ -18,12 +18,8 @@ define('MAX_FILE_SIZE', 20000000000);
 /* Setting Your Upload Directory Name, It will be under TMP_DIR */
 define('UPLOAD_DIR', 'uploads');
 
-/* Setting Your Locale */
-$locale = 'ko_KR.UTF-8';
-//$locale = 'en_US.UTF-8';
-
 /* uncomment if use default connect only */
-$_SESSION['sl_connect_info']=array(); 
+$_SESSION['sl_connect_info']=array();
 $_SESSION['sl_connect_info']['host']='localhost';
 $_SESSION['sl_connect_info']['username']='anonymous';
 $_SESSION['sl_connect_info']['userpass']='';
@@ -34,6 +30,27 @@ if (!function_exists('_')) {
 	echo 'Not Exists Gettext Function';
 	exit ;
 }
+
+/* i18n locale */
+#$language = 'korean';
+$language = 'english';
+
+if (isset($_GET['language'])) {
+		$language=$_GET['language'];
+		$_SESSION['language']=$language;
+} else {
+		if (isset($_SESSION['language'])) {
+				$language=$_SESSION['language'];
+		}
+}
+
+switch ($language) {
+						case 'korean':
+								$locale= 'ko_KR.UTF-8';
+								break;
+						default:
+								$locale = 'en_US.UTF-8';
+				}
 
 putenv("LC_ALL=" . $locale);
 setlocale(LC_ALL, $locale);
@@ -66,20 +83,20 @@ class config {
 		} else {
 			$this -> host = $connect_info['host'];
 		}
-			
+
 		if (!empty($connect_info['username']))
 			$this -> username = $connect_info['username'];
-			
+
 		if (!empty($connect_info['userpass']))
 			$this -> userpass = $connect_info['userpass'];
-		
-		if (!empty($connect_info['port'])) {	
+
+		if (!empty($connect_info['port'])) {
 			$this -> port = $connect_info['port'];
 		}
-		
-		if (!empty($connect_info['ssl'])) {	
+
+		if (!empty($connect_info['ssl'])) {
 			$this -> ssl = $connect_info['ssl'];
-		}		
+		}
 	}
 
 	public function __get($name) {
@@ -89,4 +106,5 @@ class config {
 	public function __set($name, $value) {
 		$this -> $name = $value;
 	}
+}
 }

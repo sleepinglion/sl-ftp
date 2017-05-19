@@ -159,7 +159,7 @@ try {
 			<?php endforeach ?>
 			<?php else: ?>
 			<tr>
-				<td>&nbsp;</td>
+				<td colspan="5">&nbsp;</td>
 			</tr>
 			<?php endif ?>
 		</tbody>
@@ -203,10 +203,10 @@ try {
     <div class="col-xs-12 col-sm-4 col-md-6 col-lg-3">
     <form action="" class="form-inline">
 			<select name="language" class="form-control">
-				<option value="english"<?php if ($locale=='english'): ?> selected="selected"<?php endif ?>><?php echo _('english') ?></option>
-				<!--<option value="chineses"<?php if ($locale=='chineses'): ?> selected="selected"<?php endif ?>><?php echo _('chineses') ?></option>-->
-        <option value="korean"<?php if ($locale=='korean'): ?> selected="selected"<?php endif ?>><?php echo _('korean') ?></option>
-  			<!-- <option value="japaneses"<?php if ($locale=='japaneses'): ?> selected="selected"<?php endif ?>><?php echo _('japaneses') ?></option>-->
+				<option value="english"<?php if ($language=='english'): ?> selected="selected"<?php endif ?>><?php echo _('english') ?></option>
+				<!--<option value="chineses"<?php if ($language=='chineses'): ?> selected="selected"<?php endif ?>><?php echo _('chineses') ?></option>-->
+        <option value="korean"<?php if ($language=='korean'): ?> selected="selected"<?php endif ?>><?php echo _('korean') ?></option>
+  			<!-- <option value="japaneses"<?php if ($language=='japaneses'): ?> selected="selected"<?php endif ?>><?php echo _('japaneses') ?></option>-->
 			</select>
 			<input type="submit" class="btn" value="<?php echo _('submit') ?>" />
 		</form>

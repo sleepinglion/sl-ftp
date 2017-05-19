@@ -16,7 +16,7 @@ try {
 
     if (!\file_exists($upload_directory)) {
         if (!\mkdir($upload_directory)) {
-            throw new \Exception(print_r(_("Unable To Make %s Directory"), $upload_directory), 7);
+            throw new \Exception(sprintf(_("Unable To Make %s Directory"), $upload_directory), 7);
         }
     }
 
