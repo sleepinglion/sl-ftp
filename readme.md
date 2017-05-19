@@ -25,7 +25,7 @@ need [Composer](https://getcomposer.org)
 and just do "composer install"
 
 1. Get Source
-2. composer update
+2. composer install
 3. "config/config.php.sample" change name "config/config.php" and set your environment
 4. mkdir public/tmp(TMP_DIR)
 5. chown (webuser) public/tmp(TMP_DIR)
