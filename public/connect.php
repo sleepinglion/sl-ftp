@@ -24,8 +24,10 @@ try {
     $_SESSION['sl_connect_info']['userpass']=filter_var($_POST['userpass'], FILTER_SANITIZE_STRING);
     $_SESSION['sl_connect_info']['no_default']=true;
 
+    $config = new Config\config($_SESSION['sl_connect_info']);
+
     header('Location: ' . $config -> web_root_directory . 'index.php'); else:
-?>
+        $config = new Config\config(); ?>
 <!DOCTYPE html>
 <html lang="ko">
 <head>
@@ -36,32 +38,39 @@ try {
 	<link href="<?php echo $config->web_root_directory ?>css/bootstrap.min.css" media="all" type="text/css" rel="stylesheet" />
 	<link href="<?php echo $config->web_root_directory ?>css/index.css" media="all" type="text/css" rel="stylesheet" />
 </head>
-<body>
-	<header>
+<body id="sl_ftp_connect">
 		<div class="container">
-			<form action="" method="post">
-				<div class="form-group">
-					<label><?php echo _('host') ?></label>
-					<input type="text" name="host" required="required" />
-				</div>
-				<div class="form-group">
-					<label><?php echo _('username') ?></label>
-					<input type="text" name="username" required="required" />
-				</div>
-				<div class="form-group">
-					<label><?php echo _('userpass') ?></label>
-					<input type="password" name="userpass" required="required" />
-				</div>
-				<div>
-					<input type="submit" value="FTP접속" />
-				</div>
-			</form>
+      <div class="row">
+        <form action="" method="post" class="form-horizontal">
+          <div class="form-group">
+            <label class="col-sm-2 control-label"><?php echo _('host') ?></label>
+            <div class="col-sm-10">
+              <input type="text" name="host" class="form-control" required="required" />
+            </div>
+          </div>
+          <div class="form-group">
+            <label class="col-sm-2 control-label"><?php echo _('username') ?></label>
+            <div class="col-sm-10">
+              <input type="text" name="username" class="form-control" required="required" />
+            </div>
+          </div>
+          <div class="form-group">
+            <label class="col-sm-2 control-label"><?php echo _('userpass') ?></label>
+            <div class="col-sm-10">
+              <input type="password" name="userpass" class="form-control" required="required" />
+            </div>
+          </div>
+          <div class="form-group">
+             <div class="col-sm-offset-2 col-sm-10">
+               <input type="submit" value="<?php echo _('connect') ?>" />
+             </div>
+          </div>
+        </form>
+      </div>
 		</div>
-	</header>
 </body>
-<?php endif ?>
 <?php
-
+  endif;
 } catch (\Exception $e) {
     include __DIR__ . DIRECTORY_SEPARATOR . '500.php';
 }

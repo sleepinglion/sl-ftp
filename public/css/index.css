@@ -52,6 +52,9 @@ footer dl {margin:20px 0 10px;padding:0}
 #directory_selector {width:150px}
 #directory_info {padding:0 15px}
 
+#sl_ftp_connect {background:#eee}
+#sl_ftp_connect form {margin:10% auto;padding:3%;background:#fff;width:728px}
+
 @media all and (max-width: 768px) {
 	html,body {background:#ccc}
 	header nav.container {width:100%;margin:0;padding:0}

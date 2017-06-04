@@ -1,38 +1,38 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: sl_ftp\n"
-"POT-Creation-Date: 2017-05-16 14:53+0900\n"
-"PO-Revision-Date: 2017-05-16 14:53+0900\n"
+"POT-Creation-Date: 2017-06-04 20:50+0900\n"
+"PO-Revision-Date: 2017-06-04 20:50+0900\n"
 "Last-Translator: \n"
 "Language-Team: sleepinglion <admin@sleepinglion.pe.kr>\n"
 "Language: ko_KR\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"X-Generator: Poedit 1.8.7.1\n"
+"X-Generator: Poedit 1.8.7\n"
 "X-Poedit-Basepath: ../../../..\n"
 "Plural-Forms: nplurals=1; plural=0;\n"
 "X-Poedit-SourceCharset: UTF-8\n"
 "X-Poedit-SearchPath-0: config\n"
 "X-Poedit-SearchPath-1: public\n"
 
-#: config/config.php:73
+#: config/config.php:67
 msgid "Byte"
 msgstr "바이트"
 
-#: config/config.php:73
+#: config/config.php:67
 msgid "Kilo Byte"
 msgstr "킬로바이트"
 
-#: config/config.php:73
+#: config/config.php:67
 msgid "Mega Byte"
 msgstr "메가바이트"
 
-#: config/config.php:73
+#: config/config.php:67
 msgid "Giga Byte"
 msgstr "기가바이트"
 
-#: config/config.php:73
+#: config/config.php:67
 msgid "Tera Byte"
 msgstr "테라바이트"
 
@@ -48,17 +48,21 @@ msgstr "죄송합니다. 애러가 발생하여 더 이상 진행할수 없습�
 msgid "Confirm"
 msgstr "확인"
 
-#: public/connect.php:44
+#: public/connect.php:46
 msgid "host"
 msgstr "접속주소"
 
-#: public/connect.php:48
+#: public/connect.php:52
 msgid "username"
 msgstr "사용자명"
 
-#: public/connect.php:52
+#: public/connect.php:58
 msgid "userpass"
 msgstr "비밀번호"
+
+#: public/connect.php:65
+msgid "connect"
+msgstr "FTP 접속하기"
 
 #: public/delete.php:25 public/mkzip.php:23 public/rename.php:18
 msgid "File Names Not Submit"
@@ -140,35 +144,35 @@ msgstr "디렉토리"
 msgid "File"
 msgstr "파일"
 
-#: public/index.php:176
+#: public/index.php:192
 msgid "Free Space"
 msgstr "남은용량"
 
-#: public/index.php:178
+#: public/index.php:194
 msgid "All Space"
 msgstr "전체용량"
 
-#: public/index.php:183
+#: public/index.php:199
 msgid "Temp Upload Folder Free Space"
 msgstr "임시업로드 남은용량"
 
-#: public/index.php:190
+#: public/index.php:206
 msgid "english"
 msgstr "영어"
 
-#: public/index.php:191
+#: public/index.php:207
 msgid "chineses"
 msgstr "중국어"
 
-#: public/index.php:192
+#: public/index.php:208
 msgid "korean"
 msgstr "한국어"
 
-#: public/index.php:193
+#: public/index.php:209
 msgid "japaneses"
 msgstr "일본어"
 
-#: public/index.php:195
+#: public/index.php:211
 msgid "submit"
 msgstr "변경"
 
