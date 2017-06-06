@@ -22,11 +22,9 @@ try {
         return false;
     }
 
-    $config = new Config\config($_SESSION['sl_connect_info']);
-
     $ftp = new \FtpClient\FtpClient();
-    $ftp -> connect($config -> host, $config -> ssl, $config -> port);
-    $ftp -> login($config -> username, $config -> userpass);
+    $ftp -> connect($sl_connect_info['host'], $sl_connect_info['ssl'], $sl_connect_info['port']);
+    $ftp -> login($sl_connect_info['username'], $sl_connect_info['userpass']);
     $ftp -> chdir($current_folder);
 
     foreach ($files as $value) {
@@ -34,9 +32,9 @@ try {
     }
 
     if (empty($current_folder)) {
-        header('Location: ' . $config -> web_root_directory . 'index.php');
+        header('Location: ' . $sl_connect_info['web_root_directory']. 'index.php');
     } else {
-        header('Location: ' . $config -> web_root_directory . 'index.php?dir=' . $current_folder);
+        header('Location: ' . $sl_connect_info['web_root_directory']. 'index.php?dir=' . $current_folder);
     }
 } catch (\Exception $e) {
     include __DIR__ . DIRECTORY_SEPARATOR . '500.php';

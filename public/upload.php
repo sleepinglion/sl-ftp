@@ -27,11 +27,9 @@ try {
         throw new \Exception(_('Upload File Move Fail'), 8);
     }
 
-    $config = new Config\config($_SESSION['sl_connect_info']);
-
     $ftp = new \FtpClient\FtpClient();
-    $ftp -> connect($config -> host, $config -> ssl, $config -> port);
-    $ftp -> login($config -> username, $config -> userpass);
+    $ftp -> connect($sl_connect_info['host'], $sl_connect_info['ssl'], $sl_connect_info['port']);
+    $ftp -> login($sl_connect_info['username'], $sl_connect_info['userpass']);
     $ftp -> chdir($current_folder);
 
     if ($ftp -> put($filename, $uploadfile, FTP_BINARY)) {

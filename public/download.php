@@ -10,15 +10,13 @@ try {
         $file = $_GET['file'];
     }
 
-    $config = new Config\config($_SESSION['sl_connect_info']);
-
     $filename = basename($file);
     $local_file = TMP_DIR . DIRECTORY_SEPARATOR . $filename;
     $server_file = $file;
 
     $ftp = new \FtpClient\FtpClient();
-    $ftp -> connect($config -> host, $config -> ssl, $config -> port);
-    $ftp -> login($config -> username, $config -> userpass);
+    $ftp -> connect($sl_connect_info['host'], $sl_connect_info['ssl'], $sl_connect_info['port']);
+    $ftp -> login($sl_connect_info['username'], $sl_connect_info['userpass']);
     $list = $ftp -> scanDir(pathinfo($file, PATHINFO_DIRNAME));
 
     $file_exists = false;

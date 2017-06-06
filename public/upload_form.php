@@ -4,8 +4,6 @@ namespace SleepingLion\SL_FTP;
 
 require __DIR__ . DIRECTORY_SEPARATOR . '..' . DIRECTORY_SEPARATOR . 'config' . DIRECTORY_SEPARATOR . 'config.php';
 
-$config = new Config\config($_SESSION['sl_connect_info']);
-
 function convertPHPSizeToBytes($sSize)
 {
     if (is_numeric($sSize)) {
@@ -51,9 +49,9 @@ $max_uploads_files = ini_get('max_file_uploads');
 	<meta http-equiv="Content-type" content="text/html; charset=utf-8" />
 	<title><?php printf(_('Upload Files %s'), $current_folder) ?></title>
 	<meta name="viewport" content="width=device-width, initial-scale=1">
-	<link href="<?php echo $config->web_root_directory ?>images/favicon.ico" type="image/x-icon" rel="shortcut icon"/>
-	<link href="<?php echo $config->web_root_directory ?>css/bootstrap.min.css" media="all" type="text/css" rel="stylesheet" />
-	<link href="<?php echo $config->web_root_directory ?>css/uploads.css" media="all" type="text/css" rel="stylesheet" />
+	<link href="<?php echo $sl_connect_info['web_root_directory'] ?>images/favicon.ico" type="image/x-icon" rel="shortcut icon"/>
+	<link href="<?php echo $sl_connect_info['web_root_directory'] ?>css/bootstrap.min.css" media="all" type="text/css" rel="stylesheet" />
+	<link href="<?php echo $sl_connect_info['web_root_directory'] ?>css/uploads.css" media="all" type="text/css" rel="stylesheet" />
 </head>
 <body>
 	<article class="container">
@@ -62,7 +60,7 @@ $max_uploads_files = ini_get('max_file_uploads');
 	<div id="dropArea" title="ggg"><?php echo _('Drop Area') ?></div>
 	<div class="info">
 	<div><?php echo _('Files Left') ?>: <span id="count">0</span></div>
-	<div><input id="url" type="hidden" value="<?php echo $config->web_root_directory ?>upload.php"/></div>
+	<div><input id="url" type="hidden" value="<?php echo $sl_connect_info['web_root_directory'] ?>upload.php"/></div>
 	<h2><?php echo _('Result') ?>:</h2>
 	<div id="result"></div>
 	<canvas width="500" height="20"></canvas>
@@ -72,7 +70,7 @@ $max_uploads_files = ini_get('max_file_uploads');
 	<input type="hidden" id="max_file_uploads" value="<?php echo $max_uploads_filesize ?>" />
 	<article>
 		<h3><a href="" id="unable_dd_link"><?php echo _('Unable To Use Drag and Drop') ?></a></h3>
-		<form id="upload_form" enctype="multipart/form-data" id="upload_form" action="<?php echo $config->web_root_directory ?>upload.php" method="post" class="form-inline">
+		<form id="upload_form" enctype="multipart/form-data" id="upload_form" action="<?php echo $sl_connect_info['web_root_directory'] ?>upload.php" method="post" class="form-inline">
 			<div class="form-group">
 				<input type="hidden" name="MAX_FILE_SIZE" value="<?php echo MAX_FILE_SIZE ?>" />
 				<input type="hidden" name="dir" value="<?php echo $current_folder ?>" />
@@ -83,7 +81,7 @@ $max_uploads_files = ini_get('max_file_uploads');
 			</div>
 		</form>
 	</article>
-	<script src="<?php echo $config->web_root_directory ?>js/jquery-2.1.1.min.js"></script>
-	<script src="<?php echo $config->web_root_directory ?>js/uploads.js"></script>
+	<script src="<?php echo $sl_connect_info['web_root_directory'] ?>js/jquery-2.1.1.min.js"></script>
+	<script src="<?php echo $sl_connect_info['web_root_directory'] ?>js/uploads.js"></script>
 </body>
 </html>
