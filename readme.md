@@ -16,6 +16,8 @@ Main(Base [Nicolab/php-ftp-client](https://github.com/Nicolab/php-ftp-client) + 
 
 PHP version 5.6 or newer is recommended.
 
+Requires PHP Zip extension.
+
 this App well work on Unix,Linux  
 
 But can't display list on Windows
