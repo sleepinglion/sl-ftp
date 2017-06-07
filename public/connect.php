@@ -21,9 +21,14 @@ try {
     $userpass=filter_var($_POST['userpass'], FILTER_SANITIZE_STRING);
     $port=filter_var($_POST['port'], FILTER_SANITIZE_STRING);
     $ssl=false;
+    $pasv=false;
 
     if (!empty($_POST['ssl'])) {
         $ssl=true;
+    }
+
+    if (!empty($_POST['pasv'])) {
+        $pasv=true;
     }
 
     $ftp = new \FtpClient\FtpClient();
@@ -36,7 +41,7 @@ try {
         $_SESSION['sl_connect_info']['userpass']=$userpass;
         $_SESSION['sl_connect_info']['port']=$port;
         $_SESSION['sl_connect_info']['ssl']=$ssl;
-        echo '1';
+        $_SESSION['sl_connect_info']['pasv']=$pasv;
     } else {
         $_SESSION['sl_connect_info']=null;
         echo 'nonono';
