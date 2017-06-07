@@ -1,7 +1,7 @@
 # What is SL FTP
 
 SL FTP is a Basic Web Based FTP Client.
-[Nicolab/php-ftp-client](https://github.com/Nicolab/php-ftp-client) Wrapper Pragram With [Boostrap](http://getbootstrap.com))
+[Nicolab/php-ftp-client](https://github.com/Nicolab/php-ftp-client) Wrapper Pragram With [Boostrap](http://getbootstrap.com)
 
 Main(Base [Nicolab/php-ftp-client](https://github.com/Nicolab/php-ftp-client) + UI [Boostrap](http://getbootstrap.com)) + Something(config,[gettext](http://php.net/manual/en/book.gettext.php),[composer](https://getcomposer.org/),[capistrano](http://capistranorb.com/))
 
