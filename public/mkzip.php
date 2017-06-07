@@ -30,6 +30,7 @@ try {
     $ftp = new \FtpClient\FtpClient();
     $ftp -> connect($sl_connect_info['host'], $sl_connect_info['ssl'], $sl_connect_info['port']);
     $ftp -> login($sl_connect_info['username'], $sl_connect_info['userpass']);
+    $ftp -> pasv($sl_connect_info['pasv']);
 
     $download_list = getAllFtpList($ftp, $current_folder, $files);
     $dir = TMP_DIR . DIRECTORY_SEPARATOR . uniqid();

@@ -9,7 +9,7 @@ var list = [];
 var totalSize = 0;
 var totalProgress = 0;
 
-	
+
 	// init handlers
 	function initHandlers() {
 		dropArea.addEventListener('drop', handleDrop, false);
@@ -63,6 +63,7 @@ var totalProgress = 0;
 	function handleComplete(size) {
 		totalProgress += size;
 		drawProgress(totalProgress / totalSize);
+		opener.parent.location.reload();	
 		uploadNext();
 	}
 
@@ -93,7 +94,7 @@ var totalProgress = 0;
 		// prepare FormData
 		var formData = new FormData();
 		formData.append('userfile', file);
-		formData.append('dir',$("#upload_form input:eq(1)").val());				
+		formData.append('dir',$("#upload_form input:eq(1)").val());
 		xhr.send(formData);
 	}
 
@@ -120,7 +121,7 @@ $(document).ready(function() {
 	$("#unable_dd_link").click(function(){
 		$("article:first").hide();
 		$("article:eq(1) h3").css('visibility','hidden');
-		$("article:eq(1),form").show();		
+		$("article:eq(1),form").show();
 		return false;
 	});
 

@@ -23,10 +23,8 @@ try {
     $ftp -> login($sl_connect_info['username'], $sl_connect_info['userpass']);
     $ftp -> chdir($current_folder);
 
-    if ($ftp -> mkdir($file)) {
-        echo "successfully created $file\n";
-    } else {
-        echo "There was a problem while creating $file\n";
+    if (!$ftp -> mkdir($file)) {
+        throw new \Exception(sprintf(_("There was a problem while creating %s"), $file), 1);
     }
 
     if (empty($current_folder)) {
@@ -34,6 +32,6 @@ try {
     } else {
         header('Location: ' . $sl_connect_info['web_root_directory'] . 'index.php?dir=' . $current_folder);
     }
-} catch (Exception $e) {
+} catch (\Exception $e) {
     include __DIR__ . DIRECTORY_SEPARATOR . '500.php';
 }
