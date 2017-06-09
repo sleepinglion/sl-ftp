@@ -4,7 +4,7 @@ namespace SleepingLion\SL_FTP\Config {
 
 session_start();
 
-define('DEBUG', true);
+define('DEBUG', 0);
 define('ROOT_DIR', realpath(__DIR__ . DIRECTORY_SEPARATOR . '..'));
 define('PUBLIC_DIR', ROOT_DIR . DIRECTORY_SEPARATOR . 'public');
 define('TMP_DIR', PUBLIC_DIR . DIRECTORY_SEPARATOR . 'tmp');
@@ -18,18 +18,27 @@ define('MAX_FILE_SIZE', 20000000000);
 /* Setting Your Upload Directory Name, It will be under TMP_DIR */
 define('UPLOAD_DIR', 'uploads');
 
-/* uncomment if use default connect only
+/* uncomment if use default connect only */
 $sl_connect_info=array();
 $sl_connect_info['host']='localhost';
-$sl_connect_info['username']='anonymous';
-$sl_connect_info['userpass']='';
+$sl_connect_info['username']='sl_ftp';
+$sl_connect_info['userpass']='sl_ftp1!';
 $sl_connect_info['port']=21;
-$sl_connect_info['ssl']=false;*/
+$sl_connect_info['ssl']=false;
 $sl_connect_info['web_root_directory'] = '/';
 $sl_connect_info['pasv']=true;
 
+
+if (DEBUG==1) {
+    error_reporting(E_ALL);
+    ini_set('display_errors', 1);
+} else {
+    error_reporting(-1);
+    ini_set('display_errors', 0);
+}
+
 if (!function_exists('_')) {
-    throw new \Exception(_("Not Available Gettext Extensions"), 101);
+    throw new \Exception(_('Not Available Gettext Extensions'), 101);
 }
 
 /* i18n locale */
@@ -59,10 +68,6 @@ bindtextdomain('messages', __DIR__ . DIRECTORY_SEPARATOR . 'language');
 textdomain('messages');
 bind_textdomain_codeset('messages', 'UTF-8');
 
-if (DEBUG) {
-    error_reporting(E_ALL);
-    ini_set("display_errors", 1);
-}
 
 if (!file_exists(TMP_DIR)) {
     throw new \Exception(sprintf(_("Not exists TMP_DIR(%s)"), TMP_DIR), 102);
