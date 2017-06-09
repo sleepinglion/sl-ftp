@@ -42,8 +42,8 @@ if (!function_exists('_')) {
 }
 
 /* i18n locale */
-#$language = 'korean';
-$language = 'english';
+#$language = 'ko';
+$language = 'en';
 
 if (isset($_GET['language'])) {
     $language=$_GET['language'];
@@ -55,8 +55,11 @@ if (isset($_GET['language'])) {
 }
 
 switch ($language) {
-    case 'korean':
+    case 'ko':
         $locale= 'ko_KR.UTF-8';
+        break;
+    case 'zh-CN':
+        $locale= 'zh_CN.UTF-8';
         break;
     default:
         $locale = 'en_US.UTF-8';
