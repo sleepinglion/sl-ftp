@@ -109,16 +109,7 @@ $(document).ready(function() {
 			if(data.result=='success') {
 				delete_result=false;
 				var message='';
-				$.each(data.delete_file_result,function(key,value){
-					if(value) {
-						message+=key+delete_success+"\n";
-					} else {
-						message+=key+delete_fail+"\n";
-					}
-				});
-
-				alert(message);
-
+				
 				if($("#current_folder").val()==$("#directory_separator").val()) {
 					location.href=$("#web_root_directory").val()+'index.php';
 				} else {

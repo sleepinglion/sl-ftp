@@ -42,10 +42,10 @@ try {
         $dir_param = '?dir=' . $current_folder;
     } ?>
 <!DOCTYPE html>
-<html lang="ko">
+<html lang="<?php echo $language ?>">
 <head>
 	<meta http-equiv="Content-type" content="text/html; charset=utf-8" />
-	<title><?php echo _('Site Title') ?></title>
+	<title><?php echo _(SL FTP client) ?></title>
 	<meta name="viewport" content="width=device-width, initial-scale=1">
 	<link href="<?php echo $sl_connect_info['web_root_directory']?>images/favicon.ico" type="image/x-icon" rel="shortcut icon"/>
 	<link href="<?php echo $sl_connect_info['web_root_directory']?>css/bootstrap.min.css" media="all" type="text/css" rel="stylesheet" />
@@ -161,7 +161,7 @@ try {
 	</table>
 	</div>
   <div id="sl_ad">
-  <?php if (DEBUG): ?>
+  <?php if (DEBUG==1): ?>
   <div style="width:100%;padding-top:10%;background:red">&nbsp;</div>
   <?php else: ?>
   <script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>

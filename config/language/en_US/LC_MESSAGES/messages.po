@@ -1,8 +1,8 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: sl_ftp\n"
-"POT-Creation-Date: 2017-05-16 14:54+0900\n"
-"PO-Revision-Date: 2017-05-16 14:54+0900\n"
+"POT-Creation-Date: 2017-06-09 17:14+0900\n"
+"PO-Revision-Date: 2017-06-09 17:14+0900\n"
 "Last-Translator: \n"
 "Language-Team: sleepinglion <admin@sleepinglion.pe.kr>\n"
 "Language: ko_KR\n"
@@ -16,167 +16,202 @@ msgstr ""
 "X-Poedit-SearchPath-0: config\n"
 "X-Poedit-SearchPath-1: public\n"
 
-#: config/config.php:73
+#: config/config.php:41
+msgid "Not Available Gettext Extensions"
+msgstr "Not Available Gettext Extensions"
+
+#: config/config.php:76
+#, php-format
+msgid "Not exists TMP_DIR(%s)"
+msgstr "Not exists TMP_DIR(%s)"
+
+#: config/config.php:80
+#, php-format
+msgid "Not Writable TMP_DIR(%s)"
+msgstr "Not Writable TMP_DIR(%s)"
+
+#: config/config.php:103
 msgid "Byte"
 msgstr "Byte"
 
-#: config/config.php:73
+#: config/config.php:103
 msgid "Kilo Byte"
 msgstr "Kilo Byte"
 
-#: config/config.php:73
+#: config/config.php:103
 msgid "Mega Byte"
 msgstr "Mega Byte"
 
-#: config/config.php:73
+#: config/config.php:103
 msgid "Giga Byte"
 msgstr "Giga Byte"
 
-#: config/config.php:73
+#: config/config.php:103
 msgid "Tera Byte"
 msgstr "Tera Byte"
 
-#: public/500.php:36
+#: public/500.php:38
 msgid "Error"
 msgstr "Error"
 
-#: public/500.php:40
+#: public/500.php:42
 msgid "Sorry Error"
 msgstr "Sorry, Error Occur"
 
-#: public/500.php:42 public/mkdir_form.php:20 public/rename_form.php:24
+#: public/500.php:44 public/mkdir_form.php:20 public/rename_form.php:24
 msgid "Confirm"
 msgstr "Confirm"
 
-#: public/connect.php:44
+#: public/connect.php:82
 msgid "host"
 msgstr "host"
 
-#: public/connect.php:48
+#: public/connect.php:86
+msgid "port"
+msgstr "port"
+
+#: public/connect.php:92
 msgid "username"
 msgstr "username"
 
-#: public/connect.php:52
+#: public/connect.php:98
 msgid "userpass"
 msgstr "userpass"
 
-#: public/delete.php:25 public/mkzip.php:23 public/rename.php:18
+#: public/connect.php:107
+msgid "sftp"
+msgstr "Secure FTP(SFTP)"
+
+#: public/connect.php:111
+msgid "pasv mode"
+msgstr "PASSIVE mode"
+
+#: public/connect.php:118
+msgid "connect"
+msgstr "Connect"
+
+#: public/delete.php:26 public/mkzip.php:23 public/rename.php:18
 msgid "File Names Not Submit"
 msgstr "File Names Not Submit"
 
-#: public/download.php:32
+#: public/download.php:31
 msgid "File Not Exists"
 msgstr "File Not Exists"
 
-#: public/index.php:38 public/index.php:86
+#: public/index.php:33 public/index.php:81
 msgid "Files"
 msgstr "Files"
 
-#: public/index.php:53
-msgid "Site Title"
-msgstr "Sleeping-Lion Web FTP Client"
-
-#: public/index.php:65
+#: public/index.php:60
 msgid "Refresh"
 msgstr "Refresh"
 
-#: public/index.php:66 public/upload_form.php:82
+#: public/index.php:61 public/upload_form.php:80
 msgid "Upload"
 msgstr "Upload"
 
-#: public/index.php:67 public/mkdir_form.php:13
+#: public/index.php:62 public/mkdir_form.php:13
 msgid "New Folder"
 msgstr "New Folder"
 
-#: public/index.php:68
+#: public/index.php:63
 msgid "Download"
 msgstr "Download"
 
-#: public/index.php:69 public/rename_form.php:13
+#: public/index.php:64 public/rename_form.php:13
 msgid "Rename"
 msgstr "Rename"
 
-#: public/index.php:70
+#: public/index.php:65
 msgid "Delete"
 msgstr "Delete"
 
-#: public/index.php:72
+#: public/index.php:67
 msgid "Logout"
 msgstr "Logout"
 
-#: public/index.php:86
+#: public/index.php:81
 msgid "Current Directory"
 msgstr "Current Directory"
 
-#: public/index.php:87
+#: public/index.php:82
 msgid "Visited Directory"
 msgstr "Visited Directory"
 
-#: public/index.php:107
+#: public/index.php:102
 msgid "Name"
 msgstr "Name"
 
-#: public/index.php:108
+#: public/index.php:103 public/upload.php:50
 msgid "Size"
 msgstr "Size"
 
-#: public/index.php:109
+#: public/index.php:104
 msgid "Date"
 msgstr "Date"
 
-#: public/index.php:110
+#: public/index.php:105
 msgid "Time"
 msgstr "Time"
 
-#: public/index.php:125
+#: public/index.php:120
 msgid "Go To Parent Directory"
 msgstr "Go To Parent Directory"
 
-#: public/index.php:137
+#: public/index.php:132
 msgid "Direcotry"
 msgstr "Direcotry"
 
-#: public/index.php:139
+#: public/index.php:134
 msgid "File"
 msgstr "File"
 
-#: public/index.php:176
+#: public/index.php:187
 msgid "Free Space"
 msgstr "Free Space"
 
-#: public/index.php:178
+#: public/index.php:189
 msgid "All Space"
 msgstr "All Space"
 
-#: public/index.php:183
+#: public/index.php:194
 msgid "Temp Upload Folder Free Space"
 msgstr "Temp Upload Folder Free Space"
 
-#: public/index.php:190
-msgid "english"
-msgstr "English"
+#: public/js/lang.js.php:1
+msgid "select_download_file"
+msgstr "Select Download File"
 
-#: public/index.php:191
-msgid "chineses"
-msgstr "Chineses"
+#: public/js/lang.js.php:2
+msgid "select_delete_file"
+msgstr "Select Delete File"
 
-#: public/index.php:192
-msgid "korean"
-msgstr "Korean"
+#: public/js/lang.js.php:3 public/js/lang.js.php:4
+msgid "notice_cascade_delete"
+msgstr ""
 
-#: public/index.php:193
-msgid "japaneses"
-msgstr "Japaneses"
+#: public/js/lang.js.php:5
+msgid "delete_success"
+msgstr ""
 
-#: public/index.php:195
+#: public/js/lang.js.php:6
+msgid "delete_fail"
+msgstr ""
+
+#: public/locale_form.php:9
 msgid "submit"
 msgstr "Submit"
 
-#: public/mkdir.php:18
+#: public/mkdir.php:10
 msgid "Folder Name Not Submit"
 msgstr "Folder Name Not Submit"
 
-#: public/mkzip.php:47
+#: public/mkdir.php:27
+#, php-format
+msgid "There was a problem while creating %s"
+msgstr "There was a problem while creating %s"
+
+#: public/mkzip.php:46
 #, php-format
 msgid "Successfully Make %s File"
 msgstr "Successfully Make %s File"
@@ -194,35 +229,58 @@ msgstr "Unable To Make %s Directory"
 msgid "Upload File Move Fail"
 msgstr "Upload File Move Fail"
 
-#: public/upload_form.php:52
+#: public/upload.php:48
+msgid "Your File"
+msgstr "Your File"
+
+#: public/upload.php:49
+msgid "Type"
+msgstr "Type"
+
+#: public/upload_form.php:50
 #, php-format
 msgid "Upload Files %s"
 msgstr "Upload Files %s"
 
-#: public/upload_form.php:60
+#: public/upload_form.php:58
 msgid "Drag and Drop Your File On Drop Area"
 msgstr "Drag and Drop Your File On Drop Area"
 
-#: public/upload_form.php:60
+#: public/upload_form.php:58
 #, php-format
 msgid "Files Size under %s AND File Count under %s"
 msgstr "Files Size under %s AND File Count under %s"
 
-#: public/upload_form.php:62
+#: public/upload_form.php:60
 msgid "Drop Area"
 msgstr "Drop Area"
 
-#: public/upload_form.php:64
+#: public/upload_form.php:62
 msgid "Files Left"
 msgstr "Files Left"
 
-#: public/upload_form.php:66
+#: public/upload_form.php:64
 msgid "Result"
 msgstr "Result"
 
-#: public/upload_form.php:74
+#: public/upload_form.php:72
 msgid "Unable To Use Drag and Drop"
 msgstr "Unable To Use Drag and Drop(click here)"
+
+#~ msgid "Site Title"
+#~ msgstr "Sleeping-Lion Web FTP Client"
+
+#~ msgid "english"
+#~ msgstr "English"
+
+#~ msgid "chineses"
+#~ msgstr "Chineses"
+
+#~ msgid "korean"
+#~ msgstr "Korean"
+
+#~ msgid "japaneses"
+#~ msgstr "Japaneses"
 
 #~ msgid "Drag and Drop Your File On Drop Area(Files Size under %s)"
 #~ msgstr "Drag and Drop Your File On Drop Area(Files Size under %s)"

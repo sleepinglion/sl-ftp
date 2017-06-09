@@ -45,9 +45,9 @@ try {
     $sFileSize = Config\bytesToSize1024($_FILES['userfile']['size'], 1);
 
     echo '<div class="s">
-		<p>Your file: '.$sFileName.' has been successfully received.</p>
-		<p>Type: '.$sFileType.'</p>
-		<p>Size: '.$sFileSize.'</p>
+		<p>'._('Your File').': '.$sFileName.' has been successfully received.</p>
+		<p>'._('Type').': '.$sFileType.'</p>
+		<p>'._('Size').': '.$sFileSize.'</p>
 	</div>';
 } catch (\Exception $e) {
     include __DIR__ . DIRECTORY_SEPARATOR . '500.php';

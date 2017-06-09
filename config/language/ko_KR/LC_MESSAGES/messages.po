@@ -1,8 +1,8 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: sl_ftp\n"
-"POT-Creation-Date: 2017-06-09 11:52+0900\n"
-"PO-Revision-Date: 2017-06-09 11:59+0900\n"
+"POT-Creation-Date: 2017-06-09 17:11+0900\n"
+"PO-Revision-Date: 2017-06-09 17:13+0900\n"
 "Last-Translator: \n"
 "Language-Team: sleepinglion <admin@sleepinglion.pe.kr>\n"
 "Language: ko_KR\n"
@@ -16,23 +16,37 @@ msgstr ""
 "X-Poedit-SearchPath-0: config\n"
 "X-Poedit-SearchPath-1: public\n"
 
-#: config/config.php:88
+#: config/config.php:41
+msgid "Not Available Gettext Extensions"
+msgstr "PHP gettext 확장이 설치,설정되지 않았습니다."
+
+#: config/config.php:76
+#, php-format
+msgid "Not exists TMP_DIR(%s)"
+msgstr "임시디렉토리(%s)가 존재하지 않습니다."
+
+#: config/config.php:80
+#, php-format
+msgid "Not Writable TMP_DIR(%s)"
+msgstr "임시디렉토리(%s)에 쓰기를 할 수가 없습니다."
+
+#: config/config.php:103
 msgid "Byte"
 msgstr "바이트"
 
-#: config/config.php:88
+#: config/config.php:103
 msgid "Kilo Byte"
 msgstr "킬로바이트"
 
-#: config/config.php:88
+#: config/config.php:103
 msgid "Mega Byte"
 msgstr "메가바이트"
 
-#: config/config.php:88
+#: config/config.php:103
 msgid "Giga Byte"
 msgstr "기가바이트"
 
-#: config/config.php:88
+#: config/config.php:103
 msgid "Tera Byte"
 msgstr "테라바이트"
 
@@ -76,7 +90,7 @@ msgstr "PASSIVE mode"
 msgid "connect"
 msgstr "FTP 접속하기"
 
-#: public/delete.php:25 public/mkzip.php:23 public/rename.php:18
+#: public/delete.php:26 public/mkzip.php:23 public/rename.php:18
 msgid "File Names Not Submit"
 msgstr "파일이름들이 제출되지 않았습니다."
 
@@ -87,10 +101,6 @@ msgstr "파일이 없습니다."
 #: public/index.php:33 public/index.php:81
 msgid "Files"
 msgstr "개의 파일들"
-
-#: public/index.php:48
-msgid "Site Title"
-msgstr "잠자는사자 FTP 접속 프로그램"
 
 #: public/index.php:60
 msgid "Refresh"
@@ -132,7 +142,7 @@ msgstr "방문한 디렉토리"
 msgid "Name"
 msgstr "이름"
 
-#: public/index.php:103
+#: public/index.php:103 public/upload.php:50
 msgid "Size"
 msgstr "크기"
 
@@ -188,23 +198,7 @@ msgstr "이(가) 성공적으로 삭제되었습니다."
 msgid "delete_fail"
 msgstr "을(를) 삭제하는데 실패하였습니다."
 
-#: public/locale_form.php:3
-msgid "english"
-msgstr "영어"
-
-#: public/locale_form.php:4
-msgid "chineses"
-msgstr "중국어"
-
-#: public/locale_form.php:5
-msgid "korean"
-msgstr "한국어"
-
-#: public/locale_form.php:6
-msgid "japaneses"
-msgstr "일본어"
-
-#: public/locale_form.php:8
+#: public/locale_form.php:9
 msgid "submit"
 msgstr "변경"
 
@@ -235,6 +229,14 @@ msgstr "%s 디렉토리를 생성할수 없습니다.(경로및 권한을 확인
 msgid "Upload File Move Fail"
 msgstr "업로드 파일을 이동할수 없습니다.(경로및 권한을 확인해보세요)"
 
+#: public/upload.php:48
+msgid "Your File"
+msgstr "올린 파일"
+
+#: public/upload.php:49
+msgid "Type"
+msgstr "유형"
+
 #: public/upload_form.php:50
 #, php-format
 msgid "Upload Files %s"
@@ -264,6 +266,21 @@ msgstr "결과"
 #: public/upload_form.php:72
 msgid "Unable To Use Drag and Drop"
 msgstr "끌어서 떨구기가 불가능한 경우(여기를 눌러)"
+
+#~ msgid "Site Title"
+#~ msgstr "잠자는사자 FTP 접속 프로그램"
+
+#~ msgid "english"
+#~ msgstr "영어"
+
+#~ msgid "chineses"
+#~ msgstr "중국어"
+
+#~ msgid "korean"
+#~ msgstr "한국어"
+
+#~ msgid "japaneses"
+#~ msgstr "일본어"
 
 #~ msgid "Go Parent Directory"
 #~ msgstr "상위폴더로 가기"
