@@ -14,7 +14,7 @@ if (isset($_GET['dir'])) {
 		</div>
 		<div class="modal-body">
 			<input type="hidden" name="dir" value="<?php if (empty($current_folder)): ?><?php else: ?><?php echo $current_folder ?><?php endif ?>" />
-			<input type="text" name="folder_name" class="form-control" />
+			<input type="text" name="folder_name" class="form-control" required="required" />
 		</div>
 		<div class="modal-footer">
 			<button type="submit" class="btn btn-primary"><?php echo _('Confirm') ?></button>

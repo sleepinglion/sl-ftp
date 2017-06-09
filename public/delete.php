@@ -22,7 +22,7 @@ try {
     }
 
     if (empty($files)) {
-        throw new Exception(_('File Names Not Submit'), 5);
+        throw new \Exception(_('File Names Not Submit'), 5);
     }
 
     if (!count($files)) {

@@ -58,27 +58,30 @@ footer dl {margin:20px 0 10px;padding:0}
 #sl_ftp_connect #sl_ad {margin:3% auto;width:728px;}
 
 @media all and (max-width: 768px) {
-	html,body {background:#ccc}
-	header nav.container {width:100%;margin:0;padding:0}
-	header nav ul {width:100%;margin:2% 0 0;padding:0;background:#fff;border-radius:5px}
+  html,body {background:#ccc}
+	header {background:none;border-bottom:0;margin:1% 0}
+	header h1 {margin:2%;padding:0;font-size:1.6em}
+	header h1 a {float:left;background:none;text-indent:0;width:100%;font-weight:bold}
+	header h1 a:hover {text-decoration:none}
+	header h1 a:active {color:red}
+	header nav.col-xs-12 {width:100%;margin:0;padding:0}
+	header nav ul {width:100%;margin:0;padding:0;background:#fff;border-radius:5px}
 	header nav ul li,header ul li a {clear:both;float:left;width:100%;text-align:left}
 	header nav ul.nav-pills > li + li {margin-left:0}
 	header nav ul li {margin:0;padding:0}
-	header nav ul li a {display:block;border-bottom:1px solid #f3f3f3;text-indent:1em;padding:10px;border-radius:5px}
+	header nav ul li a.btn {display:block;font-size:14px;border-bottom:1px solid #f3f3f3;text-indent:1em;padding:10px;border-radius:5px;text-align:left;white-space:normal;}
 	header nav ul li a:hover {text-decoration:none;background:#eee}
 	header nav ul li a:active {color:red}
 	header nav ul li a .glyphicon {margin-right:1em}
 	.nav-pills > li + li {margin:0}
-	#mom {float:left;clear:both;width:100%;margin:0}
-	#main {float:left;margin:0;padding:0;width:100%;padding:3%;border-radius:5px;background:#fff;}
-	footer {background:#fff;border-radius:5px;width:100%;margin:1% 0}
 }
 
 @media all and (min-width: 768px) and (max-width: 991px) {
-  header {height:8em}
-	footer {height:5em}
-	#mom {margin:-8em 0 -5em;min-height:100%}
-	#main {padding-top:8em;padding-bottom:5em}
+  header {height:5em}
+  header nav ul {margin:10px 0 0}
+	footer {height:4em}
+	#mom {margin:-5em 0 -4em;min-height:100%}
+	#main {padding-top:5em;padding-bottom:4em}
 }
 
 @media all and (min-width: 992px) {

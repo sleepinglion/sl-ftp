@@ -1,66 +1,78 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: sl_ftp\n"
-"POT-Creation-Date: 2017-06-04 20:50+0900\n"
-"PO-Revision-Date: 2017-06-04 20:50+0900\n"
+"POT-Creation-Date: 2017-06-09 11:52+0900\n"
+"PO-Revision-Date: 2017-06-09 11:59+0900\n"
 "Last-Translator: \n"
 "Language-Team: sleepinglion <admin@sleepinglion.pe.kr>\n"
 "Language: ko_KR\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"X-Generator: Poedit 1.8.7\n"
+"X-Generator: Poedit 1.8.7.1\n"
 "X-Poedit-Basepath: ../../../..\n"
 "Plural-Forms: nplurals=1; plural=0;\n"
 "X-Poedit-SourceCharset: UTF-8\n"
 "X-Poedit-SearchPath-0: config\n"
 "X-Poedit-SearchPath-1: public\n"
 
-#: config/config.php:67
+#: config/config.php:88
 msgid "Byte"
 msgstr "바이트"
 
-#: config/config.php:67
+#: config/config.php:88
 msgid "Kilo Byte"
 msgstr "킬로바이트"
 
-#: config/config.php:67
+#: config/config.php:88
 msgid "Mega Byte"
 msgstr "메가바이트"
 
-#: config/config.php:67
+#: config/config.php:88
 msgid "Giga Byte"
 msgstr "기가바이트"
 
-#: config/config.php:67
+#: config/config.php:88
 msgid "Tera Byte"
 msgstr "테라바이트"
 
-#: public/500.php:36
+#: public/500.php:38
 msgid "Error"
 msgstr "애러"
 
-#: public/500.php:40
+#: public/500.php:42
 msgid "Sorry Error"
 msgstr "죄송합니다. 애러가 발생하여 더 이상 진행할수 없습니다."
 
-#: public/500.php:42 public/mkdir_form.php:20 public/rename_form.php:24
+#: public/500.php:44 public/mkdir_form.php:20 public/rename_form.php:24
 msgid "Confirm"
 msgstr "확인"
 
-#: public/connect.php:46
+#: public/connect.php:82
 msgid "host"
 msgstr "접속주소"
 
-#: public/connect.php:52
+#: public/connect.php:86
+msgid "port"
+msgstr "포트"
+
+#: public/connect.php:92
 msgid "username"
 msgstr "사용자명"
 
-#: public/connect.php:58
+#: public/connect.php:98
 msgid "userpass"
 msgstr "비밀번호"
 
-#: public/connect.php:65
+#: public/connect.php:107
+msgid "sftp"
+msgstr "보안FTP(SFTP)"
+
+#: public/connect.php:111
+msgid "pasv mode"
+msgstr "PASSIVE mode"
+
+#: public/connect.php:118
 msgid "connect"
 msgstr "FTP 접속하기"
 
@@ -68,119 +80,144 @@ msgstr "FTP 접속하기"
 msgid "File Names Not Submit"
 msgstr "파일이름들이 제출되지 않았습니다."
 
-#: public/download.php:32
+#: public/download.php:31
 msgid "File Not Exists"
 msgstr "파일이 없습니다."
 
-#: public/index.php:38 public/index.php:86
+#: public/index.php:33 public/index.php:81
 msgid "Files"
 msgstr "개의 파일들"
 
-#: public/index.php:53
+#: public/index.php:48
 msgid "Site Title"
 msgstr "잠자는사자 FTP 접속 프로그램"
 
-#: public/index.php:65
+#: public/index.php:60
 msgid "Refresh"
 msgstr "새로고침"
 
-#: public/index.php:66 public/upload_form.php:82
+#: public/index.php:61 public/upload_form.php:80
 msgid "Upload"
 msgstr "올리기"
 
-#: public/index.php:67 public/mkdir_form.php:13
+#: public/index.php:62 public/mkdir_form.php:13
 msgid "New Folder"
 msgstr "새 폴더"
 
-#: public/index.php:68
+#: public/index.php:63
 msgid "Download"
 msgstr "다운로드"
 
-#: public/index.php:69 public/rename_form.php:13
+#: public/index.php:64 public/rename_form.php:13
 msgid "Rename"
 msgstr "이름바꾸기"
 
-#: public/index.php:70
+#: public/index.php:65
 msgid "Delete"
 msgstr "삭제"
 
-#: public/index.php:72
+#: public/index.php:67
 msgid "Logout"
 msgstr "나가기"
 
-#: public/index.php:86
+#: public/index.php:81
 msgid "Current Directory"
 msgstr "현재 디렉토리"
 
-#: public/index.php:87
+#: public/index.php:82
 msgid "Visited Directory"
 msgstr "방문한 디렉토리"
 
-#: public/index.php:107
+#: public/index.php:102
 msgid "Name"
 msgstr "이름"
 
-#: public/index.php:108
+#: public/index.php:103
 msgid "Size"
 msgstr "크기"
 
-#: public/index.php:109
+#: public/index.php:104
 msgid "Date"
 msgstr "날짜"
 
-#: public/index.php:110
+#: public/index.php:105
 msgid "Time"
 msgstr "시간"
 
-#: public/index.php:125
+#: public/index.php:120
 msgid "Go To Parent Directory"
 msgstr "상위디렉토리로 가기"
 
-#: public/index.php:137
+#: public/index.php:132
 msgid "Direcotry"
 msgstr "디렉토리"
 
-#: public/index.php:139
+#: public/index.php:134
 msgid "File"
 msgstr "파일"
 
-#: public/index.php:192
+#: public/index.php:187
 msgid "Free Space"
 msgstr "남은용량"
 
-#: public/index.php:194
+#: public/index.php:189
 msgid "All Space"
 msgstr "전체용량"
 
-#: public/index.php:199
+#: public/index.php:194
 msgid "Temp Upload Folder Free Space"
 msgstr "임시업로드 남은용량"
 
-#: public/index.php:206
+#: public/js/lang.js.php:1
+msgid "select_download_file"
+msgstr "다운로드 받을 파일을 선택해주세요"
+
+#: public/js/lang.js.php:2
+msgid "select_delete_file"
+msgstr "삭제할 파일을 선택해주세요"
+
+#: public/js/lang.js.php:3 public/js/lang.js.php:4
+msgid "notice_cascade_delete"
+msgstr "을(를) 삭제할 경우 하위 폴더,파일이 모두 삭제됩니다, 그래도 진행합니까?"
+
+#: public/js/lang.js.php:5
+msgid "delete_success"
+msgstr "이(가) 성공적으로 삭제되었습니다."
+
+#: public/js/lang.js.php:6
+msgid "delete_fail"
+msgstr "을(를) 삭제하는데 실패하였습니다."
+
+#: public/locale_form.php:3
 msgid "english"
 msgstr "영어"
 
-#: public/index.php:207
+#: public/locale_form.php:4
 msgid "chineses"
 msgstr "중국어"
 
-#: public/index.php:208
+#: public/locale_form.php:5
 msgid "korean"
 msgstr "한국어"
 
-#: public/index.php:209
+#: public/locale_form.php:6
 msgid "japaneses"
 msgstr "일본어"
 
-#: public/index.php:211
+#: public/locale_form.php:8
 msgid "submit"
 msgstr "변경"
 
-#: public/mkdir.php:18
+#: public/mkdir.php:10
 msgid "Folder Name Not Submit"
 msgstr "폴더명이 체출되지 않았습니다."
 
-#: public/mkzip.php:47
+#: public/mkdir.php:27
+#, php-format
+msgid "There was a problem while creating %s"
+msgstr "%s를 생성하는데 문제가 있습니다."
+
+#: public/mkzip.php:46
 #, php-format
 msgid "Successfully Make %s File"
 msgstr "%s가 성공적으로 만들어졌습니다."
@@ -198,33 +235,33 @@ msgstr "%s 디렉토리를 생성할수 없습니다.(경로및 권한을 확인
 msgid "Upload File Move Fail"
 msgstr "업로드 파일을 이동할수 없습니다.(경로및 권한을 확인해보세요)"
 
-#: public/upload_form.php:52
+#: public/upload_form.php:50
 #, php-format
 msgid "Upload Files %s"
 msgstr "%s에 파일 올리기"
 
-#: public/upload_form.php:60
+#: public/upload_form.php:58
 msgid "Drag and Drop Your File On Drop Area"
 msgstr "올릴 파일을 끌어서 떨구는곳에 떨구세요"
 
-#: public/upload_form.php:60
+#: public/upload_form.php:58
 #, php-format
 msgid "Files Size under %s AND File Count under %s"
 msgstr "파일용량 %s이하, 파일 갯수 %s이하여야 함"
 
-#: public/upload_form.php:62
+#: public/upload_form.php:60
 msgid "Drop Area"
 msgstr "떨구는 곳"
 
-#: public/upload_form.php:64
+#: public/upload_form.php:62
 msgid "Files Left"
 msgstr "남은 파일"
 
-#: public/upload_form.php:66
+#: public/upload_form.php:64
 msgid "Result"
 msgstr "결과"
 
-#: public/upload_form.php:74
+#: public/upload_form.php:72
 msgid "Unable To Use Drag and Drop"
 msgstr "끌어서 떨구기가 불가능한 경우(여기를 눌러)"
 

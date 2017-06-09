@@ -57,14 +57,14 @@ try {
       <div class="row">
         <nav class="col-xs-12">
           <ul class="nav nav-pills">
-            <li><a href="<?php echo $sl_connect_info['web_root_directory']?>index.php<?php echo $dir_param ?>" class="btn btn-default"><?php echo _('Refresh') ?></a></li>
-            <li><a href="<?php echo $sl_connect_info['web_root_directory']?>upload_form.php<?php echo $dir_param ?>" id="upload" class="btn btn-default" target="_blank"><?php echo _('Upload') ?></a></li>
-            <li><a href="<?php echo $sl_connect_info['web_root_directory']?>mkdir_form.php<?php echo $dir_param ?>" data-target="#myModal" data-toggle="modal" class="modal_link btn btn-default"><?php echo _('New Folder') ?></a></li>
-            <li><a href="<?php echo $sl_connect_info['web_root_directory']?>mkzip.php<?php echo $dir_param ?>" id="download" class="btn btn-default disabled"><?php echo _('Download') ?></a></li>
-            <li><a href="<?php echo $sl_connect_info['web_root_directory']?>rename_form.php<?php echo $dir_param ?>" id="rename" data-target="#myModal" data-toggle="modal" class="modal_link btn btn-default disabled"><?php echo _('Rename') ?></a></li>
-            <li><a href="<?php echo $sl_connect_info['web_root_directory']?>delete.php<?php echo $dir_param ?>" id="delete" class="btn btn-default disabled"><?php echo _('Delete') ?></a></li>
+            <li><a href="<?php echo $sl_connect_info['web_root_directory']?>index.php<?php echo $dir_param ?>" class="btn btn-default"><?php echo _('Refresh') ?><span class="visible-xs glyphicon glyphicon-chevron-right pull-right"></span></a></li>
+            <li><a href="<?php echo $sl_connect_info['web_root_directory']?>upload_form.php<?php echo $dir_param ?>" id="upload" class="btn btn-default" target="_blank"><?php echo _('Upload') ?><span class="visible-xs glyphicon glyphicon-chevron-right pull-right"></span></a></li>
+            <li><a href="<?php echo $sl_connect_info['web_root_directory']?>mkdir_form.php<?php echo $dir_param ?>" data-target="#myModal" data-toggle="modal" class="modal_link btn btn-default"><?php echo _('New Folder') ?><span class="visible-xs glyphicon glyphicon-chevron-right pull-right"></span></a></li>
+            <li><a href="<?php echo $sl_connect_info['web_root_directory']?>mkzip.php<?php echo $dir_param ?>" id="download" class="btn btn-default disabled"><?php echo _('Download') ?><span class="visible-xs glyphicon glyphicon-chevron-right pull-right"></span></a></li>
+            <li><a href="<?php echo $sl_connect_info['web_root_directory']?>rename_form.php<?php echo $dir_param ?>" id="rename" data-target="#myModal" data-toggle="modal" class="modal_link btn btn-default disabled"><?php echo _('Rename') ?><span class="visible-xs glyphicon glyphicon-chevron-right pull-right"></span></a></li>
+            <li><a href="<?php echo $sl_connect_info['web_root_directory']?>delete.php<?php echo $dir_param ?>" id="delete" class="btn btn-default disabled"><?php echo _('Delete') ?><span class="visible-xs glyphicon glyphicon-chevron-right pull-right"></span></a></li>
             <?php if (isset($_SESSION['sl_connect_info']['host'])): ?>
-            <li><a href="<?php echo $sl_connect_info['web_root_directory']?>index.php?logout=true" id="logout" class="btn btn-default"><?php echo _('Logout') ?></a></li>
+            <li><a href="<?php echo $sl_connect_info['web_root_directory']?>index.php?logout=true" id="logout" class="btn btn-default"><?php echo _('Logout') ?><span class="visible-xs glyphicon glyphicon-chevron-right pull-right"></span></a></li>
             <?php endif ?>
           </ul>
         </nav>
@@ -205,6 +205,7 @@ try {
 	<div class="modal fade" id="myModal" tabindex="-1" role="dialog"></div>
 	<script src="<?php echo $sl_connect_info['web_root_directory']?>js/jquery-2.1.1.min.js" defer></script>
 	<script src="<?php echo $sl_connect_info['web_root_directory']?>js/bootstrap.min.js" defer></script>
+  <script src="<?php echo $sl_connect_info['web_root_directory']?>js/lang.js.php"></script>
 	<script src="<?php echo $sl_connect_info['web_root_directory']?>js/index.js" defer></script>
 </body>
 </html>
