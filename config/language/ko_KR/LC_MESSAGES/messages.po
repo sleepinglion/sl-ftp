@@ -1,8 +1,8 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: sl_ftp\n"
-"POT-Creation-Date: 2017-06-09 17:11+0900\n"
-"PO-Revision-Date: 2017-06-09 17:13+0900\n"
+"POT-Creation-Date: 2017-06-09 17:17+0900\n"
+"PO-Revision-Date: 2017-06-09 17:18+0900\n"
 "Last-Translator: \n"
 "Language-Team: sleepinglion <admin@sleepinglion.pe.kr>\n"
 "Language: ko_KR\n"
@@ -49,6 +49,10 @@ msgstr "기가바이트"
 #: config/config.php:103
 msgid "Tera Byte"
 msgstr "테라바이트"
+
+#: public/500.php:20 public/connect.php:56 public/index.php:48
+msgid "SL FTP"
+msgstr "잠자는사자 FTP"
 
 #: public/500.php:38
 msgid "Error"
@@ -266,6 +270,9 @@ msgstr "결과"
 #: public/upload_form.php:72
 msgid "Unable To Use Drag and Drop"
 msgstr "끌어서 떨구기가 불가능한 경우(여기를 눌러)"
+
+#~ msgid "SL FTP client"
+#~ msgstr "sleepinglion FTP client"
 
 #~ msgid "Site Title"
 #~ msgstr "잠자는사자 FTP 접속 프로그램"

@@ -44,7 +44,7 @@ $max_uploads_filesize = getMaximumFileUploadSize();
 $max_uploads_files = ini_get('max_file_uploads');
 ?>
 <!DOCTYPE html>
-<html lang="ko">
+<html lang="<?php echo $language ?>">
 <head>
 	<meta http-equiv="Content-type" content="text/html; charset=utf-8" />
 	<title><?php printf(_('Upload Files %s'), $current_folder) ?></title>

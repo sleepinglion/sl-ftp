@@ -17,7 +17,7 @@
 <html lang="<?php echo $language ?>">
 <head>
 	<meta http-equiv="Content-type" content="text/html; charset=utf-8" />
-	<title><?php echo _(SL FTP client) ?></title>
+	<title><?php echo _('SL FTP') ?></title>
 	<meta name="viewport" content="width=device-width, initial-scale=1">
 	<link href="<?php echo $sl_connect_info['web_root_directory'] ?>images/favicon.ico" type="image/x-icon" rel="shortcut icon"/>
 	<link href="<?php echo $sl_connect_info['web_root_directory'] ?>css/bootstrap.min.css" media="all" type="text/css" rel="stylesheet" />

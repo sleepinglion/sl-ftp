@@ -1,8 +1,8 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: sl_ftp\n"
-"POT-Creation-Date: 2017-06-09 17:14+0900\n"
-"PO-Revision-Date: 2017-06-09 17:14+0900\n"
+"POT-Creation-Date: 2017-06-09 17:18+0900\n"
+"PO-Revision-Date: 2017-06-09 17:18+0900\n"
 "Last-Translator: \n"
 "Language-Team: sleepinglion <admin@sleepinglion.pe.kr>\n"
 "Language: ko_KR\n"
@@ -49,6 +49,10 @@ msgstr "Giga Byte"
 #: config/config.php:103
 msgid "Tera Byte"
 msgstr "Tera Byte"
+
+#: public/500.php:20 public/connect.php:56 public/index.php:48
+msgid "SL FTP"
+msgstr "SL FTP"
 
 #: public/500.php:38
 msgid "Error"
