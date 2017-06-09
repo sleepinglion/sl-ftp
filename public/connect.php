@@ -81,10 +81,10 @@ try {
         <form action="" id="connect_form" method="post" class="form-horizontal">
           <div class="form-group">
             <label class="col-sm-2 control-label"><?php echo _('host') ?></label>
-            <div class="col-sm-7">
+            <div class="col-sm-6">
               <input type="text" name="host" class="form-control" required="required" />
             </div>
-            <label class="col-sm-1 control-label"><?php echo _('port') ?></label>
+            <label class="col-sm-2 control-label"><?php echo _('port') ?></label>
             <div class="col-sm-2">
               <input type="number" name="port" value="21" class="form-control" required="required" />
             </div>
@@ -104,9 +104,9 @@ try {
           <div class="form-group">
             <div class="col-sm-offset-2 col-sm-10">
               <div class="checkbox">
-                <label>
+              <!--  <label>
                   <input type="checkbox" name="ssl" value="1" /> <?php echo _('sftp') ?>
-                </label>
+                </label> -->
                 &nbsp;&nbsp;&nbsp;
                 <label>
                   <input type="checkbox" name="pasv_mode" value="1" /> <?php echo _('pasv mode') ?>

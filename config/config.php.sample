@@ -19,12 +19,12 @@ define('MAX_FILE_SIZE', 20000000000);
 define('UPLOAD_DIR', 'uploads');
 
 /* uncomment if use default connect only */
-$sl_connect_info=array();
+/* $sl_connect_info=array();
 $sl_connect_info['host']='localhost';
 $sl_connect_info['username']='sl_ftp';
 $sl_connect_info['userpass']='sl_ftp1!';
 $sl_connect_info['port']=21;
-$sl_connect_info['ssl']=false;
+$sl_connect_info['ssl']=false; */
 $sl_connect_info['web_root_directory'] = '/';
 $sl_connect_info['pasv']=true;
 
