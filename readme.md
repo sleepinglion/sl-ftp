@@ -19,9 +19,7 @@ PHP version 5.6 or newer is recommended.
 
 Requires [PHP Zip extension](http://php.net/manual/en/book.zip.php).
 
-this App well work on Unix,Linux  
-
-But can't display list on Windows
+this App well work on Unix,Linux But can't display list on Windows
 
 ## Installation
 
