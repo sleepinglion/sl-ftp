@@ -74,6 +74,8 @@ footer dl {margin:20px 0 10px;padding:0}
 	header nav ul li a:active {color:red}
 	header nav ul li a .glyphicon {margin-right:1em}
 	.nav-pills > li + li {margin:0}
+
+  footer .form-control {width:100%}
 }
 
 @media all and (min-width: 768px) and (max-width: 991px) {

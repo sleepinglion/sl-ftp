@@ -7,6 +7,7 @@ try {
     require __DIR__ . DIRECTORY_SEPARATOR . '..'. DIRECTORY_SEPARATOR . 'config' . DIRECTORY_SEPARATOR . 'config.php';
 
     $_SESSION['DELETE_FOLDER'] = array();
+    $current_folder='.';
 
     if (isset($_POST['dir'])) {
         $current_folder = $_POST['dir'];
@@ -93,13 +94,15 @@ function deleteAllFiles($ftp, $current_folder, $delete_list)
 {
     $result = array();
     $delete_directory = array();
+
     foreach ($delete_list as $key => $file) {
         if (isset($file['type'])) {
-            $result[$file['full_path']] = $ftp -> remove($file['full_path'], true);
+            $result = $ftp -> remove($file['full_path'], true);
         } else {
             $dir = $current_folder . DIRECTORY_SEPARATOR . $key;
             $_SESSION['DELETE_FOLDER'][] = $key;
-            $result[$file['full_path']] = deleteAllFiles($ftp, $dir, $file);
+            
+            $result = deleteAllFiles($ftp, $dir, $file);
         }
     }
 
