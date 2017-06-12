@@ -28,7 +28,7 @@ try {
     $ftp = new \FtpClient\FtpClient();
     $ftp -> connect($sl_connect_info['host'], $sl_connect_info['ssl'], $sl_connect_info['port']);
     $ftp -> login($sl_connect_info['username'], $sl_connect_info['userpass']);
-    
+
     if (!empty($sl_connect_info['pasv'])) {
         $ftp -> pasv($sl_connect_info['pasv']);
     }
@@ -38,21 +38,11 @@ try {
     $files_results = deleteAllFiles($ftp, $current_folder, $delete_list);
     $folders_results = deleteAllFolders($ftp);
 
-    echo '<pre>';
-    print_r($_SESSION['directory']);
-    echo '</pre>';
-
-    print_r($folders_results);
-
-    if (count($_SESSION['directory'])) {
-        foreach ($folders_results as $key=>$value) {
-            if (in_array($current_folder.$value, $_SESSION['directory'])) {
-                unset($_SESSION['directory'][$key]);
-            }
-        }
+    if ($json) {
+        echo json_encode(array('result' => 'success', 'delete_file_result' => $files_results, 'delete_folder_result' => $folders_results));
+    } else {
+        header('Location: ' . WEB_ROOT_DIRECTORY . 'index.php');
     }
-
-    echo json_encode(array('result' => 'success', 'delete_file_result' => $files_results, 'delete_folder_result' => $folders_results));
 } catch (\Exception $e) {
     if ($json) {
         echo json_encode(array('result' => 'fail', 'code' => $e -> getCode(), 'message' => $e -> getMessage()));

@@ -105,11 +105,11 @@ $(document).ready(function() {
 			}
 		}
 
-		$.post($(this).attr('href'),{'dir':$("#current_folder").val(),'files':aa},function(data){
+		$.post($(this).attr('href'),{'dir':$("#current_folder").val(),'files':aa,'json':true},function(data){
 			if(data.result=='success') {
 				delete_result=false;
 				var message='';
-				
+
 				if($("#current_folder").val()==$("#directory_separator").val()) {
 					location.href=$("#web_root_directory").val()+'index.php';
 				} else {
