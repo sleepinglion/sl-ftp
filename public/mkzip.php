@@ -30,7 +30,10 @@ try {
     $ftp = new \FtpClient\FtpClient();
     $ftp -> connect($sl_connect_info['host'], $sl_connect_info['ssl'], $sl_connect_info['port']);
     $ftp -> login($sl_connect_info['username'], $sl_connect_info['userpass']);
-    $ftp -> pasv($sl_connect_info['pasv']);
+
+    if (!empty($sl_connect_info['pasv'])) {
+        $ftp -> pasv($sl_connect_info['pasv']);
+    }
 
     $download_list = getAllFtpList($ftp, $current_folder, $files);
     $dir = TMP_DIR . DIRECTORY_SEPARATOR . uniqid();
@@ -41,9 +44,9 @@ try {
     makeZipFile($dir, $zipfilePath);
 
     if ($json) {
-        echo json_encode(array('result' => 'success', 'zip_file' => $sl_connect_info['web_root_directory'] . 'tmp/' . $zipfileName));
+        echo json_encode(array('result' => 'success', 'zip_file' => WEB_ROOT_DIRECTORY . 'tmp/' . $zipfileName));
     } else {
-        printf(_('Successfully Make %s File'), $sl_connect_info['web_root_directory'] . 'tmp/' . $zipfileName);
+        printf(_('Successfully Make %s File'), WEB_ROOT_DIRECTORY . 'tmp/' . $zipfileName);
     }
 } catch (\Exception $e) {
     if ($json) {

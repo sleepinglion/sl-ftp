@@ -47,7 +47,7 @@ try {
         echo 'nonono';
     }
 
-    header('Location: ' . $sl_connect_info['web_root_directory'] . 'index.php'); else:
+    header('Location: ' . WEB_ROOT_DIRECTORY . 'index.php'); else:
 ?>
 <!DOCTYPE html>
 <html lang="<?php echo $language ?>">
@@ -56,9 +56,9 @@ try {
 	<title><?php echo _('SL FTP') ?></title>
 	<meta name="viewport" content="width=device-width, initial-scale=1">
 	<meta name="author" content="Sleeping-Lion">
-	<link href="<?php echo $sl_connect_info['web_root_directory']?>images/favicon.ico" type="image/x-icon" rel="shortcut icon"/>
-	<link href="<?php echo $sl_connect_info['web_root_directory']?>css/bootstrap.min.css" media="all" type="text/css" rel="stylesheet" />
-	<link href="<?php echo $sl_connect_info['web_root_directory']?>css/index.css" media="all" type="text/css" rel="stylesheet" />
+	<link href="<?php echo ASSET_DIRECTORY?>images/favicon.ico" type="image/x-icon" rel="shortcut icon"/>
+	<link href="<?php echo ASSET_DIRECTORY?>css/bootstrap.min.css" media="all" type="text/css" rel="stylesheet" />
+	<link href="<?php echo ASSET_DIRECTORY?>css/index.css" media="all" type="text/css" rel="stylesheet" />
 </head>
 <body id="sl_ftp_connect">
 		<div class="container">
@@ -123,9 +123,9 @@ try {
         <?php include __DIR__ . DIRECTORY_SEPARATOR .'locale_form.php' ?>
       </div>
 		</div>
-    <script src="<?php echo $sl_connect_info['web_root_directory']?>js/jquery-2.1.1.min.js" defer></script>
-  	<script src="<?php echo $sl_connect_info['web_root_directory']?>js/bootstrap.min.js" defer></script>
-  	<script src="<?php echo $sl_connect_info['web_root_directory']?>js/index.js" defer></script>
+    <script src="<?php echo ASSET_DIRECTORY?>js/jquery-2.1.1.min.js" defer></script>
+  	<script src="<?php echo ASSET_DIRECTORY?>js/bootstrap.min.js" defer></script>
+  	<script src="<?php echo ASSET_DIRECTORY?>js/index.js" defer></script>
 </body>
 </html>
 <?php

@@ -28,10 +28,14 @@ try {
     }
 
     if (empty($current_folder)) {
-        header('Location: ' . $sl_connect_info['web_root_directory'] . 'index.php');
+        header('Location: ' . WEB_ROOT_DIRECTORY . 'index.php');
     } else {
-        header('Location: ' . $sl_connect_info['web_root_directory'] . 'index.php?dir=' . $current_folder);
+        header('Location: ' . WEB_ROOT_DIRECTORY . 'index.php?dir=' . $current_folder);
     }
 } catch (\Exception $e) {
-    include __DIR__ . DIRECTORY_SEPARATOR . '500.php';
+    if ($json) {
+        echo json_encode(array('result' => 'fail', 'code' => $e -> getCode(), 'message' => $e -> getMessage()));
+    } else {
+        include __DIR__ . DIRECTORY_SEPARATOR . '500.php';
+    }
 }

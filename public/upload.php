@@ -30,7 +30,11 @@ try {
     $ftp = new \FtpClient\FtpClient();
     $ftp -> connect($sl_connect_info['host'], $sl_connect_info['ssl'], $sl_connect_info['port']);
     $ftp -> login($sl_connect_info['username'], $sl_connect_info['userpass']);
-    $ftp -> pasv($sl_connect_info['pasv']);
+
+    if (!empty($sl_connect_info['pasv'])) {
+        $ftp -> pasv($sl_connect_info['pasv']);
+    }
+
     $ftp -> chdir($current_folder);
 
     if ($ftp -> put($filename, $uploadfile, FTP_BINARY)) {
@@ -50,5 +54,9 @@ try {
 		<p>'._('Size').': '.$sFileSize.'</p>
 	</div>';
 } catch (\Exception $e) {
-    include __DIR__ . DIRECTORY_SEPARATOR . '500.php';
+    if ($json) {
+        echo json_encode(array('result' => 'fail', 'code' => $e -> getCode(), 'message' => $e -> getMessage()));
+    } else {
+        include __DIR__ . DIRECTORY_SEPARATOR . '500.php';
+    }
 }

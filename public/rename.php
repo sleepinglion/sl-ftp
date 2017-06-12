@@ -25,7 +25,11 @@ try {
     $ftp = new \FtpClient\FtpClient();
     $ftp -> connect($sl_connect_info['host'], $sl_connect_info['ssl'], $sl_connect_info['port']);
     $ftp -> login($sl_connect_info['username'], $sl_connect_info['userpass']);
-    $ftp -> pasv($sl_connect_info['pasv']);
+
+    if (!empty($sl_connect_info['pasv'])) {
+        $ftp -> pasv($sl_connect_info['pasv']);
+    }
+
     $ftp -> chdir($current_folder);
 
     foreach ($files as $value) {
@@ -33,10 +37,14 @@ try {
     }
 
     if (empty($current_folder)) {
-        header('Location: ' . $sl_connect_info['web_root_directory']. 'index.php');
+        header('Location: ' . WEB_ROOT_DIRECTORY. 'index.php');
     } else {
-        header('Location: ' . $sl_connect_info['web_root_directory']. 'index.php?dir=' . $current_folder);
+        header('Location: ' . WEB_ROOT_DIRECTORY. 'index.php?dir=' . $current_folder);
     }
 } catch (\Exception $e) {
-    include __DIR__ . DIRECTORY_SEPARATOR . '500.php';
+    if ($json) {
+        echo json_encode(array('result' => 'fail', 'code' => $e -> getCode(), 'message' => $e -> getMessage()));
+    } else {
+        include __DIR__ . DIRECTORY_SEPARATOR . '500.php';
+    }
 }

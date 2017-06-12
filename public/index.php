@@ -17,7 +17,10 @@ try {
     $ftp = new \FtpClient\FtpClient();
     $ftp -> connect($sl_connect_info['host'], $sl_connect_info['ssl'], $sl_connect_info['port']);
     $ftp -> login($sl_connect_info['username'], $sl_connect_info['userpass']);
-    $ftp -> pasv($sl_connect_info['pasv']);
+
+    if (!empty($sl_connect_info['pasv'])) {
+        $ftp -> pasv($sl_connect_info['pasv']);
+    }
 
     if (empty($current_folder)) {
         $current_folder = '.';
@@ -30,7 +33,7 @@ try {
     }
 
     if (isset($_GET['dir'])) {
-        $_SESSION['directory'][$current_folder] = $sl_connect_info['web_root_directory'] . $current_folder . '(' . $total . _('Files') . ')';
+        $_SESSION['directory'][$current_folder] = $current_folder . '(' . $total . _('Files') . ')';
     }
 
     $_SESSION['directory'] = array_unique($_SESSION['directory']);
@@ -48,9 +51,9 @@ try {
 	<title><?php echo _('SL FTP') ?></title>
 	<meta name="viewport" content="width=device-width, initial-scale=1">
 	<meta name="author" content="Sleeping-Lion">
-	<link href="<?php echo $sl_connect_info['web_root_directory']?>images/favicon.ico" type="image/x-icon" rel="shortcut icon"/>
-	<link href="<?php echo $sl_connect_info['web_root_directory']?>css/bootstrap.min.css" media="all" type="text/css" rel="stylesheet" />
-	<link href="<?php echo $sl_connect_info['web_root_directory']?>css/index.css" media="all" type="text/css" rel="stylesheet" />
+	<link href="<?php echo ASSET_DIRECTORY?>images/favicon.ico" type="image/x-icon" rel="shortcut icon"/>
+	<link href="<?php echo ASSET_DIRECTORY?>css/bootstrap.min.css" media="all" type="text/css" rel="stylesheet" />
+	<link href="<?php echo ASSET_DIRECTORY?>css/index.css" media="all" type="text/css" rel="stylesheet" />
 </head>
 <body>
 	<header>
@@ -58,14 +61,14 @@ try {
       <div class="row">
         <nav class="col-xs-12">
           <ul class="nav nav-pills">
-            <li><a href="<?php echo $sl_connect_info['web_root_directory']?>index.php<?php echo $dir_param ?>" class="btn btn-default"><?php echo _('Refresh') ?><span class="visible-xs glyphicon glyphicon-chevron-right pull-right"></span></a></li>
-            <li><a href="<?php echo $sl_connect_info['web_root_directory']?>upload_form.php<?php echo $dir_param ?>" id="upload" class="btn btn-default" target="_blank"><?php echo _('Upload') ?><span class="visible-xs glyphicon glyphicon-chevron-right pull-right"></span></a></li>
-            <li><a href="<?php echo $sl_connect_info['web_root_directory']?>mkdir_form.php<?php echo $dir_param ?>" data-target="#myModal" data-toggle="modal" class="modal_link btn btn-default"><?php echo _('New Folder') ?><span class="visible-xs glyphicon glyphicon-chevron-right pull-right"></span></a></li>
-            <li><a href="<?php echo $sl_connect_info['web_root_directory']?>mkzip.php<?php echo $dir_param ?>" id="download" class="btn btn-default disabled"><?php echo _('Download') ?><span class="visible-xs glyphicon glyphicon-chevron-right pull-right"></span></a></li>
-            <li><a href="<?php echo $sl_connect_info['web_root_directory']?>rename_form.php<?php echo $dir_param ?>" id="rename" data-target="#myModal" data-toggle="modal" class="modal_link btn btn-default disabled"><?php echo _('Rename') ?><span class="visible-xs glyphicon glyphicon-chevron-right pull-right"></span></a></li>
-            <li><a href="<?php echo $sl_connect_info['web_root_directory']?>delete.php<?php echo $dir_param ?>" id="delete" class="btn btn-default disabled"><?php echo _('Delete') ?><span class="visible-xs glyphicon glyphicon-chevron-right pull-right"></span></a></li>
+            <li><a href="<?php echo WEB_ROOT_DIRECTORY?>index.php<?php echo $dir_param ?>" class="btn btn-default"><?php echo _('Refresh') ?><span class="visible-xs glyphicon glyphicon-chevron-right pull-right"></span></a></li>
+            <li><a href="<?php echo WEB_ROOT_DIRECTORY?>upload_form.php<?php echo $dir_param ?>" id="upload" class="btn btn-default" target="_blank"><?php echo _('Upload') ?><span class="visible-xs glyphicon glyphicon-chevron-right pull-right"></span></a></li>
+            <li><a href="<?php echo WEB_ROOT_DIRECTORY?>mkdir_form.php<?php echo $dir_param ?>" data-target="#myModal" data-toggle="modal" class="modal_link btn btn-default"><?php echo _('New Folder') ?><span class="visible-xs glyphicon glyphicon-chevron-right pull-right"></span></a></li>
+            <li><a href="<?php echo WEB_ROOT_DIRECTORY?>mkzip.php<?php echo $dir_param ?>" id="download" class="btn btn-default disabled"><?php echo _('Download') ?><span class="visible-xs glyphicon glyphicon-chevron-right pull-right"></span></a></li>
+            <li><a href="<?php echo WEB_ROOT_DIRECTORY?>rename_form.php<?php echo $dir_param ?>" id="rename" data-target="#myModal" data-toggle="modal" class="modal_link btn btn-default disabled"><?php echo _('Rename') ?><span class="visible-xs glyphicon glyphicon-chevron-right pull-right"></span></a></li>
+            <li><a href="<?php echo WEB_ROOT_DIRECTORY?>delete.php<?php echo $dir_param ?>" id="delete" class="btn btn-default disabled"><?php echo _('Delete') ?><span class="visible-xs glyphicon glyphicon-chevron-right pull-right"></span></a></li>
             <?php if (isset($_SESSION['sl_connect_info']['host'])): ?>
-            <li><a href="<?php echo $sl_connect_info['web_root_directory']?>index.php?logout=true" id="logout" class="btn btn-default"><?php echo _('Logout') ?><span class="visible-xs glyphicon glyphicon-chevron-right pull-right"></span></a></li>
+            <li><a href="<?php echo WEB_ROOT_DIRECTORY?>index.php?logout=true" id="logout" class="btn btn-default"><?php echo _('Logout') ?><span class="visible-xs glyphicon glyphicon-chevron-right pull-right"></span></a></li>
             <?php endif ?>
           </ul>
         </nav>
@@ -74,7 +77,7 @@ try {
 	</header>
 	<div id="mom">
 		<div id="main">
-			<input type="hidden" id="web_root_directory" value="<?php echo $sl_connect_info['web_root_directory']?>" />
+			<input type="hidden" id="web_root_directory" value="<?php echo WEB_ROOT_DIRECTORY?>" />
 			<input type="hidden" id="directory_separator" value="<?php echo DIRECTORY_SEPARATOR ?>" />
 			<input type="hidden" id="current_folder" value="<?php echo $current_folder ?>" />
 	<div class="table-responsive">
@@ -111,9 +114,9 @@ try {
             $pathinfo = pathinfo($current_folder);
 
     if ($pathinfo['dirname'] == DIRECTORY_SEPARATOR) {
-        $link = $sl_connect_info['web_root_directory'] . 'index.php';
+        $link = WEB_ROOT_DIRECTORY . 'index.php';
     } else {
-        $link = $sl_connect_info['web_root_directory'] . 'index.php?dir=' . $pathinfo['dirname'];
+        $link = WEB_ROOT_DIRECTORY . 'index.php?dir=' . $pathinfo['dirname'];
     } ?>
 			<tr>
 				<td>&nbsp;</td>
@@ -130,16 +133,16 @@ try {
 					<input type="hidden" name="type[]" value="<?php echo $value['type'] ?>" />
 					<input type="hidden" name="name[]" value="<?php echo $value['name'] ?>" />
 					<?php if ($value['type']=='directory'): ?>
-							<label for="file_check<?php echo $index ?>"><img src="<?php echo $sl_connect_info['web_root_directory']?>images/icon_16_folder.gif" width="16" height="16" alt="<?php echo _('Direcotry') ?>" /></label>
+							<label for="file_check<?php echo $index ?>"><img src="<?php echo WEB_ROOT_DIRECTORY?>images/icon_16_folder.gif" width="16" height="16" alt="<?php echo _('Direcotry') ?>" /></label>
 					<?php else: ?>
-							<label for="file_check<?php echo $index ?>"><img src="<?php echo $sl_connect_info['web_root_directory']?>images/icon_16_file.gif" width="16" height="16" alt="<?php echo _('File') ?>" /></label>
+							<label for="file_check<?php echo $index ?>"><img src="<?php echo WEB_ROOT_DIRECTORY?>images/icon_16_file.gif" width="16" height="16" alt="<?php echo _('File') ?>" /></label>
 					<?php endif ?>
 				</td>
 				<td>
 					<?php if ($value['type']=='directory'): ?>
-					<a href="<?php echo $sl_connect_info['web_root_directory']?>index.php?dir=<?php if ($current_folder!='.'): ?><?php echo $current_folder ?><?php echo DIRECTORY_SEPARATOR ?><?php endif ?><?php echo $value['name'] ?>" ><?php echo $value['name'] ?></a>
+					<a href="<?php echo WEB_ROOT_DIRECTORY?>index.php?dir=<?php if ($current_folder!='.'): ?><?php echo $current_folder ?><?php echo DIRECTORY_SEPARATOR ?><?php endif ?><?php echo $value['name'] ?>" ><?php echo $value['name'] ?></a>
 					<?php else: ?>
-					<a href="<?php echo $sl_connect_info['web_root_directory']?>download.php?file=<?php echo $current_folder ?><?php echo DIRECTORY_SEPARATOR ?><?php echo $value['name'] ?>" ><?php echo $value['name'] ?></a>
+					<a href="<?php echo WEB_ROOT_DIRECTORY?>download.php?file=<?php echo $current_folder ?><?php echo DIRECTORY_SEPARATOR ?><?php echo $value['name'] ?>" ><?php echo $value['name'] ?></a>
 					<?php endif ?>
 				</td>
 				<td>
@@ -204,10 +207,10 @@ try {
 	</footer>
 	<div class="slboard_overlay" id="overlay"></div>
 	<div class="modal fade" id="myModal" tabindex="-1" role="dialog"></div>
-	<script src="<?php echo $sl_connect_info['web_root_directory']?>js/jquery-2.1.1.min.js" defer></script>
-	<script src="<?php echo $sl_connect_info['web_root_directory']?>js/bootstrap.min.js" defer></script>
-  <script src="<?php echo $sl_connect_info['web_root_directory']?>js/lang.js.php"></script>
-	<script src="<?php echo $sl_connect_info['web_root_directory']?>js/index.js" defer></script>
+	<script src="<?php echo ASSET_DIRECTORY?>js/jquery-2.1.1.min.js" defer></script>
+	<script src="<?php echo ASSET_DIRECTORY?>js/bootstrap.min.js" defer></script>
+  <script src="<?php echo ASSET_DIRECTORY?>js/lang.js.php"></script>
+	<script src="<?php echo ASSET_DIRECTORY?>js/index.js" defer></script>
 </body>
 </html>
 <?php

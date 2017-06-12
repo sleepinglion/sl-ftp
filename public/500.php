@@ -20,9 +20,9 @@
 	<title><?php echo _('SL FTP') ?></title>
 	<meta name="viewport" content="width=device-width, initial-scale=1">
 	<meta name="author" content="Sleeping-Lion">
-	<link href="<?php echo $sl_connect_info['web_root_directory'] ?>images/favicon.ico" type="image/x-icon" rel="shortcut icon"/>
-	<link href="<?php echo $sl_connect_info['web_root_directory'] ?>css/bootstrap.min.css" media="all" type="text/css" rel="stylesheet" />
-	<link href="<?php echo $sl_connect_info['web_root_directory'] ?>css/index.css" media="all" type="text/css" rel="stylesheet" />
+	<link href="<?php echo ASSET_DIRECTORY ?>images/favicon.ico" type="image/x-icon" rel="shortcut icon"/>
+	<link href="<?php echo ASSET_DIRECTORY ?>css/bootstrap.min.css" media="all" type="text/css" rel="stylesheet" />
+	<link href="<?php echo ASSET_DIRECTORY ?>css/index.css" media="all" type="text/css" rel="stylesheet" />
 </head>
 <body>
 	<header>

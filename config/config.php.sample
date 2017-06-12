@@ -18,16 +18,22 @@ define('MAX_FILE_SIZE', 20000000000);
 /* Setting Your Upload Directory Name, It will be under TMP_DIR */
 define('UPLOAD_DIR', 'uploads');
 
+/* Setting Your Web Root path */
+define('WEB_ROOT_DIRECTORY', '/');
+
+/* Setting Your Asset Root path */
+define('ASSET_DIRECTORY', '/');
+
 /* uncomment if use default connect only */
-/* $sl_connect_info=array();
+/*
+$sl_connect_info=array();
 $sl_connect_info['host']='localhost';
 $sl_connect_info['username']='sl_ftp';
 $sl_connect_info['userpass']='sl_ftp1!';
 $sl_connect_info['port']=21;
-$sl_connect_info['ssl']=false; */
-$sl_connect_info['web_root_directory'] = '/';
+$sl_connect_info['ssl']=false;
 $sl_connect_info['pasv']=true;
-
+*/
 
 if (DEBUG==1) {
     error_reporting(E_ALL);
@@ -42,7 +48,6 @@ if (!function_exists('_')) {
 }
 
 /* i18n locale */
-#$language = 'ko';
 $language = 'en';
 
 if (isset($_GET['language'])) {
@@ -84,6 +89,12 @@ if (isset($_GET['logout'])) {
     $_SESSION['sl_connect_info']=null;
 }
 
+
+$json = false;
+if (isset($_POST['json'])) {
+    $json = true;
+}
+
 if (empty($sl_connect_info['host'])) {
     if (isset($_SESSION['sl_connect_info'])) {
         $sl_connect_info['host']=$_SESSION['sl_connect_info']['host'];
@@ -93,7 +104,7 @@ if (empty($sl_connect_info['host'])) {
         $sl_connect_info['port']=$_SESSION['sl_connect_info']['port'];
     } else {
         if (basename($_SERVER["SCRIPT_FILENAME"])!='connect.php') {
-            header('Location: ' .$sl_connect_info['web_root_directory'].'connect.php');
+            header('Location: ' .WEB_ROOT_DIRECTORY.'connect.php');
         }
     }
 }
