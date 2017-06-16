@@ -46,12 +46,12 @@ $max_uploads_files = ini_get('max_file_uploads');
 <!DOCTYPE html>
 <html lang="<?php echo $language ?>">
 <head>
-	<meta http-equiv="Content-type" content="text/html; charset=utf-8" />
+	<meta charset="utf-8">
 	<title><?php printf(_('Upload Files %s'), $current_folder) ?></title>
-	<meta name="viewport" content="width=device-width, initial-scale=1">
-	<link href="<?php echo ASSET_DIRECTORY ?>images/favicon.ico" type="image/x-icon" rel="shortcut icon"/>
-	<link href="<?php echo ASSET_DIRECTORY ?>css/bootstrap.min.css" media="all" type="text/css" rel="stylesheet" />
-	<link href="<?php echo ASSET_DIRECTORY ?>css/uploads.css" media="all" type="text/css" rel="stylesheet" />
+	<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=yes">
+	<link href="<?php echo ASSET_DIRECTORY ?>images/favicon.ico" type="image/x-icon" rel="shortcut icon">
+	<link href="<?php echo ASSET_DIRECTORY ?>css/bootstrap.min.css" media="all" type="text/css" rel="stylesheet">
+	<link href="<?php echo ASSET_DIRECTORY ?>css/uploads.css" media="all" type="text/css" rel="stylesheet">
 </head>
 <body>
 	<article class="container">
