@@ -84,7 +84,7 @@ try {
       		</div>
       		<div class="panel-body">
 
-        <form action="" id="connect_form" method="post" class="form-horizontal">
+        <form action="<?php echo $_SERVER['PHP_SELF'] ?>" id="connect_form" method="post" class="form-horizontal">
           <div class="form-group">
             <label class="col-sm-2 control-label"><?php echo _('host') ?></label>
             <div class="col-sm-6">
@@ -133,7 +133,6 @@ try {
         <h3 class="panel-title"><?php echo _('Change Language') ?></h3>
       </div>
       <div class="panel-body">
-
         <?php include __DIR__ . DIRECTORY_SEPARATOR .'locale_form.php' ?>
       </div>
     </article>
