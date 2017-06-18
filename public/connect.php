@@ -63,21 +63,7 @@ try {
 <body id="sl_ftp_connect">
 		<div class="container">
       <div class="row">
-        <div id="sl_ad" style="margin-bottom:20px">
-        <?php if (DEBUG==1): ?>
-        <div style="width:728px;height:90px;background:red;">&nbsp;</div>
-        <?php else: ?>
-          <script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
-          <!-- 250정사각형 -->
-          <ins class="adsbygoogle"
-               style="display:inline-block;width:728px;height:90px"
-               data-ad-client="ca-pub-5400903051441488"
-               data-ad-slot="7215435937"></ins>
-          <script>
-          (adsbygoogle = window.adsbygoogle || []).push({});
-          </script>
-        <?php endif ?>
-        </div>
+        <?php include __DIR__ . DIRECTORY_SEPARATOR .'ad.php' ?>
         <article class="panel panel-default">
       		<div class="panel-heading">
       			<h3 class="panel-title"><?php echo _('Connect Info') ?></h3>
@@ -147,6 +133,6 @@ try {
 <?php
   endif;
 } catch (\Exception $e) {
-    include __DIR__ . DIRECTORY_SEPARATOR . '500.php';
+    include __DIR__ . DIRECTORY_SEPARATOR . 'error.php';
 }
 ?>

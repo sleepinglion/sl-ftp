@@ -6,5 +6,5 @@
     <option value="ko"<?php if ($language=='ko'): ?> selected="selected"<?php endif ?>>한국어</option>
     <!-- <option value="jp"<?php if ($language=='jp'): ?> selected="selected"<?php endif ?>>日本語</option>-->
   </select>
-  <input type="submit" class="btn" value="<?php echo _('submit') ?>" />
+  <input type="submit" class="btn" value="<?php echo _('Change') ?>" />
 </form>

@@ -217,6 +217,6 @@ try {
 <?php
 
 } catch (\Exception $e) {
-    include __DIR__ . DIRECTORY_SEPARATOR . '500.php';
+    include __DIR__ . DIRECTORY_SEPARATOR . 'error.php';
 }
 ?>

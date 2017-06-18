@@ -45,6 +45,6 @@ try {
     if ($json) {
         echo json_encode(array('result' => 'fail', 'code' => $e -> getCode(), 'message' => $e -> getMessage()));
     } else {
-        include __DIR__ . DIRECTORY_SEPARATOR . '500.php';
+        include __DIR__ . DIRECTORY_SEPARATOR . 'error.php';
     }
 }

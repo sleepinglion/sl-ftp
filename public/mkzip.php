@@ -52,7 +52,7 @@ try {
     if ($json) {
         echo json_encode(array('reuslt' => 'error', 'message' => $e -> getMessage()));
     } else {
-        include __DIR__ . DIRECTORY_SEPARATOR . '500.php';
+        include __DIR__ . DIRECTORY_SEPARATOR . 'error.php';
     }
 }
 
