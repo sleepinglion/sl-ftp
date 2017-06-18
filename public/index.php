@@ -98,7 +98,7 @@ try {
 			<col />
 			<col style="width:20%" />
 			<col style="width:10%" />
-			<col style="width:10%" class="hidden-xs" />
+			<col style="width:15%" class="hidden-xs" />
 		</colgroup>
 		<thead>
 			<tr>
@@ -106,7 +106,7 @@ try {
 				<th><?php echo _('Name') ?></th>
 				<th><?php echo _('Size') ?></th>
 				<th><?php echo _('Date') ?></th>
-				<th class="hidden-xs"><?php echo _('Time') ?></th>
+				<th class="hidden-xs"><?php echo _('Manage') ?></th>
 			</tr>
 		</thead>
 		<tbody>
@@ -149,10 +149,15 @@ try {
 					<?php echo Config\bytesToSize1024($value['size']) ?>
 				</td>
 				<td>
-					<?php echo $value['month'] ?>/<?php echo $value['day'] ?>
+					<?php echo $value['month'] ?>/<?php echo $value['day'] ?> <?php echo $value['time'] ?>
 				</td>
 				<td class="hidden-xs">
-					<?php echo $value['time'] ?>
+          <form action="/rename.php" method="post">
+            <input type="submit" class="btn btn-default" value="<?php echo _('Rename') ?>" />
+          </form>
+          <form action="/delete.php" method="post">
+            <input type="submit" class="btn btn-danger" value="<?php echo _('Delete') ?>" />
+          </form>
 				</td>
 			</tr>
 			<?php endforeach ?>

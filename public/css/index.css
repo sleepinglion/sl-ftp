@@ -60,6 +60,8 @@ footer form {float:right;margin:5px 0 0;padding:0}
 #sl_error_page article {padding:1% 2%}
 #sl_ad {margin:3% auto;width:728px;}
 
+#file_list form {float:left;margin-right:5px}
+
 footer form {float:right}
 
 @media all and (max-width: 768px) {
