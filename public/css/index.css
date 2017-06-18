@@ -27,7 +27,7 @@ mark, rp, rt, ruby, summary, time {display:inline;}
 
 .btn {font-size:1em}
 
-#mom {margin:-6em 0 -3em;min-height:100%}
+#mom {margin:-6em 0 -3em;min-height:100%;clear:both;float:left;width:100%;padding:0}
 #main {padding-top:6em;padding-bottom:3em}
 
 table th {background:#333;color:#fff}
@@ -44,7 +44,6 @@ header nav a:visited {color:#666}
 header nav a.btn-danger:visited {color:#fff}
 header nav a:active {color:red}
 header nav ul li ul {position:absolute;display:none}
-#mom {clear:both;float:left;width:100%;padding:0}
 footer {height:3em;background:#ccc;clear:both}
 footer address {text-align:center;margin:0.7em 0 0}
 footer address a {color:#333}
