@@ -27,8 +27,11 @@ mark, rp, rt, ruby, summary, time {display:inline;}
 
 .btn {font-size:1em}
 
+#mom {margin:-6em 0 -3em;min-height:100%}
+#main {padding-top:6em;padding-bottom:3em}
+
 table th {background:#333;color:#fff}
-header {background:#ccc}
+header {background:#ccc;height:6em}
 header nav { position: relative; z-index: 999; margin:0; padding:0}
 header nav ul { float: right; margin: 1.5em 0 0 0; padding: 0}
 header nav li { float: left; list-style: none; margin: 0 0 0 20px}
@@ -42,11 +45,11 @@ header nav a.btn-danger:visited {color:#fff}
 header nav a:active {color:red}
 header nav ul li ul {position:absolute;display:none}
 #mom {clear:both;float:left;width:100%;padding:0}
-footer {background:#ccc;clear:both}
-footer address {text-align:center}
-footer nav {float:left}
-footer form {float:left;margin:10px 0;padding:0}
-footer dl {margin:20px 0 10px;padding:0}
+footer {height:3em;background:#ccc;clear:both}
+footer address {text-align:center;margin:0.7em 0 0}
+footer address a {color:#333}
+footer nav {float:left;margin:1em}
+footer form {float:right;margin:5px 0 0;padding:0}
 
 
 #directory_selector {width:150px}
@@ -83,21 +86,14 @@ footer form {float:right}
 @media all and (min-width: 768px) and (max-width: 991px) {
   header {height:5em}
   header nav ul {margin:10px 0 0}
-	footer {height:4em}
+	footer {height:3em}
   footer dl {margin:10px 0 0}
-	#mom {margin:-5em 0 -4em;min-height:100%}
-	#main {padding-top:5em;padding-bottom:4em}
+	#mom {margin:-5em 0 -3em;min-height:100%}
+	#main {padding-top:5em;padding-bottom:3em}
 }
 
 @media all and (min-width: 992px) {
   html,body {font-size:14px}
-
-  header {height:6em}
-	footer {height:5em}
-	footer nav {margin:1em}
-	footer form {float:right}
-	#mom {margin:-6em 0 -5em;min-height:100%}
-	#main {padding-top:6em;padding-bottom:5em}
 }
 
 @media all and (min-width: 992px) and (max-width: 1199px) {
@@ -106,7 +102,7 @@ footer form {float:right}
 
 @media all and (min-width: 1200px) {
 	.adsbygoogle {height: 100px}
-  footer form {margin:20px 0 0}
+  footer form {margin:5px 0 0}
 }
 
 @media (min-width: 1200px) and (max-width: 1499px) {

@@ -186,7 +186,7 @@ try {
 	<footer>
     <div class="container-fluid">
     <div class="row">
-		<?php if ($sl_connect_info['host']=='localhost'): ?>
+		<!--<?php if ($sl_connect_info['host']=='localhost'): ?>
 		<dl class="col-xs-12 col-sm-8 col-md-6 col-lg-9">
 			<dt class="col-xs-6 col-sm-5 col-md-3 col-lg-2"><?php echo _('Free Space') ?></dt>
       <dd class="col-xs-6 col-sm-7 col-md-9 col-lg-10"><?php echo Config\bytesToSize1024(\disk_free_space(TMP_DIR)) ?></dd>
@@ -198,7 +198,8 @@ try {
 			<dt class="col-xs-6 col-sm-5 col-md-3 col-lg-2"><?php echo _('Temp Upload Folder Free Space') ?></dt>
       <dd class="col-xs-6 col-sm-7 col-md-9 col-lg-10"><?php echo Config\bytesToSize1024(\disk_free_space(TMP_DIR)) ?></dd>
 		</dl>
-		<?php endif ?>
+  <?php endif ?> -->
+    <address class="col-xs-12 col-sm-8 col-md-6 col-lg-9"><a href="http://www.sleepinglion.pe.kr" title="sleepinglion`s homepage" target="_blank" />SleepingLion</a></address>
     <div class="col-xs-12 col-sm-4 col-md-6 col-lg-3">
       <?php include __DIR__ . DIRECTORY_SEPARATOR .'locale_form.php' ?>
     </div>
