@@ -104,7 +104,7 @@ $(document).ready(function() {
 				return false;
 			}
 		} else {
-			 if(!confirm('are you sure?')) {
+			 if(!confirm(notice_delete)) {
 				 return false;
 			 }
 		}

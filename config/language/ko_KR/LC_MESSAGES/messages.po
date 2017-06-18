@@ -1,8 +1,8 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: sl_ftp\n"
-"POT-Creation-Date: 2017-06-18 15:38+0900\n"
-"PO-Revision-Date: 2017-06-18 15:38+0900\n"
+"POT-Creation-Date: 2017-06-18 16:32+0900\n"
+"PO-Revision-Date: 2017-06-18 16:33+0900\n"
 "Last-Translator: \n"
 "Language-Team: sleepinglion <admin@sleepinglion.pe.kr>\n"
 "Language: ko_KR\n"
@@ -190,23 +190,27 @@ msgstr "전체용량"
 msgid "Temp Upload Folder Free Space"
 msgstr "임시업로드 남은용량"
 
-#: public/js/lang.js.php:1
+#: public/js/lang.js.php:7
 msgid "select_download_file"
 msgstr "다운로드 받을 파일을 선택해주세요"
 
-#: public/js/lang.js.php:2
+#: public/js/lang.js.php:8
 msgid "select_delete_file"
 msgstr "삭제할 파일을 선택해주세요"
 
-#: public/js/lang.js.php:3 public/js/lang.js.php:4
+#: public/js/lang.js.php:9
 msgid "notice_cascade_delete"
 msgstr "을(를) 삭제할 경우 하위 폴더,파일이 모두 삭제됩니다, 그래도 진행합니까?"
 
-#: public/js/lang.js.php:5
+#: public/js/lang.js.php:10
+msgid "notice_delete"
+msgstr "정말로 삭제합니까?"
+
+#: public/js/lang.js.php:11
 msgid "delete_success"
 msgstr "이(가) 성공적으로 삭제되었습니다."
 
-#: public/js/lang.js.php:6
+#: public/js/lang.js.php:12
 msgid "delete_fail"
 msgstr "을(를) 삭제하는데 실패하였습니다."
 
