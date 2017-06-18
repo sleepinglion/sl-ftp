@@ -103,6 +103,10 @@ $(document).ready(function() {
 			if(!confirm('('+folder_name.join()+')'+notice_cascade_delete)) {
 				return false;
 			}
+		} else {
+			 if(!confirm('are you sure?')) {
+				 return false;
+			 }
 		}
 
 		$.post($(this).attr('href'),{'dir':$("#current_folder").val(),'files':aa,'json':true},function(data){

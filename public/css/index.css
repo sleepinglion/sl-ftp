@@ -53,10 +53,8 @@ footer dl {margin:20px 0 10px;padding:0}
 #directory_info {padding:0 15px}
 
 #sl_ftp_connect {background:#eee}
-#sl_ftp_connect form {background:#fff;width:728px;margin:3% auto;padding:1%};
-#sl_ftp_connect #connect_form {position:relative;margin:3% auto;padding:3%}
+#sl_ftp_connect article {background:#fff;width:728px;margin:3% auto}
 #sl_ftp_connect #sl_ad {margin:3% auto;width:728px;}
-
 
 footer form {float:right}
 

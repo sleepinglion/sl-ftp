@@ -42,7 +42,7 @@
 						<?php else: ?>
 						<p><?php echo _('Sorry Error') ?></p>
 						<?php endif ?>
-						<a href="<?php echo $sl_connect_info['web_root_directory'] ?>index.php<?php echo $dir_param ?>" class="btn btn-primary"><?php echo _('Confirm') ?></a>
+						<a href="<?php echo WEB_ROOT_DIRECTORY ?>index.php<?php echo $dir_param ?>" class="btn btn-primary"><?php echo _('Confirm') ?></a>
 					</div>
 				</div>
 			</div>

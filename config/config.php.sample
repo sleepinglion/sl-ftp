@@ -24,7 +24,7 @@ define('WEB_ROOT_DIRECTORY', '/');
 /* Setting Your Asset Root path */
 define('ASSET_DIRECTORY', '/');
 
-/* uncomment if use default connect only */
+/* uncomment this if use default connect only */
 /*
 $sl_connect_info=array();
 $sl_connect_info['host']='localhost';
@@ -32,7 +32,7 @@ $sl_connect_info['username']='sl_ftp';
 $sl_connect_info['userpass']='sl_ftp1!';
 $sl_connect_info['port']=21;
 $sl_connect_info['ssl']=false;
-$sl_connect_info['pasv']=true;
+$sl_connect_info['pasv']=false;
 */
 
 if (DEBUG==1) {

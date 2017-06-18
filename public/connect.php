@@ -78,6 +78,12 @@ try {
           </script>
         <?php endif ?>
         </div>
+        <article class="panel panel-default">
+      		<div class="panel-heading">
+      			<h3 class="panel-title"><?php echo _('Connect Info') ?></h3>
+      		</div>
+      		<div class="panel-body">
+
         <form action="" id="connect_form" method="post" class="form-horizontal">
           <div class="form-group">
             <label class="col-sm-2 control-label"><?php echo _('host') ?></label>
@@ -120,7 +126,18 @@ try {
              </div>
           </div>
         </form>
+      </div>
+    </article>
+    <article class="panel panel-default">
+      <div class="panel-heading">
+        <h3 class="panel-title"><?php echo _('Change Language') ?></h3>
+      </div>
+      <div class="panel-body">
+
         <?php include __DIR__ . DIRECTORY_SEPARATOR .'locale_form.php' ?>
+      </div>
+    </article>
+
       </div>
 		</div>
     <script src="<?php echo ASSET_DIRECTORY?>js/jquery-2.1.1.min.js" defer></script>
