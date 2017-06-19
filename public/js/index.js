@@ -2,7 +2,15 @@ $(document).ready(function() {
 	$('.modal_link').click(function(event){
 		event.preventDefault();
 		$('#myModal').removeData("modal");
-		$('#myModal').load($(this).attr('href'),function(){
+
+		var link=$(this).attr('href');
+		if(link.indexOf('?') != -1){
+			link+='&no_layout=true';
+		} else {
+			link+='?no_layout=true';
+		}
+
+		$('#myModal').load(link,function(){
 			$('#myModal').modal();
   		});
 	});
@@ -16,11 +24,11 @@ $(document).ready(function() {
 		location.href=r_location;
 	});
 
-	$("#check_all").change(function(){
+	$(".check_all").change(function(){
 		if($(this).is(':checked')) {
-			$('table tbody input:checkbox').prop('checked',true);
+			$('table input:checkbox').prop('checked',true);
 		} else {
-			$('table tbody input:checkbox').prop('checked',false);
+			$('table input:checkbox').prop('checked',false);
 		}
 	});
 
@@ -32,6 +40,7 @@ $(document).ready(function() {
 		}
 	});
 
+/*
 	$('#myModal').on('shown.bs.modal', function () {
 		if($("#myModal form").attr('action')=='rename.php') {
 			$("#file_list tbody input:checked").each(function(index){
@@ -45,7 +54,7 @@ $(document).ready(function() {
 			});
 		}
 	});
-
+*/
 	$("#upload").click(function(){
 		window.open($(this).attr('href'),"_blank","top=100,left=100,width=800,height=600");
 		return false;
@@ -74,6 +83,44 @@ $(document).ready(function() {
 		$.post($(this).attr('href'),{'dir':$("#current_folder").val(),'files':aa,'json':true},function(data){
 			if(data.result=='success') {
 				location.href=data.zip_file;
+			} else {
+				alert(data.message);
+			}
+		},'json');
+
+		return false;
+	});
+
+	$("#file_list .btn-danger").click(function(){
+		var aa=[];
+		folder_exists=false;
+
+		if($(this).parent().parent().find('input:eq(1)').val()=='directory') {
+			folder_exists=true;
+			folder_name=$(this).parent().parent().find('input:eq(2)').val();
+		}
+		aa[0]=$(this).parent().parent().find('input:first').val();
+
+		if(folder_exists) {
+			if(!confirm(folder_name+notice_cascade_delete)) {
+				return false;
+			}
+		} else {
+			 if(!confirm(notice_delete)) {
+				 return false;
+			 }
+		}
+
+		$.post('delete.php',{'dir':$("#current_folder").val(),'files':aa,'json':true},function(data){
+			if(data.result=='success') {
+				delete_result=false;
+				var message='';
+
+				if($("#current_folder").val()==$("#directory_separator").val()) {
+					location.href=$("#web_root_directory").val()+'index.php';
+				} else {
+					location.href=$("#web_root_directory").val()+'index.php?dir='+$("#current_folder").val();
+				}
 			} else {
 				alert(data.message);
 			}

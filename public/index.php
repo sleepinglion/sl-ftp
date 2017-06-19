@@ -59,14 +59,25 @@ try {
 	<header>
 		<div class="container-fluid">
       <div class="row">
-        <nav class="col-xs-12">
+        <div id="directory_info" class="col-xs-12 col-sm-6">
+          <div class="col-xs-12">
+      <label for="visited_directory"><?php echo _('Current Directory') ?></label>  : <?php if ($current_folder=='.'): ?><?php echo DIRECTORY_SEPARATOR ?><?php else: ?><?php echo $current_folder ?>(<?php echo $total ?><?php echo _('Files') ?>)<?php endif ?>
+      </div>
+      <div class="col-xs-12">
+      <label for="visited_directory"><?php echo _('Visited Directory') ?></label>
+        <?php if (count($_SESSION['directory'])): ?>
+        <select name="visited_directory" id="visited_directory">
+          <?php foreach ($_SESSION['directory'] as $s_key=>$s_directory): ?>
+          <option value="<?php echo $s_key ?>" <?php if ($s_key==$current_folder): ?>selected="selected"<?php endif ?>><?php echo $s_directory ?></option>
+          <?php endforeach ?>
+        </select>
+        <?php endif ?>
+      </div>
+      </div>
+
+        <nav class="hidden-xs col-sm-6 ">
+
           <ul class="nav nav-pills">
-            <li><a href="<?php echo WEB_ROOT_DIRECTORY?>index.php<?php echo $dir_param ?>" class="btn btn-default"><?php echo _('Refresh') ?><span class="visible-xs glyphicon glyphicon-chevron-right pull-right"></span></a></li>
-            <li><a href="<?php echo WEB_ROOT_DIRECTORY?>upload_form.php<?php echo $dir_param ?>" id="upload" class="btn btn-default" target="_blank"><?php echo _('Upload') ?><span class="visible-xs glyphicon glyphicon-chevron-right pull-right"></span></a></li>
-            <li><a href="<?php echo WEB_ROOT_DIRECTORY?>mkdir_form.php<?php echo $dir_param ?>" data-target="#myModal" data-toggle="modal" class="modal_link btn btn-default"><?php echo _('New Folder') ?><span class="visible-xs glyphicon glyphicon-chevron-right pull-right"></span></a></li>
-            <li><a href="<?php echo WEB_ROOT_DIRECTORY?>mkzip.php<?php echo $dir_param ?>" id="download" class="btn btn-default disabled"><?php echo _('Download') ?><span class="visible-xs glyphicon glyphicon-chevron-right pull-right"></span></a></li>
-            <li><a href="<?php echo WEB_ROOT_DIRECTORY?>rename_form.php<?php echo $dir_param ?>" id="rename" data-target="#myModal" data-toggle="modal" class="modal_link btn btn-default disabled"><?php echo _('Rename') ?><span class="visible-xs glyphicon glyphicon-chevron-right pull-right"></span></a></li>
-            <li><a href="<?php echo WEB_ROOT_DIRECTORY?>delete.php<?php echo $dir_param ?>" id="delete" class="btn btn-default disabled"><?php echo _('Delete') ?><span class="visible-xs glyphicon glyphicon-chevron-right pull-right"></span></a></li>
             <?php if (isset($_SESSION['sl_connect_info']['host'])): ?>
             <li><a href="<?php echo WEB_ROOT_DIRECTORY?>index.php?logout=true" id="logout" class="btn btn-default"><?php echo _('Logout') ?><span class="visible-xs glyphicon glyphicon-chevron-right pull-right"></span></a></li>
             <?php endif ?>
@@ -81,31 +92,21 @@ try {
 			<input type="hidden" id="directory_separator" value="<?php echo DIRECTORY_SEPARATOR ?>" />
 			<input type="hidden" id="current_folder" value="<?php echo $current_folder ?>" />
 	<div class="table-responsive">
-    <div id="directory_info">
-	<label for="visited_directory"><?php echo _('Current Directory') ?></label>  : <?php if ($current_folder=='.'): ?><?php echo DIRECTORY_SEPARATOR ?><?php else: ?><?php echo $current_folder ?>(<?php echo $total ?><?php echo _('Files') ?>)<?php endif ?>
-	<span style="margin:0 20px">||</span> <label for="visited_directory"><?php echo _('Visited Directory') ?></label>
-		<?php if (count($_SESSION['directory'])): ?>
-		<select name="visited_directory" id="visited_directory">
-			<?php foreach ($_SESSION['directory'] as $s_key=>$s_directory): ?>
-			<option value="<?php echo $s_key ?>" <?php if ($s_key==$current_folder): ?>selected="selected"<?php endif ?>><?php echo $s_directory ?></option>
-			<?php endforeach ?>
-		</select>
-		<?php endif ?>
-  </div>
+
 	<table id="file_list" class="table table-striped">
 		<colgroup>
 			<col style="width:10%" />
 			<col />
 			<col style="width:20%" />
 			<col style="width:10%" />
-			<col style="width:15%" class="hidden-xs" />
+			<col style="width:200px" class="hidden-xs" />
 		</colgroup>
 		<thead>
 			<tr>
-				<th><input type="checkbox" id="check_all" /></th>
+				<th><input type="checkbox" class="check_all" /></th>
 				<th><?php echo _('Name') ?></th>
 				<th><?php echo _('Size') ?></th>
-				<th><?php echo _('Date') ?></th>
+				<th><?php echo _('Time') ?></th>
 				<th class="hidden-xs"><?php echo _('Manage') ?></th>
 			</tr>
 		</thead>
@@ -152,24 +153,49 @@ try {
 					<?php echo $value['month'] ?>/<?php echo $value['day'] ?> <?php echo $value['time'] ?>
 				</td>
 				<td class="hidden-xs">
-          <form action="/rename.php" method="post">
-            <input type="submit" class="btn btn-default" value="<?php echo _('Rename') ?>" />
-          </form>
-          <form action="/delete.php" method="post">
-            <input type="submit" class="btn btn-danger" value="<?php echo _('Delete') ?>" />
-          </form>
+            <a href="/rename_form.php?dir=<?php echo $current_folder ?>&amp;file=<?php echo $value['name'] ?>&amp;type=<?php echo $value['type'] ?>" class="btn btn-default modal_link" data-target="#myModal" data-toggle="modal"><?php echo _('Rename') ?></a>
+            <a href="/delete_confirm_form.php?dir=<?php echo $current_folder ?>&amp;file=<?php echo $value['name'] ?>" class="btn btn-danger"><?php echo _('Delete') ?></a>
 				</td>
 			</tr>
 			<?php endforeach ?>
 			<?php else: ?>
 			<tr>
-				<td colspan="5">&nbsp;</td>
+        <td>&nbsp;</td>
+        <td><?php echo _('No File') ?></td>
+				<td colspan="3">&nbsp;</td>
 			</tr>
 			<?php endif ?>
 		</tbody>
+		<?php if (count($list)): ?>
+    <tfoot>
+      <tr>
+  			<td><input type="checkbox" class="check_all" /></td>
+        <td>
+          <p style="float:left;margin-right:10px"><?php echo _('Selected Do') ?></p>
+          <ul style="float:left" class="nav nav-pills">
+          <li><a href="<?php echo WEB_ROOT_DIRECTORY?>mkzip.php<?php echo $dir_param ?>" id="download" class="btn btn-default disabled"><?php echo _('Download') ?><span class="visible-xs glyphicon glyphicon-chevron-right pull-right"></span></a></li>
+          <li><a href="<?php echo WEB_ROOT_DIRECTORY?>delete.php<?php echo $dir_param ?>" id="delete" class="btn btn-default disabled"><?php echo _('Delete') ?><span class="visible-xs glyphicon glyphicon-chevron-right pull-right"></span></a></li>
+          </ul>
+        </td>
+        <td colspan="3">&nbsp;
+        </td>
+      </tr>
+    </tfoot>
+    <?php endif ?>
 	</table>
 	</div>
-  <div id="sl_ad">
+
+<div id="create_menu">
+  <ul>
+    <li><a href="<?php echo WEB_ROOT_DIRECTORY?>upload_form.php<?php echo $dir_param ?>" id="upload" class="btn btn-primary" target="_blank"><?php echo _('Upload') ?><span class="visible-xs glyphicon glyphicon-chevron-right pull-right"></span></a></li>
+    <li><a href="<?php echo WEB_ROOT_DIRECTORY?>mkdir_form.php<?php echo $dir_param ?>" data-target="#myModal" data-toggle="modal" class="modal_link btn btn-default"><?php echo _('New Folder') ?><span class="visible-xs glyphicon glyphicon-chevron-right pull-right"></span></a></li>
+    <?php if (isset($_SESSION['sl_connect_info']['host'])): ?>
+    <li class="visible-xs"><a href="<?php echo WEB_ROOT_DIRECTORY?>index.php?logout=true" id="logout" class="btn btn-default"><?php echo _('Logout') ?><span class="visible-xs glyphicon glyphicon-chevron-right pull-right"></span></a></li>
+    <?php endif ?>
+  </ul>
+</div>
+
+  <div id="sl_full_ad">
   <?php if (DEBUG==1): ?>
   <div style="width:100%;padding-top:10%;background:red">&nbsp;</div>
   <?php else: ?>

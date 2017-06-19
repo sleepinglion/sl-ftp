@@ -27,7 +27,7 @@ mark, rp, rt, ruby, summary, time {display:inline;}
 
 .btn {font-size:1em}
 
-#mom {margin:-6em 0 -3em;min-height:100%;clear:both;float:left;width:100%;padding:0}
+#mom {margin:-6em 0 -3em}
 #main {padding-top:6em;padding-bottom:3em}
 
 table th {background:#333;color:#fff}
@@ -37,53 +37,53 @@ header nav ul { float: right; margin: 1.5em 0 0 0; padding: 0}
 header nav li { float: left; list-style: none; margin: 0 0 0 20px}
 header nav ul.nav-pills > li + li {margin-left:20px}
 header nav a { float: left; color: #333;text-decoration: none}
-header nav a.btn-danger {color:#fff}
-header nav a:hover {color:#000}
-header nav a.btn-danger:hover{background:red}
-header nav a:visited {color:#666}
-header nav a.btn-danger:visited {color:#fff}
-header nav a:active {color:red}
-header nav ul li ul {position:absolute;display:none}
+
 footer {height:3em;background:#ccc;clear:both}
 footer address {text-align:center;margin:0.7em 0 0}
 footer address a {color:#333}
 footer nav {float:left;margin:1em}
 footer form {float:right;margin:5px 0 0;padding:0}
 
-
 #directory_selector {width:150px}
-#directory_info {padding:0 15px}
-
-#sl_ftp_connect,#sl_error_page {background:#eee}
-#sl_ftp_connect article,#sl_error_page article {width:728px;margin:3% auto}
+#sl_ftp_connect,#sl_error_page,#sl_rename_form {background:#eee}
+#sl_ftp_connect article,#sl_error_page article,#sl_rename_form article {width:728px;margin:3% auto}
 #sl_ftp_connect article {background:#fff}
 #sl_error_page article {padding:1% 2%}
 #sl_ad {margin:3% auto;width:728px;}
-
 #file_list form {float:left;margin-right:5px}
+
+#create_menu li {list-style: none;display:inline-block;}
 
 footer form {float:right}
 
 @media all and (max-width: 768px) {
   html,body {background:#ccc}
-	header {background:none;border-bottom:0;margin:1% 0}
+
+  #mom,#main {margin:0;padding:0}
+  #directory_info {margin:10px 0}
+	header {background:none;border-bottom:0;margin:0}
 	header h1 {margin:2%;padding:0;font-size:1.6em}
 	header h1 a {float:left;background:none;text-indent:0;width:100%;font-weight:bold}
 	header h1 a:hover {text-decoration:none}
 	header h1 a:active {color:red}
 	header nav.col-xs-12 {width:100%;margin:0;padding:0}
-	header nav ul {width:100%;margin:0;padding:0;background:#fff;border-radius:5px}
-	header nav ul li,header ul li a {clear:both;float:left;width:100%;text-align:left}
 	header nav ul.nav-pills > li + li {margin-left:0}
-	header nav ul li {margin:0;padding:0}
-	header nav ul li a.btn {display:block;font-size:14px;border-bottom:1px solid #f3f3f3;text-indent:1em;padding:10px;border-radius:5px;text-align:left;white-space:normal;}
-	header nav ul li a:hover {text-decoration:none;background:#eee}
+	header nav ul li a:hover {text-decoration:none}
 	header nav ul li a:active {color:red}
 	header nav ul li a .glyphicon {margin-right:1em}
 	.nav-pills > li + li {margin:0}
-
+  .nav-pills {width:100%;margin:0;padding:0;background:#fff;border-radius:5px}
+	.nav-pills li {margin:0;padding:0}
+	.nav-pills li,.nav-pills li a {clear:both;float:left;width:100%;text-align:left}
+  .nav-pills li a.btn {display:block;font-size:14px;border-bottom:1px solid #f3f3f3;text-indent:1em;padding:10px;border-radius:5px;text-align:left;white-space:normal;}
   footer .btn {width:100%;margin:7px 0 0}
   footer form {width:100%}
+}
+
+@media all and (min-width: 768px) {
+  #mom{min-height:100%;clear:both;float:left;width:100%;padding:0}
+  #directory_info {margin:1em 0 0;padding:0 15px}
+  #create_menu {margin:15px 0;padding:0 15px}
 }
 
 @media all and (min-width: 768px) and (max-width: 991px) {
