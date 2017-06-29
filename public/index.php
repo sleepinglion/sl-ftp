@@ -99,7 +99,7 @@ try {
 			<col />
 			<col style="width:20%" />
 			<col style="width:10%" />
-			<col style="width:200px" class="hidden-xs" />
+			<col style="width:220px" class="hidden-xs" />
 		</colgroup>
 		<thead>
 			<tr>
