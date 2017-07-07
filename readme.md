@@ -42,4 +42,6 @@ MIT, All Free
 
 ## Donation
 
+If this project help you reduce time to develop, you can give me a cup of beer :)
+
 [![Donate](https://www.paypalobjects.com/en_US/i/btn/btn_donateCC_LG.gif)](admin@sleepinglion.pe.kr)
