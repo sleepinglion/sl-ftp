@@ -39,3 +39,7 @@ MIT, All Free
 ## Author
 
 [SleepingLion](http://www.sleepinglion.pe.kr)
+
+## Donation
+
+[![Donate](https://www.paypalobjects.com/en_US/i/btn/btn_donateCC_LG.gif)](admin@sleepinglion.pe.kr)
