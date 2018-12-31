@@ -5,3 +5,4 @@ log
 lib
 vendor
 config/config.php
+composer.lock
