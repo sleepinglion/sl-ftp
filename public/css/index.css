@@ -46,7 +46,7 @@ footer form {float:right;margin:5px 0 0;padding:0}
 
 #directory_selector {width:150px}
 #sl_ftp_connect,#sl_error_page,#sl_rename_form {background:#eee}
-#sl_ftp_connect article,#sl_error_page article,#sl_rename_form article {width:728px;margin:3% auto}
+#sl_ftp_connect article,#sl_error_page article,#sl_rename_form article {width:728px;margin:1% auto}
 #sl_ftp_connect article {background:#fff}
 #sl_error_page article {padding:1% 2%}
 #sl_ad {margin:3% auto;width:728px;}

@@ -8,7 +8,7 @@ if (isset($_GET['dir'])) {
 ?>
 <?php if (DEBUG==1): ?>
 <form action="delete.php" method="post">
-  <input type="text" name="files[]"  />
-  <input type="submit" value="삭제" />
+  <input type="text" name="files[]">
+  <input type="submit" value="<?php echo _('Delete') ?>">
 </form>
 <?php endif ?>

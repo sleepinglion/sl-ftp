@@ -57,13 +57,13 @@ try {
 </head>
 <body>
 	<header>
-		<div class="container-fluid">
+		<div class="container">
       <div class="row">
         <div id="directory_info" class="col-xs-12 col-sm-6">
-          <div class="col-xs-12">
+          <div class="col-12">
       <label for="visited_directory"><?php echo _('Current Directory') ?></label>  : <?php if ($current_folder=='.'): ?><?php echo DIRECTORY_SEPARATOR ?><?php else: ?><?php echo $current_folder ?>(<?php echo $total ?><?php echo _('Files') ?>)<?php endif ?>
       </div>
-      <div class="col-xs-12">
+      <div class="col-12">
       <label for="visited_directory"><?php echo _('Visited Directory') ?></label>
         <?php if (count($_SESSION['directory'])): ?>
         <select name="visited_directory" id="visited_directory">
@@ -75,7 +75,7 @@ try {
       </div>
       </div>
 
-        <nav class="hidden-xs col-sm-6 ">
+        <nav class="hidden-xs col-sm-6">
 
           <ul class="nav nav-pills">
             <?php if (isset($_SESSION['sl_connect_info']['host'])): ?>
@@ -218,20 +218,20 @@ try {
     <div class="container-fluid">
     <div class="row">
 		<!--<?php if ($sl_connect_info['host']=='localhost'): ?>
-		<dl class="col-xs-12 col-sm-8 col-md-6 col-lg-9">
+		<dl class="col-12 col-sm-8 col-md-6 col-lg-9">
 			<dt class="col-xs-6 col-sm-5 col-md-3 col-lg-2"><?php echo _('Free Space') ?></dt>
       <dd class="col-xs-6 col-sm-7 col-md-9 col-lg-10"><?php echo Config\bytesToSize1024(\disk_free_space(TMP_DIR)) ?></dd>
       <dt class="col-xs-6 col-sm-5 col-md-3 col-lg-2"><?php echo _('All Space') ?></dt>
       <dd class="col-xs-6 col-sm-7 col-md-9 col-lg-10"><?php echo Config\bytesToSize1024(\disk_total_space(TMP_DIR)) ?></dd>
 		</dl>
 		<?php else: ?>
-		<dl class="col-xs-12 col-sm-8 col-md-6 col-lg-9">
+		<dl class="col-12 col-sm-8 col-md-6 col-lg-9">
 			<dt class="col-xs-6 col-sm-5 col-md-3 col-lg-2"><?php echo _('Temp Upload Folder Free Space') ?></dt>
       <dd class="col-xs-6 col-sm-7 col-md-9 col-lg-10"><?php echo Config\bytesToSize1024(\disk_free_space(TMP_DIR)) ?></dd>
 		</dl>
   <?php endif ?> -->
-    <address class="col-xs-12 col-sm-8 col-md-6 col-lg-9"><a href="http://www.sleepinglion.pe.kr" title="sleepinglion`s homepage" target="_blank" />SleepingLion</a></address>
-    <div class="col-xs-12 col-sm-4 col-md-6 col-lg-3">
+    <address class="col-12 col-sm-8 col-md-6 col-lg-9"><a href="http://www.sleepinglion.pe.kr" title="sleepinglion`s homepage" target="_blank" />SleepingLion</a></address>
+    <div class="col-12 col-sm-4 col-md-6 col-lg-3">
       <?php include __DIR__ . DIRECTORY_SEPARATOR .'locale_form.php' ?>
     </div>
   </div>

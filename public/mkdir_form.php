@@ -41,12 +41,11 @@ if (isset($_GET['dir'])) {
     <div class="container">
       <div class="row">
         <?php include __DIR__ . DIRECTORY_SEPARATOR .'ad.php' ?>
-      <article class="panel panel-default">
-        <div class="panel-heading">
-          <h3 class="panel-title"><?php echo _('New Folder') ?></h3>
+      <article class="card">
+        <div class="card-header">
+          <h3><?php echo _('New Folder') ?></h3>
         </div>
-        <div class="panel-body">
-
+        <div class="card-body">
           <form action="mkdir.php" method="post">
             <div class="form-group">
         			<input type="hidden" name="dir" value="<?php if (empty($current_folder)): ?><?php else: ?><?php echo $current_folder ?><?php endif ?>" />

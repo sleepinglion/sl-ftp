@@ -26,11 +26,11 @@ if (isset($_GET['file'])) {
   <div class="container">
     <div class="row">
       <?php include __DIR__ . DIRECTORY_SEPARATOR .'ad.php' ?>
-      <article class="panel panel-danger">
-        <div class="panel-heading">
-          <h3 class="panel-title"><?php echo _('Delete Confirm') ?></h3>
+      <article class="card">
+        <div class="card-header">
+          <h3><?php echo _('Delete Confirm') ?></h3>
         </div>
-        <div class="panel-body">
+        <div class="card-body">
           <form action="delete.php" method="post">
             <p><?php echo sprintf(_("Are You Sure Delete %s"), $file) ?></p>
         		<input type="hidden" name="dir" value="<?php if (empty($current_folder)): ?><?php else: ?><?php echo $current_folder ?><?php endif ?>" />

@@ -68,11 +68,11 @@ if (isset($_GET['type'])) {
     <div class="container">
       <div class="row">
         <?php include __DIR__ . DIRECTORY_SEPARATOR .'ad.php' ?>
-      <article class="panel panel-default">
-        <div class="panel-heading">
-          <h3 class="panel-title"><?php echo _('Rename') ?></h3>
+      <article class="card">
+        <div class="card-header">
+          <h3><?php echo _('Rename') ?></h3>
         </div>
-        <div class="panel-body">
+        <div class="card-body">
 
 	   <form action="rename.php" method="post">
        <div class="form-group">

@@ -64,37 +64,30 @@ try {
 		<div class="container">
       <div class="row">
         <?php include __DIR__ . DIRECTORY_SEPARATOR .'ad.php' ?>
-        <article class="panel panel-default">
-      		<div class="panel-heading">
-      			<h3 class="panel-title"><?php echo _('Connect Info') ?></h3>
+        <article class="card">
+      		<div class="card-header">
+      			<h3><?php echo _('Connect Info') ?></h3>
       		</div>
-      		<div class="panel-body">
+      		<div class="card-body">
 
-        <form action="<?php echo $_SERVER['PHP_SELF'] ?>" id="connect_form" method="post" class="form-horizontal">
-          <div class="form-group">
-            <label class="col-sm-2 control-label"><?php echo _('host') ?></label>
-            <div class="col-sm-6">
-              <input type="text" name="host" class="form-control" required="required" />
-            </div>
-            <label class="col-sm-2 control-label"><?php echo _('port') ?></label>
-            <div class="col-sm-2">
-              <input type="number" name="port" value="21" class="form-control" required="required" />
-            </div>
+        <form action="<?php echo $_SERVER['PHP_SELF'] ?>" id="connect_form" method="post" class="row">
+          <div class="col-12 col-lg-10 form-group">
+            <label><?php echo _('host') ?></label>
+            <input type="text" name="host" class="form-control" required="required">
           </div>
-          <div class="form-group">
-            <label class="col-sm-2 control-label"><?php echo _('username') ?></label>
-            <div class="col-sm-10">
-              <input type="text" name="username" class="form-control" required="required" />
-            </div>
+          <div class="col-12 col-lg-2 form-group">
+            <label><?php echo _('port') ?></label>
+            <input type="number" name="port" value="21" class="form-control" required="required">
           </div>
-          <div class="form-group">
-            <label class="col-sm-2 control-label"><?php echo _('userpass') ?></label>
-            <div class="col-sm-10">
-              <input type="password" name="userpass" class="form-control" />
-            </div>
+          <div class="col-12 form-group">
+            <label><?php echo _('username') ?></label>
+            <input type="text" name="username" class="form-control" required="required">
           </div>
-          <div class="form-group">
-            <div class="col-sm-offset-2 col-sm-10">
+          <div class="col-12 form-group">
+            <label><?php echo _('userpass') ?></label>
+            <input type="password" name="userpass" class="form-control">
+          </div>
+          <div class="col-12 form-group">
               <div class="checkbox">
               <!--  <label>
                   <input type="checkbox" name="ssl" value="1" /> <?php echo _('sftp') ?>
@@ -104,21 +97,18 @@ try {
                   <input type="checkbox" name="pasv_mode" value="1" /> <?php echo _('pasv mode') ?>
                 </label>
               </div>
-            </div>
           </div>
-          <div class="form-group">
-             <div class="col-sm-offset-2 col-sm-10">
+          <div class="col-12 form-group">
                <input type="submit" value="<?php echo _('connect') ?>" class="btn btn-primary btn-block" />
-             </div>
           </div>
         </form>
       </div>
     </article>
-    <article class="panel panel-default">
-      <div class="panel-heading">
-        <h3 class="panel-title"><?php echo _('Change Language') ?></h3>
+    <article class="card">
+      <div class="card-header">
+        <h3><?php echo _('Change Language') ?></h3>
       </div>
-      <div class="panel-body">
+      <div class="card-body">
         <?php include __DIR__ . DIRECTORY_SEPARATOR .'locale_form.php' ?>
       </div>
     </article>
