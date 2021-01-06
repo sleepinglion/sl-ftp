@@ -15,7 +15,6 @@ try {
         throw new \Exception("Error Processing Request", 1);
     }
 
-
     $host=filter_var($_POST['host'], FILTER_SANITIZE_STRING);
     $username=filter_var($_POST['username'], FILTER_SANITIZE_STRING);
     $userpass=filter_var($_POST['userpass'], FILTER_SANITIZE_STRING);
@@ -64,6 +63,8 @@ try {
 		<div class="container">
       <div class="row">
         <?php include __DIR__ . DIRECTORY_SEPARATOR .'ad.php' ?>
+    </div>
+    <div class="row">
         <article class="card">
       		<div class="card-header">
       			<h3><?php echo _('Connect Info') ?></h3>
@@ -89,9 +90,9 @@ try {
           </div>
           <div class="col-12 form-group">
               <div class="checkbox">
-              <!--  <label>
+                <label>
                   <input type="checkbox" name="ssl" value="1" /> <?php echo _('sftp') ?>
-                </label> -->
+                </label>
                 &nbsp;&nbsp;&nbsp;
                 <label>
                   <input type="checkbox" name="pasv_mode" value="1" /> <?php echo _('pasv mode') ?>
@@ -104,6 +105,8 @@ try {
         </form>
       </div>
     </article>
+    </div>
+    <div class="row">
     <article class="card">
       <div class="card-header">
         <h3><?php echo _('Change Language') ?></h3>

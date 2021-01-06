@@ -57,9 +57,9 @@ try {
 </head>
 <body>
 	<header>
-		<div class="container">
+		<div class="container-fluid">
       <div class="row">
-        <div id="directory_info" class="col-xs-12 col-sm-6">
+        <div id="directory_info" class="col-12 col-sm-6">
           <div class="col-12">
       <label for="visited_directory"><?php echo _('Current Directory') ?></label>  : <?php if ($current_folder=='.'): ?><?php echo DIRECTORY_SEPARATOR ?><?php else: ?><?php echo $current_folder ?>(<?php echo $total ?><?php echo _('Files') ?>)<?php endif ?>
       </div>
@@ -79,7 +79,7 @@ try {
 
           <ul class="nav nav-pills">
             <?php if (isset($_SESSION['sl_connect_info']['host'])): ?>
-            <li><a href="<?php echo WEB_ROOT_DIRECTORY?>index.php?logout=true" id="logout" class="btn btn-default"><?php echo _('Logout') ?><span class="visible-xs glyphicon glyphicon-chevron-right pull-right"></span></a></li>
+            <li><a href="<?php echo WEB_ROOT_DIRECTORY?>index.php?logout=true" id="logout" class="btn btn-secondary"><?php echo _('Logout') ?><span class="visible-xs glyphicon glyphicon-chevron-right float-right"></span></a></li>
             <?php endif ?>
           </ul>
         </nav>
@@ -87,7 +87,31 @@ try {
 		</div>
 	</header>
 	<div id="mom">
-		<div id="main">
+		<div id="main" class="container">
+
+    <div class="row">
+      <div class="col-12">
+    <div id="sl_full_ad">
+  <?php if (DEBUG==1): ?>
+  <div style="width:100%;padding-top:10%;background:red">&nbsp;</div>
+  <?php else: ?>
+  <script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+  <!-- default_ad -->
+  <ins class="adsbygoogle"
+       style="display:block"
+       data-ad-client="ca-pub-5400903051441488"
+       data-ad-slot="8412654331"
+       data-ad-format="auto"></ins>
+  <script>
+  (adsbygoogle = window.adsbygoogle || []).push({});
+  </script>
+  <?php endif ?>
+  </div>
+    </div>
+    </div>
+
+      <div class="row">
+      <div class="col-12">
 			<input type="hidden" id="web_root_directory" value="<?php echo WEB_ROOT_DIRECTORY?>" />
 			<input type="hidden" id="directory_separator" value="<?php echo DIRECTORY_SEPARATOR ?>" />
 			<input type="hidden" id="current_folder" value="<?php echo $current_folder ?>" />
@@ -95,19 +119,19 @@ try {
 
 	<table id="file_list" class="table table-striped">
 		<colgroup>
-			<col style="width:10%" />
-			<col />
-			<col style="width:20%" />
-			<col style="width:10%" />
-			<col style="width:220px" class="hidden-xs" />
+			<col style="width:10%">
+			<col>
+			<col style="width:20%">
+			<col style="width:10%">
+			<col style="width:220px">
 		</colgroup>
 		<thead>
 			<tr>
-				<th><input type="checkbox" class="check_all" /></th>
+				<th><input type="checkbox" class="check_all"></th>
 				<th><?php echo _('Name') ?></th>
 				<th><?php echo _('Size') ?></th>
 				<th><?php echo _('Time') ?></th>
-				<th class="hidden-xs"><?php echo _('Manage') ?></th>
+				<th class="text-center"><?php echo _('Manage') ?></th>
 			</tr>
 		</thead>
 		<tbody>
@@ -153,7 +177,7 @@ try {
 					<?php echo $value['month'] ?>/<?php echo $value['day'] ?> <?php echo $value['time'] ?>
 				</td>
 				<td class="hidden-xs">
-            <a href="/rename_form.php?dir=<?php echo $current_folder ?>&amp;file=<?php echo $value['name'] ?>&amp;type=<?php echo $value['type'] ?>" class="btn btn-default modal_link" data-target="#myModal" data-toggle="modal"><?php echo _('Rename') ?></a>
+            <a href="/rename_form.php?dir=<?php echo $current_folder ?>&amp;file=<?php echo $value['name'] ?>&amp;type=<?php echo $value['type'] ?>" class="btn btn-secondary modal_link" data-target="#myModal" data-toggle="modal"><?php echo _('Rename') ?></a>
             <a href="/delete_confirm_form.php?dir=<?php echo $current_folder ?>&amp;file=<?php echo $value['name'] ?>" class="btn btn-danger"><?php echo _('Delete') ?></a>
 				</td>
 			</tr>
@@ -184,52 +208,41 @@ try {
     <?php endif ?>
 	</table>
 	</div>
+	</div>
+  </div>
 
-<div id="create_menu">
-  <ul>
+
+<div class="row">
+  <ul id="create_menu" class="col-12 col-lg-6">
     <li><a href="<?php echo WEB_ROOT_DIRECTORY?>upload_form.php<?php echo $dir_param ?>" id="upload" class="btn btn-primary" target="_blank"><?php echo _('Upload') ?><span class="visible-xs glyphicon glyphicon-chevron-right pull-right"></span></a></li>
     <li><a href="<?php echo WEB_ROOT_DIRECTORY?>mkdir_form.php<?php echo $dir_param ?>" data-target="#myModal" data-toggle="modal" class="modal_link btn btn-default"><?php echo _('New Folder') ?><span class="visible-xs glyphicon glyphicon-chevron-right pull-right"></span></a></li>
     <?php if (isset($_SESSION['sl_connect_info']['host'])): ?>
     <li class="visible-xs"><a href="<?php echo WEB_ROOT_DIRECTORY?>index.php?logout=true" id="logout" class="btn btn-default"><?php echo _('Logout') ?><span class="visible-xs glyphicon glyphicon-chevron-right pull-right"></span></a></li>
     <?php endif ?>
   </ul>
+
+  <?php if ($sl_connect_info['host']=='localhost'): ?>
+		<dl class="col-12 col-lg-6">
+			<dt><?php echo _('Free Space') ?></dt>
+      <dd><?php echo Config\bytesToSize1024(\disk_free_space(TMP_DIR)) ?></dd>
+      <dt><?php echo _('All Space') ?></dt>
+      <dd><?php echo Config\bytesToSize1024(\disk_total_space(TMP_DIR)) ?></dd>
+		</dl>
+		<?php else: ?>
+		<dl class="col-12 col-lg-6">
+			<dt><?php echo _('Temp Upload Folder Free Space') ?></dt>
+      <dd><?php echo Config\bytesToSize1024(\disk_free_space(TMP_DIR)) ?></dd>
+		</dl>
+  <?php endif ?>
 </div>
 
-  <div id="sl_full_ad">
-  <?php if (DEBUG==1): ?>
-  <div style="width:100%;padding-top:10%;background:red">&nbsp;</div>
-  <?php else: ?>
-  <script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
-  <!-- default_ad -->
-  <ins class="adsbygoogle"
-       style="display:block"
-       data-ad-client="ca-pub-5400903051441488"
-       data-ad-slot="8412654331"
-       data-ad-format="auto"></ins>
-  <script>
-  (adsbygoogle = window.adsbygoogle || []).push({});
-  </script>
-  <?php endif ?>
-  </div>
+
 
 		</div>
   </div>
 	<footer>
-    <div class="container-fluid">
+    <div class="container">
     <div class="row">
-		<!--<?php if ($sl_connect_info['host']=='localhost'): ?>
-		<dl class="col-12 col-sm-8 col-md-6 col-lg-9">
-			<dt class="col-xs-6 col-sm-5 col-md-3 col-lg-2"><?php echo _('Free Space') ?></dt>
-      <dd class="col-xs-6 col-sm-7 col-md-9 col-lg-10"><?php echo Config\bytesToSize1024(\disk_free_space(TMP_DIR)) ?></dd>
-      <dt class="col-xs-6 col-sm-5 col-md-3 col-lg-2"><?php echo _('All Space') ?></dt>
-      <dd class="col-xs-6 col-sm-7 col-md-9 col-lg-10"><?php echo Config\bytesToSize1024(\disk_total_space(TMP_DIR)) ?></dd>
-		</dl>
-		<?php else: ?>
-		<dl class="col-12 col-sm-8 col-md-6 col-lg-9">
-			<dt class="col-xs-6 col-sm-5 col-md-3 col-lg-2"><?php echo _('Temp Upload Folder Free Space') ?></dt>
-      <dd class="col-xs-6 col-sm-7 col-md-9 col-lg-10"><?php echo Config\bytesToSize1024(\disk_free_space(TMP_DIR)) ?></dd>
-		</dl>
-  <?php endif ?> -->
     <address class="col-12 col-sm-8 col-md-6 col-lg-9"><a href="http://www.sleepinglion.pe.kr" title="sleepinglion`s homepage" target="_blank" />SleepingLion</a></address>
     <div class="col-12 col-sm-4 col-md-6 col-lg-3">
       <?php include __DIR__ . DIRECTORY_SEPARATOR .'locale_form.php' ?>

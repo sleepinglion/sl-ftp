@@ -1,5 +1,5 @@
 {
-    "name": "sl_ftp",
+    "name": "sleepinglion/sl_ftp",
     "description": "SL Web FTP application",
     "type": "project",
     "license": "MIT",
@@ -11,9 +11,10 @@
             "role": "Developer"
         }
      ],
-    "require": {
-        "php": ">=5.5.9",
-        "nicolab/php-ftp-client": "1.3.*",
+    "require": { 
+        "php": ">=7.2",
+        "phpseclib/phpseclib": "0.3.*@dev",
+        "nicolab/php-ftp-client": "1.5.*",
         "monolog/monolog": "1.2.*"
     },
     "require-dev": {

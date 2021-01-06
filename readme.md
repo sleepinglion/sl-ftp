@@ -11,7 +11,7 @@ Main(Base [Nicolab/php-ftp-client](https://github.com/Nicolab/php-ftp-client) + 
 
 ## Demo
 
-[SL-FTP Demo](http://demo.sl-ftp.site)
+[SL-FTP Demo](http://www.sl-ftp.site)
 
 ## Server Requirements
 
@@ -38,4 +38,4 @@ MIT, All Free
 
 ## Author
 
-[SleepingLion](http://www.sleepinglion.pe.kr)
+[SleepingLion](https://www.sleepinglion.pe.kr)
