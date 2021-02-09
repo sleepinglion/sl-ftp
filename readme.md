@@ -11,7 +11,7 @@ Main(Base [Nicolab/php-ftp-client](https://github.com/Nicolab/php-ftp-client) + 
 
 ## Demo
 
-[SL-FTP Demo](http://www.sl-ftp.site)
+[SL-FTP Demo](https://www.sl-ftp.site)
 
 ## Server Requirements
 

@@ -57,7 +57,7 @@ try {
 </head>
 <body>
 	<header>
-		<div class="container-fluid">
+		<div class="container">
       <div class="row">
         <div id="directory_info" class="col-12 col-sm-6">
           <div class="col-12">
@@ -216,9 +216,6 @@ try {
   <ul id="create_menu" class="col-12 col-lg-6">
     <li><a href="<?php echo WEB_ROOT_DIRECTORY?>upload_form.php<?php echo $dir_param ?>" id="upload" class="btn btn-primary" target="_blank"><?php echo _('Upload') ?><span class="visible-xs glyphicon glyphicon-chevron-right pull-right"></span></a></li>
     <li><a href="<?php echo WEB_ROOT_DIRECTORY?>mkdir_form.php<?php echo $dir_param ?>" data-target="#myModal" data-toggle="modal" class="modal_link btn btn-default"><?php echo _('New Folder') ?><span class="visible-xs glyphicon glyphicon-chevron-right pull-right"></span></a></li>
-    <?php if (isset($_SESSION['sl_connect_info']['host'])): ?>
-    <li class="visible-xs"><a href="<?php echo WEB_ROOT_DIRECTORY?>index.php?logout=true" id="logout" class="btn btn-default"><?php echo _('Logout') ?><span class="visible-xs glyphicon glyphicon-chevron-right pull-right"></span></a></li>
-    <?php endif ?>
   </ul>
 
   <?php if ($sl_connect_info['host']=='localhost'): ?>
@@ -243,7 +240,11 @@ try {
 	<footer>
     <div class="container">
     <div class="row">
-    <address class="col-12 col-sm-8 col-md-6 col-lg-9"><a href="http://www.sleepinglion.pe.kr" title="sleepinglion`s homepage" target="_blank" />SleepingLion</a></address>
+    <address class="col-12 col-sm-8 col-md-6 col-lg-9">
+    CopyLeft,
+        <a href="https://www.sleepinglion.pe.kr" target="_blank">SleepingLion</a>
+        &nbsp;&nbsp; All wrongs reserved. Since 2017
+    </address>
     <div class="col-12 col-sm-4 col-md-6 col-lg-3">
       <?php include __DIR__ . DIRECTORY_SEPARATOR .'locale_form.php' ?>
     </div>
@@ -252,10 +253,11 @@ try {
 	</footer>
 	<div class="slboard_overlay" id="overlay"></div>
 	<div class="modal fade" id="myModal" tabindex="-1" role="dialog"></div>
-	<script src="<?php echo ASSET_DIRECTORY?>js/jquery-2.1.1.min.js" defer></script>
-	<script src="<?php echo ASSET_DIRECTORY?>js/bootstrap.min.js" defer></script>
+	<script src="<?php echo ASSET_DIRECTORY?>js/jquery-2.1.1.min.js"></script>
+  <script src="<?php echo ASSET_DIRECTORY?>js/popper.min.js"></script>  
+	<script src="<?php echo ASSET_DIRECTORY?>js/bootstrap.min.js"></script>
   <script src="<?php echo ASSET_DIRECTORY?>js/lang.js.php"></script>
-	<script src="<?php echo ASSET_DIRECTORY?>js/index.js" defer></script>
+	<script src="<?php echo ASSET_DIRECTORY?>js/index.js"></script>
 </body>
 </html>
 <?php
