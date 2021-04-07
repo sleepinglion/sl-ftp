@@ -13,7 +13,7 @@
      ],
     "require": { 
         "php": ">=7.2",
-        "phpseclib/phpseclib": "0.3.*@dev",
+        "phpseclib/phpseclib": "2.0.*@dev",
         "nicolab/php-ftp-client": "1.5.*",
         "monolog/monolog": "1.2.*"
     },
