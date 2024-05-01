@@ -51,9 +51,9 @@ try {
 	<title><?php echo _('SL FTP') ?></title>
 	<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=yes">
 	<meta name="author" content="Sleeping-Lion">
-	<link href="<?php echo ASSET_DIRECTORY?>images/favicon.ico" type="image/x-icon" rel="shortcut icon">
-	<link href="<?php echo ASSET_DIRECTORY?>css/bootstrap.min.css" media="all" type="text/css" rel="stylesheet">
-	<link href="<?php echo ASSET_DIRECTORY?>css/index.css" media="all" type="text/css" rel="stylesheet">
+	<link href="<?php echo IMAGE_DIRECTORY?>images/favicon.ico" type="image/x-icon" rel="shortcut icon">
+	<link href="<?php echo BOOTSTRAP_CSS_DIRECTORY?>bootstrap.min.css" media="all" type="text/css" rel="stylesheet">
+	<link href="<?php echo CSS_DIRECTORY?>index.css" media="all" type="text/css" rel="stylesheet">
 </head>
 <body>
 	<header>
@@ -127,7 +127,7 @@ try {
 		</colgroup>
 		<thead>
 			<tr>
-				<th><input type="checkbox" class="check_all"></th>
+				<th><input type="checkbox" class="check_all form-check-input"></th>
 				<th><?php echo _('Name') ?></th>
 				<th><?php echo _('Size') ?></th>
 				<th><?php echo _('Time') ?></th>
@@ -154,14 +154,16 @@ try {
 			<?php foreach ($list as $index=>$value): ?>
 			<tr>
 				<td>
-					<input type="checkbox" name="file_check[]" id="file_check<?php echo $index ?>" value="<?php echo $value['name'] ?>" style="vertical-align:top" />
+          <div class="form-check">
+					<input type="checkbox" name="file_check[]" id="file_check<?php echo $index ?>" value="<?php echo $value['name'] ?>" class="form-check-input">
 					<input type="hidden" name="type[]" value="<?php echo $value['type'] ?>" />
 					<input type="hidden" name="name[]" value="<?php echo $value['name'] ?>" />
 					<?php if ($value['type']=='directory'): ?>
-							<label for="file_check<?php echo $index ?>"><img src="<?php echo WEB_ROOT_DIRECTORY?>images/icon_16_folder.gif" width="16" height="16" alt="<?php echo _('Direcotry') ?>" /></label>
+							<label class="form-check-label" for="file_check<?php echo $index ?>" style="vertical-align:top"><img src="<?php echo WEB_ROOT_DIRECTORY?>images/icon_16_folder.gif" width="16" height="16" alt="<?php echo _('Direcotry') ?>"></label>
 					<?php else: ?>
-							<label for="file_check<?php echo $index ?>"><img src="<?php echo WEB_ROOT_DIRECTORY?>images/icon_16_file.gif" width="16" height="16" alt="<?php echo _('File') ?>" /></label>
+							<label class="form-check-label" for="file_check<?php echo $index ?>" style="vertical-align:top"><img src="<?php echo WEB_ROOT_DIRECTORY?>images/icon_16_file.gif" width="16" height="16" alt="<?php echo _('File') ?>"></label>
 					<?php endif ?>
+          </div>
 				</td>
 				<td>
 					<?php if ($value['type']=='directory'): ?>
@@ -176,7 +178,7 @@ try {
 				<td>
 					<?php echo $value['month'] ?>/<?php echo $value['day'] ?> <?php echo $value['time'] ?>
 				</td>
-				<td class="hidden-xs">
+				<td class="hidden-xs text-center">
             <a href="/rename_form.php?dir=<?php echo $current_folder ?>&amp;file=<?php echo $value['name'] ?>&amp;type=<?php echo $value['type'] ?>" class="btn btn-secondary modal_link" data-target="#myModal" data-toggle="modal"><?php echo _('Rename') ?></a>
             <a href="/delete_confirm_form.php?dir=<?php echo $current_folder ?>&amp;file=<?php echo $value['name'] ?>" class="btn btn-danger"><?php echo _('Delete') ?></a>
 				</td>
@@ -193,12 +195,12 @@ try {
 		<?php if (count($list)): ?>
     <tfoot>
       <tr>
-  			<td><input type="checkbox" class="check_all" /></td>
+  			<td><input type="checkbox" class="check_all form-check-input"></td>
         <td>
           <p style="float:left;margin-right:10px"><?php echo _('Selected Do') ?></p>
           <ul style="float:left" class="nav nav-pills">
-          <li><a href="<?php echo WEB_ROOT_DIRECTORY?>mkzip.php<?php echo $dir_param ?>" id="download" class="btn btn-default disabled"><?php echo _('Download') ?><span class="visible-xs glyphicon glyphicon-chevron-right pull-right"></span></a></li>
-          <li><a href="<?php echo WEB_ROOT_DIRECTORY?>delete.php<?php echo $dir_param ?>" id="delete" class="btn btn-default disabled"><?php echo _('Delete') ?><span class="visible-xs glyphicon glyphicon-chevron-right pull-right"></span></a></li>
+          <li><a href="<?php echo WEB_ROOT_DIRECTORY?>mkzip.php<?php echo $dir_param ?>" id="download" class="btn btn-light disabled"><?php echo _('Download') ?><span class="visible-xs  glyphicon-chevron-right pull-right"></span></a></li>
+          <li><a href="<?php echo WEB_ROOT_DIRECTORY?>delete.php<?php echo $dir_param ?>" id="delete" class="btn btn-light disabled"><?php echo _('Delete') ?><span class="visible-xs  glyphicon-chevron-right pull-right"></span></a></li>
           </ul>
         </td>
         <td colspan="3">&nbsp;
@@ -214,50 +216,39 @@ try {
 
 <div class="row">
   <ul id="create_menu" class="col-12 col-lg-6">
-    <li><a href="<?php echo WEB_ROOT_DIRECTORY?>upload_form.php<?php echo $dir_param ?>" id="upload" class="btn btn-primary" target="_blank"><?php echo _('Upload') ?><span class="visible-xs glyphicon glyphicon-chevron-right pull-right"></span></a></li>
-    <li><a href="<?php echo WEB_ROOT_DIRECTORY?>mkdir_form.php<?php echo $dir_param ?>" data-target="#myModal" data-toggle="modal" class="modal_link btn btn-default"><?php echo _('New Folder') ?><span class="visible-xs glyphicon glyphicon-chevron-right pull-right"></span></a></li>
+    <li><a href="<?php echo WEB_ROOT_DIRECTORY?>upload_form.php<?php echo $dir_param ?>" id="upload" class="btn btn-primary" target="_blank"><?php echo _('Upload') ?><span class="visible-xs  glyphicon-chevron-right pull-right"></span></a></li>
+    <li><a href="<?php echo WEB_ROOT_DIRECTORY?>mkdir_form.php<?php echo $dir_param ?>" data-target="#myModal" data-toggle="modal" class="modal_link btn btn-secondary"><?php echo _('New Folder') ?><span class="visible-xs glyphicon-chevron-right pull-right"></span></a></li>
   </ul>
 
   <?php if ($sl_connect_info['host']=='localhost'): ?>
-		<dl class="col-12 col-lg-6">
+		<dl class="col-12 col-lg-6 text-end">
 			<dt><?php echo _('Free Space') ?></dt>
       <dd><?php echo Config\bytesToSize1024(\disk_free_space(TMP_DIR)) ?></dd>
       <dt><?php echo _('All Space') ?></dt>
       <dd><?php echo Config\bytesToSize1024(\disk_total_space(TMP_DIR)) ?></dd>
 		</dl>
 		<?php else: ?>
-		<dl class="col-12 col-lg-6">
+		<dl class="col-12 col-lg-6 text-end">
 			<dt><?php echo _('Temp Upload Folder Free Space') ?></dt>
       <dd><?php echo Config\bytesToSize1024(\disk_free_space(TMP_DIR)) ?></dd>
 		</dl>
   <?php endif ?>
 </div>
-
-
-
-		</div>
-  </div>
-	<footer>
-    <div class="container">
-    <div class="row">
-    <address class="col-12 col-sm-8 col-md-6 col-lg-9">
-    CopyLeft,
-        <a href="https://www.sleepinglion.pe.kr" target="_blank">SleepingLion</a>
-        &nbsp;&nbsp; All wrongs reserved. Since 2017
-    </address>
-    <div class="col-12 col-sm-4 col-md-6 col-lg-3">
-      <?php include __DIR__ . DIRECTORY_SEPARATOR .'locale_form.php' ?>
     </div>
   </div>
-</div>
-	</footer>
+<?php
+include __DIR__ . DIRECTORY_SEPARATOR . 'footer.php';
+?>
+		</div>
+  </div>
+
 	<div class="slboard_overlay" id="overlay"></div>
 	<div class="modal fade" id="myModal" tabindex="-1" role="dialog"></div>
-	<script src="<?php echo ASSET_DIRECTORY?>js/jquery-2.1.1.min.js"></script>
-  <script src="<?php echo ASSET_DIRECTORY?>js/popper.min.js"></script>  
-	<script src="<?php echo ASSET_DIRECTORY?>js/bootstrap.min.js"></script>
-  <script src="<?php echo ASSET_DIRECTORY?>js/lang.js.php"></script>
-	<script src="<?php echo ASSET_DIRECTORY?>js/index.js"></script>
+	<script src="<?php echo JS_DIRECTORY ?>jquery-2.1.1.min.js"></script>
+  <script src="<?php echo JS_DIRECTORY ?>popper.min.js"></script>  
+	<script src="<?php echo BOOTSTRAP_JS_DIRECTORY?>bootstrap.min.js"></script>
+  <script src="<?php echo JS_DIRECTORY ?>lang.js.php"></script>
+	<script src="<?php echo JS_DIRECTORY ?>index.js"></script>
 </body>
 </html>
 <?php

@@ -28,8 +28,8 @@ mark, rp, rt, ruby, summary, time {display:inline;}
 
 .container {max-width:2500px}
 
-#mom {margin:-6em 0 -3em}
-#main {padding-top:6em;padding-bottom:3em}
+#mom {margin:-6em 0 -4em}
+#main {padding-top:6em;padding-bottom:4em}
 
 table th {background:#333;color:#fff}
 header {background:#ccc;height:6em}
@@ -39,7 +39,7 @@ header nav li { float: left; list-style: none; margin: 0 0 0 20px}
 header nav ul.nav-pills > li + li {margin-left:20px}
 header nav a { float: left; color: #333;text-decoration: none}
 
-footer {height:3em;background:#ccc;clear:both}
+footer {height:4em;background:#ccc;clear:both}
 footer address {text-align:center;margin:0.7em 0 0}
 footer address a {color:#333}
 footer nav {float:left;margin:1em}
@@ -47,15 +47,14 @@ footer form {float:right;margin:5px 0 0;padding:0}
 
 #directory_selector {width:150px}
 #sl_ftp_connect,#sl_error_page,#sl_rename_form {background:#eee}
-#sl_ftp_connect article,#sl_error_page article,#sl_rename_form article {width:728px;margin:1% auto}
-#sl_ftp_connect article {background:#fff}
+#connect_form,#sl_error_page article,#sl_rename_form article {width:728px;margin:1% auto}
+
 #sl_error_page article {padding:1% 2%}
 #sl_ad {margin:3% auto;width:728px;}
 #file_list form {float:left;margin-right:5px}
 #sl_full_ad {margin:1% 0}
 #create_menu li {list-style: none;display:inline-block;}
 
-footer form {float:right}
 
 @media all and (max-width: 768px) {
   html,body {background:#ccc}

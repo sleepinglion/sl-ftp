@@ -1,27 +1,34 @@
 {
-    "name": "sleepinglion/sl_ftp",
+    "name": "jedaeroweb/sl_ftp",
     "description": "SL Web FTP application",
     "type": "project",
     "license": "MIT",
     "authors": [
         {
-            "name": "sleepinglion",
-            "email": "admin@sleepinglion.pe.kr",
-            "homepage": "https://www.sleepinglion.pe.kr",
+            "name": "jedaeroweb",
+            "email": "admin@jedaeroweb.co.kr",
+            "homepage": "https://www.jedaeroweb.co.kr",
             "role": "Developer"
         }
      ],
     "require": { 
         "php": ">=7.2",
         "phpseclib/phpseclib": "0.3.*@dev",
-        "nicolab/php-ftp-client": "1.5.*",
-        "monolog/monolog": "1.2.*"
+        "nicolab/php-ftp-client": "2.*",
+        "monolog/monolog": "1.2.*",
+        "twbs/bootstrap": "^5.3"
     },
     "require-dev": {
-        "phpunit/phpunit": "5.5.*"
+        "phpunit/phpunit": "*"
     },
     "suggest": {
         "markstory/asset_compress": "An asset compression plugin which provides file concatenation and a flexible filter system for preprocessing and minification.",
         "phpunit/phpunit": "Allows automated tests to be run without system-wide install."
+    },
+    "scripts": {
+        "post-update-cmd": [
+            "rm -rf public/bootstrap",
+            "cp -R vendor/twbs/bootstrap/dist public/bootstrap"
+        ]
     }
 }
