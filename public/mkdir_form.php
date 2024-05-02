@@ -7,15 +7,13 @@ if (isset($_GET['dir'])) {
 }
 ?>
 
-<?php if (isset($_GET['no_layout'])): ?>
+<?php if (isset($_GET['popup'])): ?>
 
   <div class="modal-dialog modal-lg">
   	<form action="mkdir.php" method="post" class="modal-content">
   		<div class="modal-header">
   			<h4 class="modal-title" id="myModalLabel"><?php echo _('New Folder') ?></h4>
-			<button type="button" class="close" data-dismiss="modal" aria-label="Close">
-          		<span aria-hidden="true">×</span>
-        	</button>
+			  <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
   		</div>
   		<div class="modal-body">
   			<input type="hidden" name="dir" value="<?php if (empty($current_folder)): ?><?php else: ?><?php echo $current_folder ?><?php endif ?>" />
@@ -35,8 +33,8 @@ if (isset($_GET['dir'])) {
   	<title><?php echo _('SL FTP') ?></title>
   	<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=yes">
   	<meta name="author" content="Sleeping-Lion">
-  	<link href="<?php echo ASSET_DIRECTORY?>images/favicon.ico" type="image/x-icon" rel="shortcut icon">
-  	<link href="<?php echo ASSET_DIRECTORY?>css/bootstrap.min.css" media="all" type="text/css" rel="stylesheet">
+	<link href="<?php echo IMAGE_DIRECTORY?>favicon.ico" type="image/x-icon" rel="shortcut icon">
+	<link href="<?php echo BOOTSTRAP_CSS_DIRECTORY?>bootstrap.min.css" media="all" type="text/css" rel="stylesheet">
   	<link href="<?php echo ASSET_DIRECTORY?>css/index.css" media="all" type="text/css" rel="stylesheet">
   </head>
   <body id="sl_rename_form">

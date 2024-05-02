@@ -1,210 +1,240 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: sl_ftp\n"
-"POT-Creation-Date: 2017-06-09 17:18+0900\n"
-"PO-Revision-Date: 2017-06-09 17:19+0900\n"
+"POT-Creation-Date: 2024-05-01 21:32+0900\n"
+"PO-Revision-Date: 2024-05-02 18:10+0900\n"
 "Last-Translator: \n"
 "Language-Team: sleepinglion <admin@sleepinglion.pe.kr>\n"
 "Language: ko_KR\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"X-Generator: Poedit 1.8.7.1\n"
-"X-Poedit-Basepath: ../../../..\n"
 "Plural-Forms: nplurals=1; plural=0;\n"
+"X-Generator: Poedit 3.2\n"
+"X-Poedit-Basepath: ../../../..\n"
 "X-Poedit-SourceCharset: UTF-8\n"
 "X-Poedit-SearchPath-0: config\n"
 "X-Poedit-SearchPath-1: public\n"
 
-#: config/config.php:41
+#: config/config.php:52
 msgid "Not Available Gettext Extensions"
 msgstr ""
 
-#: config/config.php:76
+#: config/config.php:86
 #, php-format
 msgid "Not exists TMP_DIR(%s)"
 msgstr ""
 
-#: config/config.php:80
+#: config/config.php:90
 #, php-format
 msgid "Not Writable TMP_DIR(%s)"
 msgstr ""
 
-#: config/config.php:103
+#: config/config.php:118
 msgid "Byte"
 msgstr "字节"
 
-#: config/config.php:103
+#: config/config.php:118
 msgid "Kilo Byte"
 msgstr "千字节"
 
-#: config/config.php:103
+#: config/config.php:118
 msgid "Mega Byte"
 msgstr "兆字节"
 
-#: config/config.php:103
+#: config/config.php:118
 msgid "Giga Byte"
 msgstr "千兆字节"
 
-#: config/config.php:103
+#: config/config.php:118
 msgid "Tera Byte"
 msgstr "兆兆字节"
 
-#: public/500.php:20 public/connect.php:56 public/index.php:48
+#: public/connect.php:55 public/delete_confirm_form.php:18 public/error.php:20
+#: public/index.php:51 public/mkdir_form.php:35 public/rename_form.php:62
 msgid "SL FTP"
 msgstr "SL FTP"
 
-#: public/500.php:38
-msgid "Error"
-msgstr "错误"
+#: public/connect.php:76
+msgid "Connect Info"
+msgstr "连接信息"
 
-#: public/500.php:42
-msgid "Sorry Error"
-msgstr "对不起.  애러가 발생하여 더 이상 진행할수 없습니다."
-
-#: public/500.php:44 public/mkdir_form.php:20 public/rename_form.php:24
-msgid "Confirm"
-msgstr "确认"
-
-#: public/connect.php:82
+#: public/connect.php:81
 msgid "host"
 msgstr "host"
 
-#: public/connect.php:86
+#: public/connect.php:85
 msgid "port"
-msgstr "port"
+msgstr "端口"
 
-#: public/connect.php:92
+#: public/connect.php:89
 msgid "username"
-msgstr "username"
+msgstr "用户"
 
-#: public/connect.php:98
+#: public/connect.php:93
 msgid "userpass"
-msgstr "userpass"
+msgstr "密码"
 
-#: public/connect.php:107
+#: public/connect.php:99
 msgid "sftp"
 msgstr "sftp"
 
-#: public/connect.php:111
+#: public/connect.php:103
 msgid "pasv mode"
 msgstr "pasv mode"
 
-#: public/connect.php:118
+#: public/connect.php:112
 msgid "connect"
-msgstr "connect"
+msgstr "连接"
 
-#: public/delete.php:26 public/mkzip.php:23 public/rename.php:18
+#: public/delete.php:21 public/mkzip.php:23 public/rename.php:18
 msgid "File Names Not Submit"
 msgstr "파일이름들이 제출되지 않았습니다."
 
-#: public/download.php:31
-msgid "File Not Exists"
-msgstr "파일이 없습니다."
+#: public/delete_confirm_form.php:31
+msgid "Delete Confirm"
+msgstr "确认"
 
-#: public/index.php:33 public/index.php:81
-msgid "Files"
-msgstr "개의 파일들"
+#: public/delete_confirm_form.php:35
+#, php-format
+msgid "Are You Sure Delete %s"
+msgstr ""
 
-#: public/index.php:60
-msgid "Refresh"
-msgstr "刷新"
+#: public/delete_confirm_form.php:39
+msgid "Cancel"
+msgstr ""
 
-#: public/index.php:61 public/upload_form.php:80
-msgid "Upload"
-msgstr "上载"
-
-#: public/index.php:62 public/mkdir_form.php:13
-msgid "New Folder"
-msgstr "新建"
-
-#: public/index.php:63
-msgid "Download"
-msgstr "下载"
-
-#: public/index.php:64 public/rename_form.php:13
-msgid "Rename"
-msgstr "改名"
-
-#: public/index.php:65
+#: public/delete_confirm_form.php:40 public/delete_form.php:12
+#: public/index.php:183 public/index.php:203
 msgid "Delete"
 msgstr "删除"
 
-#: public/index.php:67
-msgid "Logout"
-msgstr "登出"
+#: public/download.php:35
+msgid "File Not Exists"
+msgstr "파일이 없습니다."
 
-#: public/index.php:81
+#: public/error.php:32
+msgid "Error"
+msgstr "错误"
+
+#: public/error.php:36
+msgid "Sorry Error"
+msgstr "对不起.  애러가 발생하여 더 이상 진행할수 없습니다."
+
+#: public/error.php:38 public/mkdir_form.php:25 public/mkdir_form.php:57
+#: public/rename_form.php:52 public/rename_form.php:87
+msgid "Confirm"
+msgstr "确认"
+
+#: public/index.php:36 public/index.php:64
+msgid "Files"
+msgstr "개의 파일들"
+
+#: public/index.php:64
 msgid "Current Directory"
 msgstr "当前目录"
 
-#: public/index.php:82
+#: public/index.php:67
 msgid "Visited Directory"
 msgstr "访问目录"
 
-#: public/index.php:102
+#: public/index.php:82
+msgid "Logout"
+msgstr "登出"
+
+#: public/index.php:131 public/rename_form.php:83
 msgid "Name"
 msgstr "名称"
 
-#: public/index.php:103 public/upload.php:50
+#: public/index.php:132 public/upload.php:54
 msgid "Size"
 msgstr "尺寸"
 
-#: public/index.php:104
-msgid "Date"
-msgstr "日期"
-
-#: public/index.php:105
+#: public/index.php:133
 msgid "Time"
 msgstr "时间"
 
-#: public/index.php:120
+#: public/index.php:134
+msgid "Manage"
+msgstr "官理"
+
+#: public/index.php:149
 msgid "Go To Parent Directory"
 msgstr "转到父目录"
 
-#: public/index.php:132
+#: public/index.php:162 public/rename_form.php:36
 msgid "Direcotry"
 msgstr "夹"
 
-#: public/index.php:134
+#: public/index.php:164 public/rename_form.php:38
 msgid "File"
 msgstr "文件"
 
-#: public/index.php:187
+#: public/index.php:182 public/rename_form.php:24 public/rename_form.php:75
+msgid "Rename"
+msgstr "改名"
+
+#: public/index.php:190
+#, fuzzy
+#| msgid "File"
+msgid "No File"
+msgstr "文件"
+
+#: public/index.php:200
+msgid "Selected Do"
+msgstr ""
+
+#: public/index.php:202
+msgid "Download"
+msgstr "下载"
+
+#: public/index.php:219 public/upload_form.php:81
+msgid "Upload"
+msgstr "上载"
+
+#: public/index.php:220 public/mkdir_form.php:15 public/mkdir_form.php:48
+msgid "New Folder"
+msgstr "新建"
+
+#: public/index.php:225
 msgid "Free Space"
 msgstr "可用空间"
 
-#: public/index.php:189
+#: public/index.php:227
 msgid "All Space"
 msgstr "总空间"
 
-#: public/index.php:194
+#: public/index.php:232
 msgid "Temp Upload Folder Free Space"
 msgstr "임시업로드 남은용량"
 
-#: public/js/lang.js.php:1
+#: public/js/lang.js.php:7
 msgid "select_download_file"
 msgstr ""
 
-#: public/js/lang.js.php:2
+#: public/js/lang.js.php:8
 msgid "select_delete_file"
 msgstr ""
 
-#: public/js/lang.js.php:3 public/js/lang.js.php:4
+#: public/js/lang.js.php:9
 msgid "notice_cascade_delete"
 msgstr ""
 
-#: public/js/lang.js.php:5
+#: public/js/lang.js.php:10
+msgid "notice_delete"
+msgstr ""
+
+#: public/js/lang.js.php:11
 msgid "delete_success"
 msgstr ""
 
-#: public/js/lang.js.php:6
+#: public/js/lang.js.php:12
 msgid "delete_fail"
 msgstr ""
 
-#: public/locale_form.php:9
-msgid "submit"
-msgstr "更改"
+#: public/locale_form.php:11
+msgid "Change"
+msgstr "改变"
 
 #: public/mkdir.php:10
 msgid "Folder Name Not Submit"
@@ -215,7 +245,7 @@ msgstr "폴더명이 체출되지 않았습니다."
 msgid "There was a problem while creating %s"
 msgstr ""
 
-#: public/mkzip.php:46
+#: public/mkzip.php:49
 #, php-format
 msgid "Successfully Make %s File"
 msgstr "%s가 성공적으로 만들어졌습니다."
@@ -233,11 +263,11 @@ msgstr "%s 디렉토리를 생성할수 없습니다.(경로및 권한을 확인
 msgid "Upload File Move Fail"
 msgstr "업로드 파일을 이동할수 없습니다.(경로및 권한을 확인해보세요)"
 
-#: public/upload.php:48
+#: public/upload.php:52
 msgid "Your File"
 msgstr ""
 
-#: public/upload.php:49
+#: public/upload.php:53
 msgid "Type"
 msgstr ""
 
@@ -246,30 +276,39 @@ msgstr ""
 msgid "Upload Files %s"
 msgstr "%s에 파일 올리기"
 
-#: public/upload_form.php:58
+#: public/upload_form.php:59
 msgid "Drag and Drop Your File On Drop Area"
 msgstr "올릴 파일을 끌어서 떨구는곳에 떨구세요"
 
-#: public/upload_form.php:58
+#: public/upload_form.php:59
 #, php-format
 msgid "Files Size under %s AND File Count under %s"
 msgstr "파일용량 %s이하, 파일 갯수 %s이하여야 함"
 
-#: public/upload_form.php:60
+#: public/upload_form.php:61
 msgid "Drop Area"
 msgstr "떨구는 곳"
 
-#: public/upload_form.php:62
+#: public/upload_form.php:63
 msgid "Files Left"
 msgstr "남은 파일"
 
-#: public/upload_form.php:64
+#: public/upload_form.php:65
 msgid "Result"
 msgstr "结果"
 
-#: public/upload_form.php:72
+#: public/upload_form.php:73
 msgid "Unable To Use Drag and Drop"
 msgstr "끌어서 떨구기가 불가능한 경우(여기를 눌러)"
+
+#~ msgid "Refresh"
+#~ msgstr "刷新"
+
+#~ msgid "Date"
+#~ msgstr "日期"
+
+#~ msgid "submit"
+#~ msgstr "更改"
 
 #~ msgid "SL FTP client"
 #~ msgstr "SL FTP client"

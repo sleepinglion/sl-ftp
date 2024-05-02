@@ -50,8 +50,8 @@ $max_uploads_files = ini_get('max_file_uploads');
 	<title><?php printf(_('Upload Files %s'), $current_folder) ?></title>
   <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=yes">
 	<meta name="author" content="Sleeping-Lion">
-	<link href="<?php echo ASSET_DIRECTORY ?>images/favicon.ico" type="image/x-icon" rel="shortcut icon">
-	<link href="<?php echo ASSET_DIRECTORY ?>css/bootstrap.min.css" media="all" type="text/css" rel="stylesheet">
+	<link href="<?php echo IMAGE_DIRECTORY?>favicon.ico" type="image/x-icon" rel="shortcut icon">
+	<link href="<?php echo BOOTSTRAP_CSS_DIRECTORY?>bootstrap.min.css" media="all" type="text/css" rel="stylesheet">
 	<link href="<?php echo ASSET_DIRECTORY ?>css/uploads.css" media="all" type="text/css" rel="stylesheet">
 </head>
 <body>
@@ -82,7 +82,7 @@ $max_uploads_files = ini_get('max_file_uploads');
 			</div>
 		</form>
 	</article>
-	<script src="<?php echo ASSET_DIRECTORY ?>js/jquery-2.1.1.min.js"></script>
+	<script src="<?php echo JS_DIRECTORY ?>jquery.min.js"></script>
 	<script src="<?php echo ASSET_DIRECTORY ?>js/uploads.js"></script>
 </body>
 </html>

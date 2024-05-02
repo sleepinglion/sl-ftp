@@ -18,8 +18,8 @@ if (isset($_GET['file'])) {
   <title><?php echo _('SL FTP') ?></title>
   <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=yes">
   <meta name="author" content="Sleeping-Lion">
-  <link href="<?php echo ASSET_DIRECTORY?>images/favicon.ico" type="image/x-icon" rel="shortcut icon">
-  <link href="<?php echo ASSET_DIRECTORY?>css/bootstrap.min.css" media="all" type="text/css" rel="stylesheet">
+	<link href="<?php echo IMAGE_DIRECTORY?>favicon.ico" type="image/x-icon" rel="shortcut icon">
+	<link href="<?php echo BOOTSTRAP_CSS_DIRECTORY?>bootstrap.min.css" media="all" type="text/css" rel="stylesheet">
   <link href="<?php echo ASSET_DIRECTORY?>css/index.css" media="all" type="text/css" rel="stylesheet">
 </head>
 <body id="sl_rename_form">

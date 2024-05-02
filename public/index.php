@@ -51,7 +51,7 @@ try {
 	<title><?php echo _('SL FTP') ?></title>
 	<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=yes">
 	<meta name="author" content="Sleeping-Lion">
-	<link href="<?php echo IMAGE_DIRECTORY?>images/favicon.ico" type="image/x-icon" rel="shortcut icon">
+	<link href="<?php echo IMAGE_DIRECTORY?>favicon.ico" type="image/x-icon" rel="shortcut icon">
 	<link href="<?php echo BOOTSTRAP_CSS_DIRECTORY?>bootstrap.min.css" media="all" type="text/css" rel="stylesheet">
 	<link href="<?php echo CSS_DIRECTORY?>index.css" media="all" type="text/css" rel="stylesheet">
 </head>
@@ -90,24 +90,7 @@ try {
 		<div id="main" class="container">
 
     <div class="row">
-      <div class="col-12">
-    <div id="sl_full_ad">
-  <?php if (DEBUG==1): ?>
-  <div style="width:100%;padding-top:10%;background:red">&nbsp;</div>
-  <?php else: ?>
-  <script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
-  <!-- default_ad -->
-  <ins class="adsbygoogle"
-       style="display:block"
-       data-ad-client="ca-pub-5400903051441488"
-       data-ad-slot="8412654331"
-       data-ad-format="auto"></ins>
-  <script>
-  (adsbygoogle = window.adsbygoogle || []).push({});
-  </script>
-  <?php endif ?>
-  </div>
-    </div>
+    <?php include __DIR__ . DIRECTORY_SEPARATOR .'ad.php' ?>
     </div>
 
       <div class="row">
@@ -179,7 +162,7 @@ try {
 					<?php echo $value['month'] ?>/<?php echo $value['day'] ?> <?php echo $value['time'] ?>
 				</td>
 				<td class="hidden-xs text-center">
-            <a href="/rename_form.php?dir=<?php echo $current_folder ?>&amp;file=<?php echo $value['name'] ?>&amp;type=<?php echo $value['type'] ?>" class="btn btn-secondary modal_link" data-target="#myModal" data-toggle="modal"><?php echo _('Rename') ?></a>
+            <a href="/rename_form.php?dir=<?php echo $current_folder ?>&amp;file=<?php echo $value['name'] ?>&amp;type=<?php echo $value['type'] ?>" class="btn btn-secondary btn-modal" data-target="#myModal" data-toggle="modal"><?php echo _('Rename') ?></a>
             <a href="/delete_confirm_form.php?dir=<?php echo $current_folder ?>&amp;file=<?php echo $value['name'] ?>" class="btn btn-danger"><?php echo _('Delete') ?></a>
 				</td>
 			</tr>
@@ -197,10 +180,10 @@ try {
       <tr>
   			<td><input type="checkbox" class="check_all form-check-input"></td>
         <td>
-          <p style="float:left;margin-right:10px"><?php echo _('Selected Do') ?></p>
+          <p style="float:left;margin-right:10px;margin-top:8px"><?php echo _('Selected Do') ?></p>
           <ul style="float:left" class="nav nav-pills">
-          <li><a href="<?php echo WEB_ROOT_DIRECTORY?>mkzip.php<?php echo $dir_param ?>" id="download" class="btn btn-light disabled"><?php echo _('Download') ?><span class="visible-xs  glyphicon-chevron-right pull-right"></span></a></li>
-          <li><a href="<?php echo WEB_ROOT_DIRECTORY?>delete.php<?php echo $dir_param ?>" id="delete" class="btn btn-light disabled"><?php echo _('Delete') ?><span class="visible-xs  glyphicon-chevron-right pull-right"></span></a></li>
+          <li><a href="<?php echo WEB_ROOT_DIRECTORY?>mkzip.php<?php echo $dir_param ?>" id="download" class="btn btn-light disabled"><?php echo _('Download') ?><span class="visible-xs glyphicon-chevron-right pull-right"></span></a>&nbsp;&nbsp;</li>
+          <li><a href="<?php echo WEB_ROOT_DIRECTORY?>delete.php<?php echo $dir_param ?>" id="delete" class="btn btn-light disabled"><?php echo _('Delete') ?><span class="visible-xs glyphicon-chevron-right pull-right"></span></a></li>
           </ul>
         </td>
         <td colspan="3">&nbsp;
@@ -217,7 +200,7 @@ try {
 <div class="row">
   <ul id="create_menu" class="col-12 col-lg-6">
     <li><a href="<?php echo WEB_ROOT_DIRECTORY?>upload_form.php<?php echo $dir_param ?>" id="upload" class="btn btn-primary" target="_blank"><?php echo _('Upload') ?><span class="visible-xs  glyphicon-chevron-right pull-right"></span></a></li>
-    <li><a href="<?php echo WEB_ROOT_DIRECTORY?>mkdir_form.php<?php echo $dir_param ?>" data-target="#myModal" data-toggle="modal" class="modal_link btn btn-secondary"><?php echo _('New Folder') ?><span class="visible-xs glyphicon-chevron-right pull-right"></span></a></li>
+    <li><a href="<?php echo WEB_ROOT_DIRECTORY?>mkdir_form.php<?php echo $dir_param ?>" data-target="#myModal" data-toggle="modal" class="btn-modal btn btn-secondary"><?php echo _('New Folder') ?><span class="visible-xs glyphicon-chevron-right pull-right"></span></a></li>
   </ul>
 
   <?php if ($sl_connect_info['host']=='localhost'): ?>
@@ -241,11 +224,8 @@ include __DIR__ . DIRECTORY_SEPARATOR . 'footer.php';
 ?>
 		</div>
   </div>
-
-	<div class="slboard_overlay" id="overlay"></div>
-	<div class="modal fade" id="myModal" tabindex="-1" role="dialog"></div>
-	<script src="<?php echo JS_DIRECTORY ?>jquery-2.1.1.min.js"></script>
-  <script src="<?php echo JS_DIRECTORY ?>popper.min.js"></script>  
+  <div class="modal fade" id="myModal" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true"></div>
+	<script src="<?php echo JS_DIRECTORY ?>jquery.min.js"></script>
 	<script src="<?php echo BOOTSTRAP_JS_DIRECTORY?>bootstrap.min.js"></script>
   <script src="<?php echo JS_DIRECTORY ?>lang.js.php"></script>
 	<script src="<?php echo JS_DIRECTORY ?>index.js"></script>

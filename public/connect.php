@@ -55,7 +55,7 @@ try {
 	<title><?php echo _('SL FTP') ?></title>
 	<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=yes">
 	<meta name="author" content="Sleeping-Lion">
-	<link href="<?php echo IMAGE_DIRECTORY?>images/favicon.ico" type="image/x-icon" rel="shortcut icon">
+	<link href="<?php echo IMAGE_DIRECTORY?>favicon.ico" type="image/x-icon" rel="shortcut icon">
 	<link href="<?php echo BOOTSTRAP_CSS_DIRECTORY?>bootstrap.min.css" media="all" type="text/css" rel="stylesheet">
 	<link href="<?php echo CSS_DIRECTORY?>index.css" media="all" type="text/css" rel="stylesheet">
 </head>
@@ -77,19 +77,19 @@ try {
       		</div>
       		<div class="card-body">
             <div  class="row">
-          <div class="col-12 col-lg-10 form-group">
+          <div class="col-12 col-lg-10 mt-3 form-group">
             <label><?php echo _('host') ?></label>
             <input type="text" name="host" class="form-control form-control-lg" required="required">
           </div>
-          <div class="col-12 col-lg-2 form-group">
+          <div class="col-12 col-lg-2 mt-3 form-group">
             <label><?php echo _('port') ?></label>
             <input type="number" name="port" value="21" class="form-control form-control-lg" required="required">
           </div>
-          <div class="col-12 form-group">
+          <div class="col-12 mt-3 form-group">
             <label><?php echo _('username') ?></label>
             <input type="text" name="username" class="form-control form-control-lg" required="required">
           </div>
-          <div class="col-12 form-group">
+          <div class="col-12 mt-3 form-group">
             <label><?php echo _('userpass') ?></label>
             <input type="password" name="userpass" class="form-control form-control-lg">
           </div>
@@ -124,9 +124,9 @@ include __DIR__ . DIRECTORY_SEPARATOR . 'footer.php';
 ?>
 
 		</div>
-    <script src="<?php echo JS_DIRECTORY?>js/jquery-2.1.1.min.js" defer></script>
+    <script src="<?php echo JS_DIRECTORY ?>jquery.min.js"></script>
   	<script src="<?php echo BOOTSTRAP_JS_DIRECTORY?>bootstrap.min.js" defer></script>
-  	<script src="<?php echo JS_DIRECTORY?>js/index.js" defer></script>
+  	<script src="<?php echo JS_DIRECTORY?>index.js" defer></script>
 </body>
 </html>
 <?php

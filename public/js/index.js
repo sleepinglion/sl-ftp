@@ -1,19 +1,20 @@
 $(document).ready(function() {
-	$('.modal_link').click(function(event){
-		event.preventDefault();
-		$('#myModal').removeData("modal");
+	$('.btn-modal').click(btn_modal_click);
 
-		var link=$(this).attr('href');
-		if(link.indexOf('?') != -1){
-			link+='&no_layout=true';
-		} else {
-			link+='?no_layout=true';
-		}
+    function btn_modal_click(event) {
+        event.preventDefault();
 
-		$('#myModal').load(link,function(){
-			$('#myModal').modal();
-  		});
-	});
+        $('#myModal').removeData("modal");
+        if ($(this).attr('href').indexOf('?') == '-1') {
+            var url = $(this).attr('href') + '?popup=true';
+        } else {
+            var url = $(this).attr('href') + '&popup=true';
+        }
+		        
+        $('#myModal').load(url, function () {
+			$('#myModal').modal('show');
+        });
+    }
 
 	$("#visited_directory").change(function(){
 		if($(this).val()==$("#directory_separator").val()) {
@@ -40,21 +41,6 @@ $(document).ready(function() {
 		}
 	});
 
-/*
-	$('#myModal').on('shown.bs.modal', function () {
-		if($("#myModal form").attr('action')=='rename.php') {
-			$("#file_list tbody input:checked").each(function(index){
-				var form_group=$("#myModal form .form-group:first").clone();
-				form_group.find('input').val($(this).val());
-				form_group.find('input:first').attr('name','files['+index+'][old_name]');
-				form_group.find('input:eq(1)').attr('name','files['+index+'][new_name]').attr('id','new_name'+index);
-				form_group.find('label').attr('for','new_name'+index).append($(this).parent().find('img').clone());
-				$("#myModal form .modal-body").append(form_group);
-				form_group.show();
-			});
-		}
-	});
-*/
 	$("#upload").click(function(){
 		window.open($(this).attr('href'),"_blank","top=100,left=100,width=800,height=600");
 		return false;
