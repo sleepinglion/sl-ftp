@@ -1,6 +1,7 @@
 .project
 .settings
 public/tmp
+public/bootstrap
 log
 lib
 vendor
