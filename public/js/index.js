@@ -1,4 +1,4 @@
-$(document).ready(function() {
+$(function() {
 	$('.btn-modal').click(btn_modal_click);
 
     function btn_modal_click(event) {

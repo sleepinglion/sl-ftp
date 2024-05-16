@@ -61,7 +61,7 @@ try {
 </head>
 <body id="sl_ftp_connect">
 <div id="mom" class="mt-0">
-		<div id="main" class="container pt-0">
+		<div id="main" class="pt-0">
 		<div class="container">
       <div class="row">
         <div class="col-12">
@@ -76,7 +76,7 @@ try {
       			<h3><?php echo _('Connect Info') ?></h3>
       		</div>
       		<div class="card-body">
-            <div  class="row">
+            <div class="row">
           <div class="col-12 col-lg-10 mt-3 form-group">
             <label><?php echo _('host') ?></label>
             <input type="text" name="host" class="form-control form-control-lg" required="required">
@@ -104,26 +104,27 @@ try {
                 </label>
               </div>
           </div>
-            </div>
-        
+
+
+
+
+
+          </div>
       </div>
         </div>
-      <div class="d-grid gap-2 mt-3">
+        <div class="d-grid gap-2 mt-3">
                <input type="submit" value="<?php echo _('connect') ?>" class="btn btn-primary btn-lg" />
           </div>
-
-    </form>
-  </div>
+      </form>
     </div>
-    
     </div>
-  </div>
-  </div>
+    </div>
+    </div>
+    </div>
     <?php
 include __DIR__ . DIRECTORY_SEPARATOR . 'footer.php';
 ?>
 
-		</div>
     <script src="<?php echo JS_DIRECTORY ?>jquery.min.js"></script>
   	<script src="<?php echo BOOTSTRAP_JS_DIRECTORY?>bootstrap.min.js" defer></script>
   	<script src="<?php echo JS_DIRECTORY?>index.js" defer></script>
